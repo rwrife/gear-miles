@@ -75,11 +75,23 @@ network.
 
 ## Current status
 
-**Planning scaffold only.** This repository currently contains documentation and a
-backlog. No KiCad project, schematic, PCB, firmware build, app build, prototype,
-test, or measurement result exists yet, and none is claimed.
+**Architecture baseline accepted; still no built artifact.** This repository
+contains documentation, an accepted architecture baseline
+([`docs/architecture.md`](docs/architecture.md)), a risk register
+([`docs/risk-register.md`](docs/risk-register.md)), and a backlog. No KiCad
+project, schematic, PCB, firmware build, app build, prototype, test, or
+measurement result exists yet, and none is claimed.
+
+### Metric-honesty policy
+
+All speed and distance readouts on any surface (display, dashboard, API,
+exports) are **estimates derived from crank cadence × a user-configured
+effective circumference** — never measured wheel speed. Every such value
+carries an explicit "estimated" qualifier; the normative rules live in
+[`docs/architecture.md` § Metric-honesty policy](docs/architecture.md).
 
 Milestones:
+
 1. Requirements + architecture accepted (issue backlog #1)
 2. Component selection with manufacturer evidence; KiCad schematic + ERC
 3. PCB layout + DRC; BOM exported from schematic properties to `bom/bom.csv`

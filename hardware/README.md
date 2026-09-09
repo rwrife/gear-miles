@@ -5,7 +5,7 @@ measurement exists yet. This file describes the intended system.
 
 ## System block diagram
 
-```
+```text
 USB-C 5V ──▶ 5V/3.3V LDO ──▶ ESP32-C3 module (Wi-Fi, flash)
                                │
              ┌─────────────────┼──────────────────┐
@@ -19,9 +19,11 @@ USB-C 5V ──▶ 5V/3.3V LDO ──▶ ESP32-C3 module (Wi-Fi, flash)
 
 ## Controller choice
 
-ESP32-C3-based module with a PCB antenna (candidate families: ESP32-C3-MINI-1 or
-equivalent — final MPN selected with datasheet evidence in the component-selection
-issue). Rationale: ultra-low cost, single-core sufficient for 1 Hz UI + cadence
+ESP32-C3-based module with a PCB antenna (candidate families: ESP32-C3-WROOM-02
+or ESP32-C3-MINI-1 — final MPN selected with datasheet evidence in the
+component-selection issue; the power budget in `docs/architecture.md` cites
+ESP32-C3-WROOM-02 & WROOM-02U Datasheet v1.7). Rationale: ultra-low cost,
+single-core sufficient for 1 Hz UI + cadence
 IRQ, native USB for flashing/diagnostics, huge community, and the same toolchain
 as the rest of the tool-lab hardware projects.
 
@@ -38,8 +40,14 @@ as the rest of the tool-lab hardware projects.
 
 ## Power plan
 
-- Input: USB-C, 5 V, ≤ 100 mA typical budget target (display refresh dominates)
-- 3.3 V LDO (e.g. 300–500 mA class) with bulk + MLCC decoupling per module datasheet
+Normative numbers live in `docs/architecture.md` §4 (power budget).
+Directional notes:
+
+- Input: USB-C, 5 V SELV; Wi-Fi TX bursts (module datasheet peak 345 mA @
+  3.3 V, WROOM-02 DS v1.7 Table 6-4) dominate the peak, not the display
+  refresh (~9–13 mA during updates)
+- 3.3 V LDO **≥ 500 mA class** (floor set by module TX peak; exact part in
+  issue #2) with bulk + MLCC decoupling per module datasheet
 - No battery, no charger, no buck/boost, no mains — SELV-only by design
 - Deep-sleep policy: display holds last frame; controller idle between ticks;
   measured current documented at bring-up (no fabricated numbers here)
