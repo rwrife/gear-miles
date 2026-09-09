@@ -1,0 +1,34 @@
+# Build outputs
+build/
+dist/
+*.o
+*.elf
+*.bin
+*.uf2
+
+# ESP-IDF
+managed_components/
+sdkconfig.old
+build/
+
+# Node
+node_modules/
+app/dist/
+
+# KiCad generated / caches
+hardware/kicad/fp-info-cache
+hardware/kicad/*.kicad_prl
+hardware/kicad/*/
+hardware/kicad/*.bak
+hardware/kicad/*-backups/
+hardware/kicad/gerber/
+
+# Analysis outputs (regenerable)
+analysis/
+
+# Datasheets (re-downloadable binaries)
+datasheets/
+
+# OS noise
+.DS_Store
+Thumbs.db

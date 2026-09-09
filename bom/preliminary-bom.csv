@@ -1,0 +1,18 @@
+Item,Planning_Status,Qty,Function,Candidate_Part_Class_Or_Module,Package_Form_Family,Unit_Cost,Manufacturer,MPN,Source_URL,Notes
+1,PLANNING_ONLY,1,Wi-Fi MCU with PCB antenna,ESP32-C3 module with antenna keepout requirement,Stamp module, TBD - live sourcing required,TBD,TBD,TBD,Final MPN selected with datasheet evidence; antenna keepout mandatory
+2,PLANNING_ONLY,1,3.3 V regulator for module + display,3.3 V LDO 300-500 mA class,SOT-223 or SOT-23-5, TBD - live sourcing required,TBD,TBD,TBD,Dropout and refresh-peak current validated against datasheet
+3,PLANNING_ONLY,1,E-ink display panel,2.9 inch e-ink SPI panel no touch,FPC connector interface, TBD - live sourcing required,TBD,TBD,TBD,Panel family only; controller IC + refresh behavior per datasheet
+4,PLANNING_ONLY,1,E-ink FPC connection,FPC connector matching panel datasheet pitch/count,Bottom-contact FPC, TBD - live sourcing required,TBD,TBD,TBD,Pinout documented in schematic
+5,PLANNING_ONLY,1,Cadence sensing,Reed or Hall-effect proximity sensor with magnet,Through-hole or SMD sensor + cable head, TBD - live sourcing required,TBD,TBD,TBD,Operate/release distance per datasheet drives mount spec
+6,PLANNING_ONLY,1,External sensor connector,2-pin shrouded header or jack with ESD path,Through-hole, TBD - live sourcing required,TBD,TBD,TBD,ESD protection device chosen per IEC-rated datasheet
+7,PLANNING_ONLY,1,Sensor-line ESD protection,TVS/ESD diode array suitable for pull-up signal line,SOD/XSON per selection, TBD - live sourcing required,TBD,TBD,TBD,Voltage rating verified vs pull-up rail
+8,PLANNING_ONLY,1,USB-C power inlet,USB-C receptacle with CC straps for 5 V sink,SMD USB-C, TBD - live sourcing required,TBD,TBD,TBD,5 V sink only; no PD negotiation in MVP
+9,PLANNING_ONLY,1,USB data for flashing/diags,USB data coupling + ESD on D+/D-,Discrete or array, TBD - live sourcing required,TBD,TBD,TBD,USB CDC boot path documented
+10,PLANNING_ONLY,2,User controls,Tactile push buttons with interrupt-ready GPIO mapping,SMD 6x6, TBD - live sourcing required,TBD,TBD,TBD,Start/stop and scroll/enter
+11,PLANNING_ONLY,1,Bypass/decoupling passives,MLCC kit values + pull-up/pull-down resistors per datasheets,0402/0603 assorted, TBD - live sourcing required,TBD,TBD,TBD,Values set by schematic rules and module datasheet
+12,PLANNING_ONLY,1,Boot/test programming,Programming + test point set (BOOT GND 3V3 UART and SPI probes),Test points + header option, TBD - live sourcing required,TBD,TBD,TBD,Labels in silkscreen planned
+13,PLANNING_ONLY,1,Board,Two-layer PCB with antenna keepout,2-layer fab, TBD - fabrication quote required,TBD,TBD,TBD,Fab house chosen at fabrication issue
+14,PLANNING_ONLY,1,Enclosure,3D-printed clip/scale designs (sensor head + main housing),Printed parts, TBD - live sourcing required,TBD,TBD,TBD,No metal near antenna; STL maintained in repo
+15,PLANNING_ONLY,1,Crank magnet,Magnet + mounting cradle sized to sensor gap spec,Magnet hardware, TBD - live sourcing required,TBD,TBD,TBD,May ship with sensor in issue-2 sourcing
+16,PLANNING_ONLY,1,Assembly hardware,M2 self-tapping screws + fastener assortment,Fasteners, TBD - live sourcing required,TBD,TBD,TBD,Non-schematic item
+17,PLANNING_ONLY,1,Power cable,USB-C cable (user-supplied; budgeted for convenience),Cable, TBD - live sourcing required,TBD,TBD,TBD,Non-schematic item; often already owned
