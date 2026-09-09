@@ -18,7 +18,7 @@ cloud sync, GPS, battery design, mains anything, smart-bus integration.
 
 ## Architecture
 
-```
+```text
 [Crank magnet] → [Reed/Hall sensor] ──GPIO IRQ──▶ ESP32-C3
                                                   │ debounced tick → cadence EMA
                                                   │ speed/dist integration @ 1 Hz

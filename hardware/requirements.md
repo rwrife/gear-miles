@@ -7,8 +7,8 @@ No value here is a measurement.
 
 | ID | Requirement | Verification |
 |---|---|---|
-| E1 | Powered from USB-C, 5 V ±5%, ≤ 150 mA peak budget (3.3 V rail + display refresh included) | Bench current trace at bring-up |
-| E2 | 3.3 V rail within module datasheet tolerance at all loads incl. e-ink refresh peak | Scope capture + ERC/DRC review |
+| E1 | Powered from USB-C, 5 V ±5%. **Rev A (issue #1):** split average vs peak — average input current in connected-idle steady state ≤ 150 mA; peak capability ≥ 500 mA on the 3.3 V rail (LDO class floor, see `docs/architecture.md` §4) with the 5 V inlet able to source ≥ 450 mA transients without host disconnect. The original blanket "≤ 150 mA peak" was unsatisfiable: the module family datasheet alone rates 345 mA Wi-Fi-TX peak (WROOM-02 DS v1.7 Table 6-4) | Bench current trace at bring-up |
+| E2 | 3.3 V rail within module datasheet tolerance at all loads incl. Wi-Fi TX and e-ink refresh peaks | Scope capture + ERC/DRC review |
 | E3 | Cadence input tolerates open-drain reed/Hall sensors with 10–100 kΩ external pull-up options; input ESD protected (IEC 61000-4-2 contact-level component choice per datasheet, not a claim of passed certification) | Schematic review + bench |
 | E4 | Cadence detection 0–200 RPM with ≤ ±2 RPM error vs manual reference count at 40/80/120 RPM | Bench test, 3 runs each |
 | E5 | All external connectors ESD-protected; no GPIO drives > datasheet absolute max on any pin | Datasheet review + ERC |
