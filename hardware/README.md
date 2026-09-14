@@ -1,7 +1,9 @@
 # Gear Miles — Hardware
 
-**Status: planning only.** No KiCad project, schematic, PCB, prototype, or
-measurement exists yet. This file describes the intended system.
+**Status: NOT FOR FABRICATION; layout and hardware remain open.** The editable
+KiCad 9 project is in [`kicad/`](kicad/), with evidence and remaining
+qualifications in [`docs/schematic.md`](../docs/schematic.md). No PCB,
+prototype, or measurement exists yet.
 
 ## System block diagram
 
@@ -31,7 +33,7 @@ as the rest of the tool-lab hardware projects.
 
 | Interface | Direction | Notes |
 |---|---|---|
-| USB-C 5 V | power + USB CDC flash/debug | 5 V SELV only; no HV anywhere |
+| USB-C 5 V | power + USB CDC flash/debug | 5 V SELV input; e-ink support generates higher positive/negative rails |
 | Reed/Hall sensor input | in | Open-drain sensor with pull-up; ESD protection on external connector |
 | E-ink 2.9" SPI panel | out | 4-wire SPI + BUSY; FPC connector with documented pinout |
 | Buttons ×2 | in | Start/stop, scroll/enter; interrupts with debounce |
@@ -48,7 +50,8 @@ Directional notes:
   refresh (~9–13 mA during updates)
 - 3.3 V LDO **≥ 500 mA class** (floor set by module TX peak; exact part in
   issue #2) with bulk + MLCC decoupling per module datasheet
-- No battery, no charger, no buck/boost, no mains — SELV-only by design
+- No battery, no charger, no mains. The e-ink panel requires a booster and
+  positive/negative bias rails; their draft implementation is rejected.
 - Deep-sleep policy: display holds last frame; controller idle between ticks;
   measured current documented at bring-up (no fabricated numbers here)
 
@@ -69,12 +72,14 @@ Directional notes:
   estimates in every UI surface
 - Sweat-splash indoor environment only; no outdoor/waterproof claim
 
-## Expected KiCad deliverables (created by backlog issues, not yet present)
+## KiCad deliverables
 
 - `hardware/kicad/gear-miles.kicad_pro` — project file
-- `hardware/kicad/gear-miles.kicad_sch` — complete editable schematic
-- `hardware/kicad/gear-miles.kicad_pcb` — two-layer carrier layout
-- ERC + DRC reports committed alongside; every exception documented
+- `hardware/kicad/gear-miles.kicad_sch` — editable, fabrication-blocked schematic
+- `hardware/kicad/gear.kicad_sym` — project-local symbol source
+- native ERC and netlist-validation reports committed alongside
+- `hardware/kicad/gear-miles.kicad_pcb` — **not created**; placement/routing
+  belongs to issue #5
 - MPN/Manufacturer populated as KiCad symbol properties; `bom/bom.csv` exported
-  from the schematic as source of truth
-- PDF schematic + board renders as *supplements only*
+  only after the remaining `TBD` sourcing is closed
+- PDF schematic is a *supplement only*

@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Gear")(type "KiCad")(uri "${KIPRJMOD}/gear.kicad_sym")(options "")(descr "Gear Miles project-local symbols"))
+)

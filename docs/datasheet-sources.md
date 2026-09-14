@@ -1,5 +1,22 @@
 # Datasheet source manifest
 
+## 2026-09-14 implementation review additions
+
+The legacy rows below are retained, not blanket-revalidated. Actual local
+manufacturer PDFs were read with `pdftotext`/PyMuPDF this run:
+
+| Document | Retrieval/source | SHA-256 | Evidence |
+|---|---|---|---|
+| Si1308EDL | [Vishay PDF](https://www.vishay.com/docs/63399/si1308edl.pdf), downloaded 2026-09-14 | `a86d6f766f259d8b170a01081f577055f37b527257a0f9af497c8f2c33625c9a` | Document 63399 Rev C p1: **SOT-323/SC-70**, 1 gate, 2 source, 3 drain; orderable Si1308EDL-T1-GE3. Not SOT-23. |
+| MBR0530 | [onsemi PDF](https://www.onsemi.com/pdf/datasheet/mbr0530-d.pdf), downloaded 2026-09-14 | `11459fe319b080be6b12cb596d20f96c1d23381e5e9f40ff017afcca0d187a23` | MBR0530/D Rev 2 p1, SOD-123, 30 V / 500 mA. Physical marking/direction and full pump still require review. |
+| UMW PESD5V0S1BA/BB/BL | Existing `datasheets/PESD5V0S1BA-UMW.pdf`, read 2026-09-14 | `58082d1cca5eefb1d872f35948be198ab5a86f0f83216e07f2832d399f27d00f` | Jan 2025, UTD Semiconductor Co. Limited / UMW, p1: bidirectional, clamp 14 V, component-level ESD >30 kV. This does **not** establish safe ESP32 pin clamping. |
+| Kinghelm FPC drawing | Existing `datasheets/KH-FG0.5-H2.0-24PIN.pdf`, read 2026-09-14 | `288bd7abe5351949830d2c392e814da3db04397699d1562a0d36462827c15c85` | Text identifies Kinghelm/KH-FG0.5-H2.0-24PIN, not XUNPU. Cannot validate the selected XUNPU connector. |
+
+No structured extraction cache, lifecycle audit, or new live distributor
+pricing/stock validation was completed. See [schematic blockers](schematic.md).
+
+## Legacy manifest
+
 Datasheet PDFs themselves are gitignored (re-downloadable binaries under
 `datasheets/`); this manifest is the committed record of exactly which
 documents every datasheet citation in `docs/architecture.md` and

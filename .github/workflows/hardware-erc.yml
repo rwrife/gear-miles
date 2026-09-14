@@ -1,0 +1,37 @@
+name: hardware-erc
+
+on:
+  pull_request:
+    paths:
+      - "hardware/kicad/**"
+      - ".github/workflows/hardware-erc.yml"
+  push:
+    branches: [main]
+    paths:
+      - "hardware/kicad/**"
+      - ".github/workflows/hardware-erc.yml"
+
+jobs:
+  erc-and-pinmap:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/inti-cmnb/kicad9_auto:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Regenerate schematic
+        run: >-
+          python3 hardware/kicad/tools/generate_schematic.py &&
+          git diff --exit-code -- hardware/kicad/gear-miles.kicad_sch hardware/kicad/gear.kicad_sym
+      - name: Run native ERC
+        run: >-
+          kicad-cli sch erc --exit-code-violations --format json
+          -o hardware/kicad/reports/erc-ci.json
+          hardware/kicad/gear-miles.kicad_sch
+      - name: Assert exported pin map
+        run: >-
+          python3 hardware/kicad/tests/test_netlist.py &&
+          python3 hardware/kicad/tests/test_schematic_bounds.py
+      - name: Check PDF text bounds
+        run: >-
+          kicad-cli sch export pdf -o /tmp/gear-miles.pdf hardware/kicad/gear-miles.kicad_sch &&
+          python3 hardware/kicad/tests/test_pdf_bounds.py /tmp/gear-miles.pdf

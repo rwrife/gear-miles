@@ -1,0 +1,2328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/home/rwrife/repos/gear-miles-wt/issue-3-complete/hardware/kicad/gear-miles.kicad_sch</source>
+    <date>2026-09-14T13:27:55+0000</date>
+    <tool>Eeschema 9.0.9.1-unknown-202605141413~ce707d0a6c~ubuntu24.04.1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Gear Miles - USB-C ESP32-C3 and GDEY029T94</title>
+        <company>Gear Miles</company>
+        <rev>Issue 3 - BLOCKED</rev>
+        <date>2026-09-14</date>
+        <source>gear-miles.kicad_sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>10uF 10V X5R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>docs/component-selection.md</datasheet>
+      <fields>
+        <field name="Citation">ME6217 input capacitor; component-selection C18</field>
+        <field name="Manufacturer">Samsung Electro-Mechanics</field>
+        <field name="MPN">CL10A106KP8NNNC</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">docs/component-selection.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="C1_5" description=""/>
+      <property name="Citation" value="ME6217 input capacitor; component-selection C18"/>
+      <property name="Manufacturer" value="Samsung Electro-Mechanics"/>
+      <property name="MPN" value="CL10A106KP8NNNC"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>28b701fc-49d4-5a3c-878a-ab5eb4e3acf0</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>10uF 10V X5R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>docs/component-selection.md</datasheet>
+      <fields>
+        <field name="Citation">ME6217 output capacitor; component-selection C18</field>
+        <field name="Manufacturer">Samsung Electro-Mechanics</field>
+        <field name="MPN">CL10A106KP8NNNC</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet">docs/component-selection.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="C2_7" description=""/>
+      <property name="Citation" value="ME6217 output capacitor; component-selection C18"/>
+      <property name="Manufacturer" value="Samsung Electro-Mechanics"/>
+      <property name="MPN" value="CL10A106KP8NNNC"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b8ebed57-0229-5109-8664-ca50f5884e28</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>100nF 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <datasheet>datasheets/esp32-c3-wroom-02_datasheet_en.pdf</datasheet>
+      <fields>
+        <field name="Citation">ESP32-C3-WROOM-02 datasheet v1.7 Fig. 9-1</field>
+        <field name="Manufacturer">Samsung Electro-Mechanics</field>
+        <field name="MPN">CL05B104KO5NNNC</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet">datasheets/esp32-c3-wroom-02_datasheet_en.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="C3_8" description=""/>
+      <property name="Citation" value="ESP32-C3-WROOM-02 datasheet v1.7 Fig. 9-1"/>
+      <property name="Manufacturer" value="Samsung Electro-Mechanics"/>
+      <property name="MPN" value="CL05B104KO5NNNC"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5f4f76cb-8748-58d0-adb0-672e5e5e1c09</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>1uF 10V X7R</value>
+      <footprint>Capacitor_SMD:C_0402_1005Metric</footprint>
+      <datasheet>docs/component-selection.md</datasheet>
+      <fields>
+        <field name="Citation">ESP32-C3-WROOM-02 datasheet v1.7 section 9</field>
+        <field name="Manufacturer">Yageo</field>
+        <field name="MPN">CC0402KRX7R6BB105</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Capacitor_SMD:C_0402_1005Metric</field>
+        <field name="Datasheet">docs/component-selection.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="C4_11" description=""/>
+      <property name="Citation" value="ESP32-C3-WROOM-02 datasheet v1.7 section 9"/>
+      <property name="Manufacturer" value="Yageo"/>
+      <property name="MPN" value="CC0402KRX7R6BB105"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0244271f-b913-52f2-b800-0f16c2b7ff14</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>1uF 25V X7R</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/GDEY029T94.pdf</datasheet>
+      <fields>
+        <field name="Citation">Manufacturer figure C5, PREVGH reservoir</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/GDEY029T94.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="C5_32" description=""/>
+      <property name="Citation" value="Manufacturer figure C5, PREVGH reservoir"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6fc51c20-2252-5bd1-888b-d36ba92de828</tstamps>
+    </comp>
+    <comp ref="C6">
+      <value>1uF 25V X7R</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/GDEY029T94.pdf</datasheet>
+      <fields>
+        <field name="Citation">Manufacturer figure C6, VCI bypass</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/GDEY029T94.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="C6_33" description=""/>
+      <property name="Citation" value="Manufacturer figure C6, VCI bypass"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>03f6cb4b-55f0-5cea-9f4e-ec5a6c50438f</tstamps>
+    </comp>
+    <comp ref="C7">
+      <value>1uF 25V X7R</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/GDEY029T94.pdf</datasheet>
+      <fields>
+        <field name="Citation">Manufacturer figure C7, VDD bypass</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/GDEY029T94.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="C7_34" description=""/>
+      <property name="Citation" value="Manufacturer figure C7, VDD bypass"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>be83f3e6-b5c9-50d4-af13-602d059f8f42</tstamps>
+    </comp>
+    <comp ref="C8">
+      <value>1uF 25V X7R</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/GDEY029T94.pdf</datasheet>
+      <fields>
+        <field name="Citation">Manufacturer figure C2, VSH2 bypass</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/GDEY029T94.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="C8_35" description=""/>
+      <property name="Citation" value="Manufacturer figure C2, VSH2 bypass"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6f21f98d-84cd-59dd-ad04-3584b1dc407e</tstamps>
+    </comp>
+    <comp ref="C9">
+      <value>1uF 25V X7R</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/GDEY029T94.pdf</datasheet>
+      <fields>
+        <field name="Citation">Manufacturer figure C9, VSH1 bypass</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/GDEY029T94.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="C9_36" description=""/>
+      <property name="Citation" value="Manufacturer figure C9, VSH1 bypass"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fb46d180-71f9-539a-97dc-e11607d59ae4</tstamps>
+    </comp>
+    <comp ref="C10">
+      <value>1uF 25V X7R</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/GDEY029T94.pdf</datasheet>
+      <fields>
+        <field name="Citation">Manufacturer figure C10, VGH bypass</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/GDEY029T94.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="C10_37" description=""/>
+      <property name="Citation" value="Manufacturer figure C10, VGH bypass"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>521444ad-c2b0-539a-b490-d7e70402d95b</tstamps>
+    </comp>
+    <comp ref="C11">
+      <value>1uF 25V X7R</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/GDEY029T94.pdf</datasheet>
+      <fields>
+        <field name="Citation">Manufacturer figure C11, VSL bypass</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/GDEY029T94.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="C11_38" description=""/>
+      <property name="Citation" value="Manufacturer figure C11, VSL bypass"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>127d44c1-f8c7-515d-8c20-01e7696f3fc4</tstamps>
+    </comp>
+    <comp ref="C12">
+      <value>1uF 25V X7R</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/GDEY029T94.pdf</datasheet>
+      <fields>
+        <field name="Citation">Manufacturer figure C12, VCOM bypass</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/GDEY029T94.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="C12_39" description=""/>
+      <property name="Citation" value="Manufacturer figure C12, VCOM bypass"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3aaab894-647b-5cd2-bf6b-74400fda9a42</tstamps>
+    </comp>
+    <comp ref="C13">
+      <value>4.7uF 25V X7R</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/GDEY029T94.pdf</datasheet>
+      <fields>
+        <field name="Citation">Manufacturer figure C3, flying capacitor</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/GDEY029T94.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="C13_40" description=""/>
+      <property name="Citation" value="Manufacturer figure C3, flying capacitor"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2e084308-47b2-51dc-bdd9-3c686b08595f</tstamps>
+    </comp>
+    <comp ref="D1">
+      <value>PESD5V0S1BA</value>
+      <footprint>Diode_SMD:D_SOD-323</footprint>
+      <datasheet>datasheets/PESD5V0S1BA-UMW.pdf</datasheet>
+      <fields>
+        <field name="Citation">UMW Jan 2025 datasheet; bidirectional terminals 1 and 2</field>
+        <field name="Manufacturer">UMW</field>
+        <field name="MPN">PESD5V0S1BA</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Diode_SMD:D_SOD-323</field>
+        <field name="Datasheet">datasheets/PESD5V0S1BA-UMW.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="D1_24" description=""/>
+      <property name="Citation" value="UMW Jan 2025 datasheet; bidirectional terminals 1 and 2"/>
+      <property name="Manufacturer" value="UMW"/>
+      <property name="MPN" value="PESD5V0S1BA"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a67c8440-42fc-527e-a9fe-9596ed361fe2</tstamps>
+    </comp>
+    <comp ref="D2">
+      <value>MBR0530</value>
+      <footprint>Diode_SMD:D_SOD-123</footprint>
+      <datasheet>https://www.onsemi.com/pdf/datasheet/mbr0530-d.pdf</datasheet>
+      <fields>
+        <field name="Citation">onsemi MBR0530 datasheet; pin 1 cathode, pin 2 anode</field>
+        <field name="Manufacturer">onsemi</field>
+        <field name="MPN">MBR0530</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Diode_SMD:D_SOD-123</field>
+        <field name="Datasheet">https://www.onsemi.com/pdf/datasheet/mbr0530-d.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="D2_29" description=""/>
+      <property name="Citation" value="onsemi MBR0530 datasheet; pin 1 cathode, pin 2 anode"/>
+      <property name="Manufacturer" value="onsemi"/>
+      <property name="MPN" value="MBR0530"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>93b2b231-262b-5ca3-8264-8ff5048b52cc</tstamps>
+    </comp>
+    <comp ref="D3">
+      <value>MBR0530</value>
+      <footprint>Diode_SMD:D_SOD-123</footprint>
+      <datasheet>https://www.onsemi.com/pdf/datasheet/mbr0530-d.pdf</datasheet>
+      <fields>
+        <field name="Citation">onsemi MBR0530 datasheet; pin 1 cathode, pin 2 anode</field>
+        <field name="Manufacturer">onsemi</field>
+        <field name="MPN">MBR0530</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Diode_SMD:D_SOD-123</field>
+        <field name="Datasheet">https://www.onsemi.com/pdf/datasheet/mbr0530-d.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="D3_30" description=""/>
+      <property name="Citation" value="onsemi MBR0530 datasheet; pin 1 cathode, pin 2 anode"/>
+      <property name="Manufacturer" value="onsemi"/>
+      <property name="MPN" value="MBR0530"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>59d27795-2950-5743-91ab-ce486af63a23</tstamps>
+    </comp>
+    <comp ref="D4">
+      <value>MBR0530</value>
+      <footprint>Diode_SMD:D_SOD-123</footprint>
+      <datasheet>https://www.onsemi.com/pdf/datasheet/mbr0530-d.pdf</datasheet>
+      <fields>
+        <field name="Citation">onsemi MBR0530 datasheet; pin 1 cathode, pin 2 anode</field>
+        <field name="Manufacturer">onsemi</field>
+        <field name="MPN">MBR0530</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Diode_SMD:D_SOD-123</field>
+        <field name="Datasheet">https://www.onsemi.com/pdf/datasheet/mbr0530-d.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="D4_31" description=""/>
+      <property name="Citation" value="onsemi MBR0530 datasheet; pin 1 cathode, pin 2 anode"/>
+      <property name="Manufacturer" value="onsemi"/>
+      <property name="MPN" value="MBR0530"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6b276d7f-c46a-5bcf-bcd4-34cb97f12a97</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>TYPE-C 16PIN 2MD(073)</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/TYPE-C-16PIN-073.pdf</datasheet>
+      <fields>
+        <field name="Citation">SHOU HAN vendor drawing; contacts transcribed from drawing</field>
+        <field name="Manufacturer">SHOU HAN</field>
+        <field name="MPN">TYPE-C 16PIN 2MD(073)</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/TYPE-C-16PIN-073.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="J1_1" description=""/>
+      <property name="Citation" value="SHOU HAN vendor drawing; contacts transcribed from drawing"/>
+      <property name="Manufacturer" value="SHOU HAN"/>
+      <property name="MPN" value="TYPE-C 16PIN 2MD(073)"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c68ea590-18fa-578f-9cc7-a4988e597b5c</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>XY-XH2.54-2PWT</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>docs/component-selection.md</datasheet>
+      <fields>
+        <field name="Citation">Catalog record has no manufacturer or verified drawing; PLANNING_ONLY</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">docs/component-selection.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="J2_23" description=""/>
+      <property name="Citation" value="Catalog record has no manufacturer or verified drawing; PLANNING_ONLY"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0e942359-5603-5343-8d91-7a3cd8a065d4</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>UART0 1x4 header</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>docs/component-selection.md</datasheet>
+      <fields>
+        <field name="Citation">Exact male header not selected; PLANNING_ONLY</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">docs/component-selection.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="J3_25" description=""/>
+      <property name="Citation" value="Exact male header not selected; PLANNING_ONLY"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>faffd9dd-0f78-556f-8dcf-3b10be98e3b7</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>24-pin 0.5 mm FPC</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/GDEY029T94.pdf</datasheet>
+      <fields>
+        <field name="Citation">Panel pin map from GDEY029T94; connector MPN/footprint unverified; PLANNING_ONLY</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/GDEY029T94.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="J4_26" description=""/>
+      <property name="Citation" value="Panel pin map from GDEY029T94; connector MPN/footprint unverified; PLANNING_ONLY"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>96a312d5-4439-5fe9-ac03-19987ad1a49e</tstamps>
+    </comp>
+    <comp ref="L1">
+      <value>47uH 500mA</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/GDEY029T94.pdf</datasheet>
+      <fields>
+        <field name="Citation">GDEY029T94 Rev 1.0 section 12</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/GDEY029T94.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="L1_27" description=""/>
+      <property name="Citation" value="GDEY029T94 Rev 1.0 section 12"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3b348a13-a7d7-534e-a0f4-9570b63820fa</tstamps>
+    </comp>
+    <comp ref="PWR1">
+      <value>PWR_FLAG</value>
+      <datasheet>KiCad:power</datasheet>
+      <fields>
+        <field name="Citation">ERC supply-source flag</field>
+        <field name="Manufacturer">N/A</field>
+        <field name="MPN">N/A</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">KiCad:power</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="PWR1_41" description=""/>
+      <property name="Citation" value="ERC supply-source flag"/>
+      <property name="Manufacturer" value="N/A"/>
+      <property name="MPN" value="N/A"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3d9657a7-90ae-57cf-ad9b-54c726203c59</tstamps>
+    </comp>
+    <comp ref="PWR2">
+      <value>PWR_FLAG</value>
+      <datasheet>KiCad:power</datasheet>
+      <fields>
+        <field name="Citation">ERC supply-source flag</field>
+        <field name="Manufacturer">N/A</field>
+        <field name="MPN">N/A</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">KiCad:power</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="PWR2_42" description=""/>
+      <property name="Citation" value="ERC supply-source flag"/>
+      <property name="Manufacturer" value="N/A"/>
+      <property name="MPN" value="N/A"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9268423a-ff36-575f-ac79-a7315460e7ed</tstamps>
+    </comp>
+    <comp ref="PWR3">
+      <value>PWR_FLAG</value>
+      <datasheet>KiCad:power</datasheet>
+      <fields>
+        <field name="Citation">ERC supply-source flag</field>
+        <field name="Manufacturer">N/A</field>
+        <field name="MPN">N/A</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">KiCad:power</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="PWR3_43" description=""/>
+      <property name="Citation" value="ERC supply-source flag"/>
+      <property name="Manufacturer" value="N/A"/>
+      <property name="MPN" value="N/A"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>348a6933-e437-5166-a904-5544a2876c04</tstamps>
+    </comp>
+    <comp ref="PWR4">
+      <value>PWR_FLAG</value>
+      <datasheet>KiCad:power</datasheet>
+      <fields>
+        <field name="Citation">ERC supply-source flag</field>
+        <field name="Manufacturer">N/A</field>
+        <field name="MPN">N/A</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">KiCad:power</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="PWR4_44" description=""/>
+      <property name="Citation" value="ERC supply-source flag"/>
+      <property name="Manufacturer" value="N/A"/>
+      <property name="MPN" value="N/A"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4a0acb6a-e857-5db2-90a5-ea894e1d0b16</tstamps>
+    </comp>
+    <comp ref="Q1">
+      <value>Si1308EDL</value>
+      <footprint>Package_TO_SOT_SMD:SOT-323_SC-70</footprint>
+      <datasheet>https://www.vishay.com/docs/63399/si1308edl.pdf</datasheet>
+      <fields>
+        <field name="Citation">Vishay document 63399 Rev C p1: SC-70/SOT-323, 1G/2S/3D; ordering information</field>
+        <field name="Manufacturer">Vishay Siliconix</field>
+        <field name="MPN">Si1308EDL-T1-GE3</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-323_SC-70</field>
+        <field name="Datasheet">https://www.vishay.com/docs/63399/si1308edl.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="Q1_28" description=""/>
+      <property name="Citation" value="Vishay document 63399 Rev C p1: SC-70/SOT-323, 1G/2S/3D; ordering information"/>
+      <property name="Manufacturer" value="Vishay Siliconix"/>
+      <property name="MPN" value="Si1308EDL-T1-GE3"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ae31494f-e653-58c7-810e-bff25a67328a</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>5.1k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>docs/component-selection.md</datasheet>
+      <fields>
+        <field name="Citation">USB Type-C Specification Rd; component-selection C13</field>
+        <field name="Manufacturer">FOJAN</field>
+        <field name="MPN">FRC0402J512TS</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet">docs/component-selection.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="R1_3" description=""/>
+      <property name="Citation" value="USB Type-C Specification Rd; component-selection C13"/>
+      <property name="Manufacturer" value="FOJAN"/>
+      <property name="MPN" value="FRC0402J512TS"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>46b532ad-7c2c-52dd-b040-df16f7f662e1</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>5.1k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>docs/component-selection.md</datasheet>
+      <fields>
+        <field name="Citation">USB Type-C Specification Rd; component-selection C13</field>
+        <field name="Manufacturer">FOJAN</field>
+        <field name="MPN">FRC0402J512TS</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet">docs/component-selection.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="R2_4" description=""/>
+      <property name="Citation" value="USB Type-C Specification Rd; component-selection C13"/>
+      <property name="Manufacturer" value="FOJAN"/>
+      <property name="MPN" value="FRC0402J512TS"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0ac6d7ef-69f4-59ac-874b-429032bcd506</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>docs/component-selection.md</datasheet>
+      <fields>
+        <field name="Citation">ESP32-C3-WROOM-02 datasheet v1.7 section 9</field>
+        <field name="Manufacturer">FOJAN</field>
+        <field name="MPN">FRC0402F1002TS</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet">docs/component-selection.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="R3_10" description=""/>
+      <property name="Citation" value="ESP32-C3-WROOM-02 datasheet v1.7 section 9"/>
+      <property name="Manufacturer" value="FOJAN"/>
+      <property name="MPN" value="FRC0402F1002TS"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f5d2523f-ec56-5ef4-a526-57f0618be9e5</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>docs/component-selection.md</datasheet>
+      <fields>
+        <field name="Citation">GPIO9 BOOT pull-up</field>
+        <field name="Manufacturer">FOJAN</field>
+        <field name="MPN">FRC0402F1002TS</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet">docs/component-selection.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="R4_12" description=""/>
+      <property name="Citation" value="GPIO9 BOOT pull-up"/>
+      <property name="Manufacturer" value="FOJAN"/>
+      <property name="MPN" value="FRC0402F1002TS"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>de58511b-76c7-55dd-99b4-b6b67275981f</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>100R</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>docs/schematic.md</datasheet>
+      <fields>
+        <field name="Citation">Series impedance; value requires sensor transient qualification</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">docs/schematic.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="R5_13" description=""/>
+      <property name="Citation" value="Series impedance; value requires sensor transient qualification"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ba13b884-7ecb-5398-8c46-5ea203a5215b</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>docs/component-selection.md</datasheet>
+      <fields>
+        <field name="Citation">CADENCE pull-up; component-selection C15</field>
+        <field name="Manufacturer">FOJAN</field>
+        <field name="MPN">FRC0402F1003TS</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet">docs/component-selection.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="R6_14" description=""/>
+      <property name="Citation" value="CADENCE pull-up; component-selection C15"/>
+      <property name="Manufacturer" value="FOJAN"/>
+      <property name="MPN" value="FRC0402F1003TS"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>35676d7c-90ae-594c-8639-ad8f58703f25</tstamps>
+    </comp>
+    <comp ref="R7">
+      <value>1M</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/GDEY029T94.pdf</datasheet>
+      <fields>
+        <field name="Citation">GDEY029T94 Rev 1.0 section 12, manufacturer figure R1</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/GDEY029T94.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="R7_15" description=""/>
+      <property name="Citation" value="GDEY029T94 Rev 1.0 section 12, manufacturer figure R1"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c8c907da-8fad-577a-b839-0ed98979af74</tstamps>
+    </comp>
+    <comp ref="R8">
+      <value>2.2R</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/GDEY029T94.pdf</datasheet>
+      <fields>
+        <field name="Citation">GDEY029T94 Rev 1.0 section 12, manufacturer figure R2</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/GDEY029T94.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="R8_16" description=""/>
+      <property name="Citation" value="GDEY029T94 Rev 1.0 section 12, manufacturer figure R2"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d4e5523b-6a5c-5946-9826-4876ed531058</tstamps>
+    </comp>
+    <comp ref="R9">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>datasheets/esp32-c3_datasheet_en.pdf</datasheet>
+      <fields>
+        <field name="Citation">GPIO8 external pull-up for ROM download strap</field>
+        <field name="Manufacturer">FOJAN</field>
+        <field name="MPN">FRC0402F1002TS</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet">datasheets/esp32-c3_datasheet_en.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="R9_17" description=""/>
+      <property name="Citation" value="GPIO8 external pull-up for ROM download strap"/>
+      <property name="Manufacturer" value="FOJAN"/>
+      <property name="MPN" value="FRC0402F1002TS"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a54fa246-eb93-5163-b347-2b4fc4a5d529</tstamps>
+    </comp>
+    <comp ref="R10">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>datasheets/esp32-c3_datasheet_en.pdf</datasheet>
+      <fields>
+        <field name="Citation">GPIO2 external pull-up; avoids a GPIO-to-rail short</field>
+        <field name="Manufacturer">FOJAN</field>
+        <field name="MPN">FRC0402F1002TS</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet">datasheets/esp32-c3_datasheet_en.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="R10_18" description=""/>
+      <property name="Citation" value="GPIO2 external pull-up; avoids a GPIO-to-rail short"/>
+      <property name="Manufacturer" value="FOJAN"/>
+      <property name="MPN" value="FRC0402F1002TS"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>12ddb8eb-35a7-5a0c-b01f-29a4abf6e655</tstamps>
+    </comp>
+    <comp ref="R11">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0402_1005Metric</footprint>
+      <datasheet>docs/architecture.md</datasheet>
+      <fields>
+        <field name="Citation">BTN_A external pull-up</field>
+        <field name="Manufacturer">FOJAN</field>
+        <field name="MPN">FRC0402F1002TS</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Resistor_SMD:R_0402_1005Metric</field>
+        <field name="Datasheet">docs/architecture.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="R11_19" description=""/>
+      <property name="Citation" value="BTN_A external pull-up"/>
+      <property name="Manufacturer" value="FOJAN"/>
+      <property name="MPN" value="FRC0402F1002TS"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d45c7483-ac1c-5651-bb26-620c10e18c16</tstamps>
+    </comp>
+    <comp ref="SW1">
+      <value>KH-6X6X5H-STM</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/KH-6X6X5H-STM.pdf</datasheet>
+      <fields>
+        <field name="Citation">Kinghelm drawing; BOOT button</field>
+        <field name="Manufacturer">Shenzhen Kinghelm</field>
+        <field name="MPN">KH-6X6X5H-STM</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/KH-6X6X5H-STM.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="SW1_20" description=""/>
+      <property name="Citation" value="Kinghelm drawing; BOOT button"/>
+      <property name="Manufacturer" value="Shenzhen Kinghelm"/>
+      <property name="MPN" value="KH-6X6X5H-STM"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>053ec66c-6bbc-594a-970b-8e54eef8980c</tstamps>
+    </comp>
+    <comp ref="SW2">
+      <value>KH-6X6X5H-STM</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/KH-6X6X5H-STM.pdf</datasheet>
+      <fields>
+        <field name="Citation">Kinghelm drawing; BTN_A button</field>
+        <field name="Manufacturer">Shenzhen Kinghelm</field>
+        <field name="MPN">KH-6X6X5H-STM</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/KH-6X6X5H-STM.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="SW2_21" description=""/>
+      <property name="Citation" value="Kinghelm drawing; BTN_A button"/>
+      <property name="Manufacturer" value="Shenzhen Kinghelm"/>
+      <property name="MPN" value="KH-6X6X5H-STM"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>45e686d9-38d2-5c2c-bba1-f3efced0b4b6</tstamps>
+    </comp>
+    <comp ref="SW3">
+      <value>KH-6X6X5H-STM</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/KH-6X6X5H-STM.pdf</datasheet>
+      <fields>
+        <field name="Citation">Kinghelm drawing; BTN_B button</field>
+        <field name="Manufacturer">Shenzhen Kinghelm</field>
+        <field name="MPN">KH-6X6X5H-STM</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/KH-6X6X5H-STM.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="SW3_22" description=""/>
+      <property name="Citation" value="Kinghelm drawing; BTN_B button"/>
+      <property name="Manufacturer" value="Shenzhen Kinghelm"/>
+      <property name="MPN" value="KH-6X6X5H-STM"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>61adcf38-0c8d-56de-b8e1-f85d22dc7b92</tstamps>
+    </comp>
+    <comp ref="TP1">
+      <value>Test pad USB_5V</value>
+      <footprint>Gear:TEST_PAD</footprint>
+      <datasheet>docs/architecture.md</datasheet>
+      <fields>
+        <field name="Citation">Zero-BOM test point</field>
+        <field name="Manufacturer">Bare copper</field>
+        <field name="MPN">N/A</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TEST_PAD</field>
+        <field name="Datasheet">docs/architecture.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="TP1_45" description=""/>
+      <property name="Citation" value="Zero-BOM test point"/>
+      <property name="Manufacturer" value="Bare copper"/>
+      <property name="MPN" value="N/A"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a3021cd9-fa93-542c-a448-4188184c9272</tstamps>
+    </comp>
+    <comp ref="TP2">
+      <value>Test pad +3V3</value>
+      <footprint>Gear:TEST_PAD</footprint>
+      <datasheet>docs/architecture.md</datasheet>
+      <fields>
+        <field name="Citation">Zero-BOM test point</field>
+        <field name="Manufacturer">Bare copper</field>
+        <field name="MPN">N/A</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TEST_PAD</field>
+        <field name="Datasheet">docs/architecture.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="TP2_46" description=""/>
+      <property name="Citation" value="Zero-BOM test point"/>
+      <property name="Manufacturer" value="Bare copper"/>
+      <property name="MPN" value="N/A"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>dc46b765-20a5-5ae0-8187-e439904377f9</tstamps>
+    </comp>
+    <comp ref="TP3">
+      <value>Test pad CADENCE</value>
+      <footprint>Gear:TEST_PAD</footprint>
+      <datasheet>docs/architecture.md</datasheet>
+      <fields>
+        <field name="Citation">Zero-BOM test point</field>
+        <field name="Manufacturer">Bare copper</field>
+        <field name="MPN">N/A</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TEST_PAD</field>
+        <field name="Datasheet">docs/architecture.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="TP3_47" description=""/>
+      <property name="Citation" value="Zero-BOM test point"/>
+      <property name="Manufacturer" value="Bare copper"/>
+      <property name="MPN" value="N/A"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bb332ee6-cbff-54fe-aa18-0767759f88ac</tstamps>
+    </comp>
+    <comp ref="TP4">
+      <value>Test pad INK_CLK</value>
+      <footprint>Gear:TEST_PAD</footprint>
+      <datasheet>docs/architecture.md</datasheet>
+      <fields>
+        <field name="Citation">Zero-BOM test point</field>
+        <field name="Manufacturer">Bare copper</field>
+        <field name="MPN">N/A</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TEST_PAD</field>
+        <field name="Datasheet">docs/architecture.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="TP4_48" description=""/>
+      <property name="Citation" value="Zero-BOM test point"/>
+      <property name="Manufacturer" value="Bare copper"/>
+      <property name="MPN" value="N/A"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a7b08c1e-f14e-539e-9feb-8e74fb007b2b</tstamps>
+    </comp>
+    <comp ref="TP5">
+      <value>Test pad INK_MOSI</value>
+      <footprint>Gear:TEST_PAD</footprint>
+      <datasheet>docs/architecture.md</datasheet>
+      <fields>
+        <field name="Citation">Zero-BOM test point</field>
+        <field name="Manufacturer">Bare copper</field>
+        <field name="MPN">N/A</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TEST_PAD</field>
+        <field name="Datasheet">docs/architecture.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="TP5_49" description=""/>
+      <property name="Citation" value="Zero-BOM test point"/>
+      <property name="Manufacturer" value="Bare copper"/>
+      <property name="MPN" value="N/A"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>56943970-4a3c-55ac-aae2-9f8bb163c2d7</tstamps>
+    </comp>
+    <comp ref="TP6">
+      <value>Test pad BOOT</value>
+      <footprint>Gear:TEST_PAD</footprint>
+      <datasheet>docs/architecture.md</datasheet>
+      <fields>
+        <field name="Citation">Zero-BOM test point</field>
+        <field name="Manufacturer">Bare copper</field>
+        <field name="MPN">N/A</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TEST_PAD</field>
+        <field name="Datasheet">docs/architecture.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="TP6_50" description=""/>
+      <property name="Citation" value="Zero-BOM test point"/>
+      <property name="Manufacturer" value="Bare copper"/>
+      <property name="MPN" value="N/A"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0083e645-ad24-5d58-8fad-f025f5430814</tstamps>
+    </comp>
+    <comp ref="TP7">
+      <value>Test pad U0_TXD</value>
+      <footprint>Gear:TEST_PAD</footprint>
+      <datasheet>docs/architecture.md</datasheet>
+      <fields>
+        <field name="Citation">Zero-BOM test point</field>
+        <field name="Manufacturer">Bare copper</field>
+        <field name="MPN">N/A</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TEST_PAD</field>
+        <field name="Datasheet">docs/architecture.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="TP7_51" description=""/>
+      <property name="Citation" value="Zero-BOM test point"/>
+      <property name="Manufacturer" value="Bare copper"/>
+      <property name="MPN" value="N/A"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8cedf2fd-8ff5-5ac5-8513-a8a76a8fc0ee</tstamps>
+    </comp>
+    <comp ref="TP8">
+      <value>Test pad GND</value>
+      <footprint>Gear:TEST_PAD</footprint>
+      <datasheet>docs/architecture.md</datasheet>
+      <fields>
+        <field name="Citation">Zero-BOM test point</field>
+        <field name="Manufacturer">Bare copper</field>
+        <field name="MPN">N/A</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TEST_PAD</field>
+        <field name="Datasheet">docs/architecture.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="TP8_52" description=""/>
+      <property name="Citation" value="Zero-BOM test point"/>
+      <property name="Manufacturer" value="Bare copper"/>
+      <property name="MPN" value="N/A"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d1f5abef-de44-5a39-b76a-308ac0480b3d</tstamps>
+    </comp>
+    <comp ref="TP9">
+      <value>Test pad EN_RC</value>
+      <footprint>Gear:TEST_PAD</footprint>
+      <datasheet>docs/architecture.md</datasheet>
+      <fields>
+        <field name="Citation">Zero-BOM test point</field>
+        <field name="Manufacturer">Bare copper</field>
+        <field name="MPN">N/A</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TEST_PAD</field>
+        <field name="Datasheet">docs/architecture.md</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="TP9_53" description=""/>
+      <property name="Citation" value="Zero-BOM test point"/>
+      <property name="Manufacturer" value="Bare copper"/>
+      <property name="MPN" value="N/A"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>dbe783b4-c05a-5f2a-b86a-79a6ed188809</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>USBLC6-2SC6</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-6</footprint>
+      <datasheet>datasheets/USBLC6-2SC6.pdf</datasheet>
+      <fields>
+        <field name="Citation">ST Doc ID 11265 Rev 5</field>
+        <field name="Manufacturer">STMicroelectronics</field>
+        <field name="MPN">USBLC6-2SC6</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet">datasheets/USBLC6-2SC6.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="U1_2" description=""/>
+      <property name="Citation" value="ST Doc ID 11265 Rev 5"/>
+      <property name="Manufacturer" value="STMicroelectronics"/>
+      <property name="MPN" value="USBLC6-2SC6"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>41ed3fce-4121-56fa-8892-fac7a9a25819</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>ME6217C33P5G</value>
+      <footprint>Package_TO_SOT_SMD:SOT-89-5</footprint>
+      <datasheet>datasheets/me6217.pdf</datasheet>
+      <fields>
+        <field name="Citation">ME6217 datasheet, SOT-89-5 pin assignment</field>
+        <field name="Manufacturer">MICRONE (Nanjing Micro One)</field>
+        <field name="MPN">ME6217C33P5G</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-89-5</field>
+        <field name="Datasheet">datasheets/me6217.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="U2_6" description=""/>
+      <property name="Citation" value="ME6217 datasheet, SOT-89-5 pin assignment"/>
+      <property name="Manufacturer" value="MICRONE (Nanjing Micro One)"/>
+      <property name="MPN" value="ME6217C33P5G"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1f0c29e6-106e-5d00-9aab-71860b9cf05e</tstamps>
+    </comp>
+    <comp ref="U3">
+      <value>ESP32-C3-WROOM-02-N4</value>
+      <footprint>RF_Module:ESP32-C3-WROOM-02</footprint>
+      <datasheet>datasheets/esp32-c3-wroom-02_datasheet_en.pdf</datasheet>
+      <fields>
+        <field name="Citation">ESP32-C3-WROOM-02 datasheet v1.7 Table 3-1</field>
+        <field name="Manufacturer">Espressif Systems</field>
+        <field name="MPN">ESP32-C3-WROOM-02-N4</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">RF_Module:ESP32-C3-WROOM-02</field>
+        <field name="Datasheet">datasheets/esp32-c3-wroom-02_datasheet_en.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="U3_9" description=""/>
+      <property name="Citation" value="ESP32-C3-WROOM-02 datasheet v1.7 Table 3-1"/>
+      <property name="Manufacturer" value="Espressif Systems"/>
+      <property name="MPN" value="ESP32-C3-WROOM-02-N4"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>644d8e37-d0fc-566b-8401-a6cc0b64ce27</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Gear" part="C10_37">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">1uF 25V X7R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="C11_38">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">1uF 25V X7R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="C12_39">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">1uF 25V X7R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="C13_40">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">4.7uF 25V X7R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="C1_5">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">10uF 10V X5R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="C2_7">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">10uF 10V X5R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="C3_8">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">100nF 16V X7R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="C4_11">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">1uF 10V X7R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="C5_32">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">1uF 25V X7R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="C6_33">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">1uF 25V X7R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="C7_34">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">1uF 25V X7R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="C8_35">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">1uF 25V X7R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="C9_36">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">1uF 25V X7R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="D1_24">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">PESD5V0S1BA</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="D2_29">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">MBR0530</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="D3_30">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">MBR0530</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="D4_31">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">MBR0530</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="J1_1">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">TYPE-C 16PIN 2MD(073)</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="A1" name="GND" type="passive"/>
+        <pin num="A4" name="VBUS" type="passive"/>
+        <pin num="A5" name="CC1" type="passive"/>
+        <pin num="A6" name="D+" type="passive"/>
+        <pin num="A7" name="D-" type="passive"/>
+        <pin num="A8" name="SBU1" type="passive"/>
+        <pin num="A9" name="VBUS" type="passive"/>
+        <pin num="A12" name="GND" type="passive"/>
+        <pin num="B1" name="GND" type="passive"/>
+        <pin num="B4" name="VBUS" type="passive"/>
+        <pin num="B5" name="CC2" type="passive"/>
+        <pin num="B6" name="D+" type="passive"/>
+        <pin num="B7" name="D-" type="passive"/>
+        <pin num="B8" name="SBU2" type="passive"/>
+        <pin num="B9" name="VBUS" type="passive"/>
+        <pin num="B12" name="GND" type="passive"/>
+        <pin num="S1" name="SHIELD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="J2_23">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">XY-XH2.54-2PWT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="SENSOR" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="J3_25">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">UART0 1x4 header</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3V3" type="passive"/>
+        <pin num="2" name="U0_TXD" type="passive"/>
+        <pin num="3" name="U0_RXD" type="passive"/>
+        <pin num="4" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="J4_26">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">24-pin 0.5 mm FPC</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="NC" type="no_connect"/>
+        <pin num="2" name="GDR" type="passive"/>
+        <pin num="3" name="RESE" type="passive"/>
+        <pin num="4" name="NC" type="no_connect"/>
+        <pin num="5" name="VSH2" type="passive"/>
+        <pin num="6" name="TSCL" type="passive"/>
+        <pin num="7" name="TSDA" type="passive"/>
+        <pin num="8" name="BS1" type="passive"/>
+        <pin num="9" name="BUSY" type="passive"/>
+        <pin num="10" name="RES#" type="passive"/>
+        <pin num="11" name="D/C#" type="passive"/>
+        <pin num="12" name="CS#" type="passive"/>
+        <pin num="13" name="SCL" type="passive"/>
+        <pin num="14" name="SDA" type="passive"/>
+        <pin num="15" name="VDDIO" type="passive"/>
+        <pin num="16" name="VCI" type="passive"/>
+        <pin num="17" name="VSS" type="passive"/>
+        <pin num="18" name="VDD" type="passive"/>
+        <pin num="19" name="VPP" type="passive"/>
+        <pin num="20" name="VSH1" type="passive"/>
+        <pin num="21" name="VGH" type="passive"/>
+        <pin num="22" name="VSL" type="passive"/>
+        <pin num="23" name="VGL" type="passive"/>
+        <pin num="24" name="VCOM" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="L1_27">
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">47uH 500mA</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="PWR1_41">
+      <fields>
+        <field name="Reference">PWR</field>
+        <field name="Value">PWR_FLAG</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="PWR" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="PWR2_42">
+      <fields>
+        <field name="Reference">PWR</field>
+        <field name="Value">PWR_FLAG</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="PWR" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="PWR3_43">
+      <fields>
+        <field name="Reference">PWR</field>
+        <field name="Value">PWR_FLAG</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="PWR" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="PWR4_44">
+      <fields>
+        <field name="Reference">PWR</field>
+        <field name="Value">PWR_FLAG</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="PWR" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="Q1_28">
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Si1308EDL</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="R10_18">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">10k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="R11_19">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">10k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="R1_3">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">5.1k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="R2_4">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">5.1k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="R3_10">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">10k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="R4_12">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">10k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="R5_13">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">100R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="R6_14">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">100k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="R7_15">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">1M</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="R8_16">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">2.2R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="R9_17">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">10k</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="SW1_20">
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">KH-6X6X5H-STM</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="SW2_21">
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">KH-6X6X5H-STM</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="SW3_22">
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">KH-6X6X5H-STM</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="TP1_45">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">Test pad USB_5V</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="PAD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="TP2_46">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">Test pad +3V3</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="PAD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="TP3_47">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">Test pad CADENCE</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="PAD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="TP4_48">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">Test pad INK_CLK</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="PAD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="TP5_49">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">Test pad INK_MOSI</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="PAD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="TP6_50">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">Test pad BOOT</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="PAD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="TP7_51">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">Test pad U0_TXD</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="PAD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="TP8_52">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">Test pad GND</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="PAD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="TP9_53">
+      <fields>
+        <field name="Reference">TP</field>
+        <field name="Value">Test pad EN_RC</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="PAD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="U1_2">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">USBLC6-2SC6</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="I/O1" type="bidirectional"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="I/O2" type="bidirectional"/>
+        <pin num="4" name="I/O3" type="bidirectional"/>
+        <pin num="5" name="VBUS" type="power_in"/>
+        <pin num="6" name="I/O4" type="bidirectional"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="U2_6">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ME6217C33P5G</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="CE" type="input"/>
+        <pin num="2" name="VSS" type="power_in"/>
+        <pin num="3" name="NC" type="no_connect"/>
+        <pin num="4" name="VIN" type="power_in"/>
+        <pin num="5" name="VOUT" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="U3_9">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">ESP32-C3-WROOM-02-N4</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="3V3" type="power_in"/>
+        <pin num="2" name="EN" type="input"/>
+        <pin num="3" name="GPIO4" type="output"/>
+        <pin num="4" name="GPIO5" type="input"/>
+        <pin num="5" name="GPIO6" type="output"/>
+        <pin num="6" name="GPIO7" type="output"/>
+        <pin num="7" name="GPIO8" type="input"/>
+        <pin num="8" name="GPIO9" type="input"/>
+        <pin num="9" name="GND" type="power_in"/>
+        <pin num="10" name="GPIO10" type="output"/>
+        <pin num="11" name="RXD0/GPIO20" type="input"/>
+        <pin num="12" name="TXD0/GPIO21" type="output"/>
+        <pin num="13" name="USB_D-/GPIO18" type="bidirectional"/>
+        <pin num="14" name="USB_D+/GPIO19" type="bidirectional"/>
+        <pin num="15" name="GPIO3" type="output"/>
+        <pin num="16" name="GPIO2" type="input"/>
+        <pin num="17" name="GPIO1" type="input"/>
+        <pin num="18" name="GPIO0" type="input"/>
+        <pin num="19" name="GND" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Gear">
+      <uri>/home/rwrife/repos/gear-miles-wt/issue-3-complete/hardware/kicad/gear.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3V3" class="Default">
+      <node ref="C2" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C3" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C6" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="J3" pin="1" pinfunction="3V3" pintype="passive"/>
+      <node ref="J4" pin="15" pinfunction="VDDIO" pintype="passive"/>
+      <node ref="J4" pin="16" pinfunction="VCI" pintype="passive"/>
+      <node ref="L1" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R10" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R11" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R3" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R4" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R6" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R9" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="TP2" pin="1" pinfunction="PAD" pintype="passive"/>
+      <node ref="U2" pin="5" pinfunction="VOUT" pintype="power_out"/>
+      <node ref="U3" pin="1" pinfunction="3V3" pintype="power_in"/>
+    </net>
+    <net code="2" name="BOOT" class="Default">
+      <node ref="R4" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="SW1" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="TP6" pin="1" pinfunction="PAD" pintype="passive"/>
+      <node ref="U3" pin="8" pinfunction="GPIO9" pintype="input"/>
+    </net>
+    <net code="3" name="BTN_A" class="Default">
+      <node ref="R11" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="SW2" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U3" pin="18" pinfunction="GPIO0" pintype="input"/>
+    </net>
+    <net code="4" name="BTN_B" class="Default">
+      <node ref="R9" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="SW3" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U3" pin="7" pinfunction="GPIO8" pintype="input"/>
+    </net>
+    <net code="5" name="CADENCE" class="Default">
+      <node ref="R5" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R6" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="TP3" pin="1" pinfunction="PAD" pintype="passive"/>
+      <node ref="U3" pin="17" pinfunction="GPIO1" pintype="input"/>
+    </net>
+    <net code="6" name="CADENCE_EXT" class="Default">
+      <node ref="D1" pin="1" pinfunction="P1" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="SENSOR" pintype="passive"/>
+      <node ref="R5" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="7" name="CC1" class="Default">
+      <node ref="J1" pin="A5" pinfunction="CC1" pintype="passive"/>
+      <node ref="R1" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="8" name="CC2" class="Default">
+      <node ref="J1" pin="B5" pinfunction="CC2" pintype="passive"/>
+      <node ref="R2" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="9" name="EN_RC" class="Default">
+      <node ref="C4" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R3" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="TP9" pin="1" pinfunction="PAD" pintype="passive"/>
+      <node ref="U3" pin="2" pinfunction="EN" pintype="input"/>
+    </net>
+    <net code="10" name="EPD_SW" class="Default">
+      <node ref="C13" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="D4" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="L1" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="Q1" pin="3" pinfunction="D" pintype="passive"/>
+    </net>
+    <net code="11" name="EPD_VDD" class="Default">
+      <node ref="C7" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="J4" pin="18" pinfunction="VDD" pintype="passive"/>
+    </net>
+    <net code="12" name="GDR" class="Default">
+      <node ref="J4" pin="2" pinfunction="GDR" pintype="passive"/>
+      <node ref="Q1" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="R7" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="13" name="GND" class="Default">
+      <node ref="C1" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C10" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C11" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C12" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C2" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C3" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C4" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C6" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C7" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C8" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C9" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="D1" pin="2" pinfunction="P2" pintype="passive"/>
+      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J1" pin="A1" pinfunction="GND" pintype="passive"/>
+      <node ref="J1" pin="A12" pinfunction="GND" pintype="passive"/>
+      <node ref="J1" pin="B1" pinfunction="GND" pintype="passive"/>
+      <node ref="J1" pin="B12" pinfunction="GND" pintype="passive"/>
+      <node ref="J1" pin="S1" pinfunction="SHIELD" pintype="passive"/>
+      <node ref="J2" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="J3" pin="4" pinfunction="GND" pintype="passive"/>
+      <node ref="J4" pin="17" pinfunction="VSS" pintype="passive"/>
+      <node ref="J4" pin="8" pinfunction="BS1" pintype="passive"/>
+      <node ref="PWR2" pin="1" pinfunction="PWR" pintype="power_out"/>
+      <node ref="R1" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R2" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R7" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R8" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="SW1" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="SW2" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="SW3" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="TP8" pin="1" pinfunction="PAD" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U2" pin="2" pinfunction="VSS" pintype="power_in"/>
+      <node ref="U3" pin="19" pinfunction="GND" pintype="power_in"/>
+      <node ref="U3" pin="9" pinfunction="GND" pintype="power_in"/>
+    </net>
+    <net code="14" name="GPIO2_STRAP" class="Default">
+      <node ref="R10" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U3" pin="16" pinfunction="GPIO2" pintype="input"/>
+    </net>
+    <net code="15" name="INK_BUSY" class="Default">
+      <node ref="J4" pin="9" pinfunction="BUSY" pintype="passive"/>
+      <node ref="U3" pin="4" pinfunction="GPIO5" pintype="input"/>
+    </net>
+    <net code="16" name="INK_CLK" class="Default">
+      <node ref="J4" pin="13" pinfunction="SCL" pintype="passive"/>
+      <node ref="TP4" pin="1" pinfunction="PAD" pintype="passive"/>
+      <node ref="U3" pin="5" pinfunction="GPIO6" pintype="output"/>
+    </net>
+    <net code="17" name="INK_CS" class="Default">
+      <node ref="J4" pin="12" pinfunction="CS#" pintype="passive"/>
+      <node ref="U3" pin="10" pinfunction="GPIO10" pintype="output"/>
+    </net>
+    <net code="18" name="INK_DC" class="Default">
+      <node ref="J4" pin="11" pinfunction="D/C#" pintype="passive"/>
+      <node ref="U3" pin="15" pinfunction="GPIO3" pintype="output"/>
+    </net>
+    <net code="19" name="INK_MOSI" class="Default">
+      <node ref="J4" pin="14" pinfunction="SDA" pintype="passive"/>
+      <node ref="TP5" pin="1" pinfunction="PAD" pintype="passive"/>
+      <node ref="U3" pin="6" pinfunction="GPIO7" pintype="output"/>
+    </net>
+    <net code="20" name="INK_RST" class="Default">
+      <node ref="J4" pin="10" pinfunction="RES#" pintype="passive"/>
+      <node ref="U3" pin="3" pinfunction="GPIO4" pintype="output"/>
+    </net>
+    <net code="21" name="PREVGH" class="Default">
+      <node ref="C10" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C5" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="D4" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="J4" pin="21" pinfunction="VGH" pintype="passive"/>
+      <node ref="PWR3" pin="1" pinfunction="PWR" pintype="power_out"/>
+    </net>
+    <net code="22" name="PREVGL" class="Default">
+      <node ref="C11" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="D3" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="J4" pin="22" pinfunction="VSL" pintype="passive"/>
+      <node ref="J4" pin="23" pinfunction="VGL" pintype="passive"/>
+      <node ref="PWR4" pin="1" pinfunction="PWR" pintype="power_out"/>
+    </net>
+    <net code="23" name="PUMP" class="Default">
+      <node ref="C13" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D3" pin="2" pinfunction="A" pintype="passive"/>
+    </net>
+    <net code="24" name="RESE" class="Default">
+      <node ref="J4" pin="3" pinfunction="RESE" pintype="passive"/>
+      <node ref="Q1" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="R8" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="25" name="U0_RXD" class="Default">
+      <node ref="J3" pin="3" pinfunction="U0_RXD" pintype="passive"/>
+      <node ref="U3" pin="11" pinfunction="RXD0/GPIO20" pintype="input"/>
+    </net>
+    <net code="26" name="U0_TXD" class="Default">
+      <node ref="J3" pin="2" pinfunction="U0_TXD" pintype="passive"/>
+      <node ref="TP7" pin="1" pinfunction="PAD" pintype="passive"/>
+      <node ref="U3" pin="12" pinfunction="TXD0/GPIO21" pintype="output"/>
+    </net>
+    <net code="27" name="USB_5V" class="Default">
+      <node ref="C1" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="J1" pin="A4" pinfunction="VBUS" pintype="passive"/>
+      <node ref="J1" pin="A9" pinfunction="VBUS" pintype="passive"/>
+      <node ref="J1" pin="B4" pinfunction="VBUS" pintype="passive"/>
+      <node ref="J1" pin="B9" pinfunction="VBUS" pintype="passive"/>
+      <node ref="PWR1" pin="1" pinfunction="PWR" pintype="power_out"/>
+      <node ref="TP1" pin="1" pinfunction="PAD" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="VBUS" pintype="power_in"/>
+      <node ref="U2" pin="1" pinfunction="CE" pintype="input"/>
+      <node ref="U2" pin="4" pinfunction="VIN" pintype="power_in"/>
+    </net>
+    <net code="28" name="USB_D+" class="Default">
+      <node ref="J1" pin="A6" pinfunction="D+" pintype="passive"/>
+      <node ref="J1" pin="B6" pinfunction="D+" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="I/O1" pintype="bidirectional"/>
+      <node ref="U1" pin="6" pinfunction="I/O4" pintype="bidirectional"/>
+      <node ref="U3" pin="14" pinfunction="USB_D+/GPIO19" pintype="bidirectional"/>
+    </net>
+    <net code="29" name="USB_D-" class="Default">
+      <node ref="J1" pin="A7" pinfunction="D-" pintype="passive"/>
+      <node ref="J1" pin="B7" pinfunction="D-" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="I/O2" pintype="bidirectional"/>
+      <node ref="U1" pin="4" pinfunction="I/O3" pintype="bidirectional"/>
+      <node ref="U3" pin="13" pinfunction="USB_D-/GPIO18" pintype="bidirectional"/>
+    </net>
+    <net code="30" name="VCOM" class="Default">
+      <node ref="C12" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="J4" pin="24" pinfunction="VCOM" pintype="passive"/>
+    </net>
+    <net code="31" name="VSH1" class="Default">
+      <node ref="C9" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="J4" pin="20" pinfunction="VSH1" pintype="passive"/>
+    </net>
+    <net code="32" name="VSH2" class="Default">
+      <node ref="C8" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="J4" pin="5" pinfunction="VSH2" pintype="passive"/>
+    </net>
+  </nets>
+</export>
