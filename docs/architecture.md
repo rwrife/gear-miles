@@ -29,7 +29,7 @@ USB-C 5V ──▶ 3.3 V LDO ─────────────────
    │  no copper / no metal enclosure over module PCB          └─┬────┬────┬────┘
    │  antenna zone                                              │    │    │
                                         24-pin FPC  INK_SPI ◀───┘    │    └──▶ CADENCE
-                              E-ink 2.9" panel (SSD1680-class        │          reed/Hall open-drain
+                              GDEY029T94 2.9" panel (driver unnamed  │          reed/Hall open-drain
                               driver, on-panel booster caps)         │          input, 10–100 kΩ
                                                                      │          pull-up + ESD
                                               BTN_A (GPIO0), BTN_B (GPIO8)
@@ -45,7 +45,7 @@ USB-C 5V ──▶ 3.3 V LDO ─────────────────
 | USB-C power | in | 5 V ±5 %, USB 2.0 FS | UFP: 5.1 kΩ Rd on CC1 & CC2, no PD negotiation; D+/D− wired to module USB pins; ESD device selected in #2 |
 | USB native (module GPIO18/19) | in/out | USB CDC + Serial/JTAG | Flashing/debug/recovery path; documented recovery when LAN lost |
 | UART0 (GPIO20 RX / GPIO21 TX) | in/out | 3.3 V logic, 115200 default | Programming/log header on board; ROM bootloader usable via USB CDC or UART0 |
-| E-ink panel | out | 4-wire SPI + DC + RST + BUSY, 3.3 V logic | 24-pin FPC per panel datasheet §6.1; interface pins D0=SCLK, D1=SDIN, CS#, DC#, RES#, BUSY; panel booster pins (VGL/VGH/VSH/VSL/VCOM/RESE/GDR) wired per panel reference circuit §12; FPC connector pitch TBD (verify panel drawing in #2/#3) |
+| E-ink panel | out | 4-wire SPI + DC + RST + BUSY, 3.3 V logic | GDEY029T94 24-pin FPC per datasheet §5; the connector MPN and footprint are TBD until a matching manufacturer drawing and panel-tail overlay are obtained. The booster transcription remains a fabrication blocker; see `schematic.md`. |
 | Cadence sensor | in | Open-drain to GND, internal pull config n/a | External pull-up 10–100 kΩ populated value per #2; IEC 61000-4-2-rated ESD device on the 2-pin sensor header line; header keyed/shrouded |
 | Buttons ×2 | in | GPIO to GND, firmware debounce | BTN_A = start/stop, BTN_B = scroll/enter; GPIO-interrupt capable |
 | BOOT | in | GPIO9 strapping, to GND via button/TP | 10 kΩ pull-up (plus internal weak PU per datasheet); test point + optional button |
@@ -71,18 +71,18 @@ definitions, pp. 10–11) and ESP32-C3 Series Datasheet v2.4, Table 3-1
 | INK_BUSY | GPIO5 | 4 | |
 | CADENCE | GPIO1 | 17 | Also ADC1_CH1 — reserved as digital input only |
 | BTN_A | GPIO0 | 18 | Not a strapping pin on ESP32-C3 |
-| BTN_B | GPIO8 | 7 | Strapping (default floating). Button must be released during EN reset; held-low at reset only shifts download-boot sub-mode selection (UART/JTAG combo) — harmless, documented |
+| BTN_B | GPIO8 | 7 | Strapping. Button must be released during EN reset. ESP32-C3 DS v2.4 Table 3-3 makes download mode GPIO9 low **and GPIO8 high**; GPIO8 low with GPIO9 low is not a valid download mode. |
 | BOOT | GPIO9 | 8 | Strapping: internal weak pull-up; external 10 kΩ PU to +3V3 + button/TP to GND = download boot when pressed at reset |
 | U0_RXD | GPIO20 | 11 | UART0 log/flash header |
 | U0_TXD | GPIO21 | 12 | UART0 log/flash header |
 | USB_D- | GPIO18 | 13 | USB-C receptacle |
 | USB_D+ | GPIO19 | 14 | USB-C receptacle |
-| *(reserved)* | GPIO2 | 16 | Strapping (default floating) — leave unconnected on the PCB |
+| *(reserved)* | GPIO2 | 16 | Strapping; external 10 kΩ pull-up to +3V3. Never tie a GPIO directly to the rail. |
 | EN | — | 2 | Pull up to +3V3 with RC per Espressif module reference schematic family (detailed values in #3); never float (datasheet: "Do not leave the EN pin floating") |
 
 Design rules for the map: no strapping pin (GPIO2/8/9) drives external
-loads that could hold it in a non-default state at reset; GPIO2 stays
-unconnected; all pins above stay in their default 3.3 V I/O domain —
+loads that could hold it in a non-default state at reset; GPIO2 and GPIO8 are
+externally pulled high (10 kΩ); all pins above stay in their default 3.3 V I/O domain —
 no pin drives beyond the recommended operating conditions of Table 5-2,
 ESP32-C3 Series Datasheet v2.4 (requirement E5).
 
@@ -100,8 +100,8 @@ Design inputs only — real numbers come from the issue #8 bench.
 | Modem-sleep, CPU idle, 80 MHz, periph clocks off | 13 mA | typ | Table 6-5, p. 23 |
 | Light-sleep | 130 µA | typ | Table 6-6, p. 24 |
 | Deep-sleep | 5 µA | typ | Table 6-6, p. 24 |
-| E-ink panel during image update | 26.4 mW typ / 40 mW max → ≈ 8.8 mA / 13.3 mA @ 3.0 V | typ/max | 2.9" panel DS (SSD1680-class, waveshare doc), §11 Power Consumption, p. 20; VCI range 2.4–3.7 V, Table 9-1 |
-| E-ink standby (frame held, no refresh) | ≤ 0.017 mW → ≤ ~5 µA @ 3.3 V | max | §11, p. 20 |
+| GDEY029T94 during update | 3.0 mA typ @ 3.0 V | typ | Good Display GDEY029T94 DS Rev. 1.0 §6.2 |
+| GDEY029T94 deep sleep | 1–5 µA | typ | Good Display GDEY029T94 DS Rev. 1.0 §6.2 |
 | CADENCE pull-up 100 kΩ | ≈ 33 µA | typ | Ohm's law at 3.3 V |
 | LDO quiescent current | TBD (per #2 part) | — | datasheet, #2 |
 

@@ -1,5 +1,13 @@
 # Gear Miles — Component Selection (issue #2)
 
+> Historical selection record, **not current sourcing or fabrication approval**.
+> The issue #3 implementation review found material errors and evidence gaps.
+> Read [the current schematic blockers](schematic.md) before using any selection,
+> pinout, footprint, protection, current, or price claim below. The original
+> record is retained for provenance; no prices or availability were revalidated
+> on 2026-09-14. In particular, 200 RPM is 3.33 Hz at one pulse/revolution,
+> not 200 Hz, and USB CC pull-downs do not advertise a sink current rating.
+
 Status: **selected with datasheet evidence** (issue #2). Every MPN below is
 justified by an exact datasheet citation; every distributor stock/price figure
 is live evidence retrieved on **2026-09-11** from the JLCPCB/LCSC catalog via

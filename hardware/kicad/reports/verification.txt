@@ -1,0 +1,15 @@
+Verification UTC: 2026-09-14T13:27:54Z
+9.0.9
+candidate-map consistency passed (NOT circuit validation); deleted-J1-A9 mutation rejected
+source placement and text anchors are within A1 landscape bounds
+Found 0 violations
+Saved ERC Report to hardware/kicad/reports/erc.json
+Found 0 violations
+Saved ERC Report to hardware/kicad/reports/erc.report
+one-page PDF text bounds are clean
+markdownlint-cli2 v0.13.0 (markdownlint v0.34.0)
+Finding: **/*.md
+Linting: 13 file(s)
+Summary: 0 error(s)
+a22de9930b89d16dbff4448f1c69bb89a47f5e33c6c3b7916060369952561ae3  hardware/kicad/gear-miles.kicad_sch
+03a3c3d8a88bda1cd9c298512e1f3d7b4ec0cf1a076d8737db50615559a79f1c  hardware/kicad/gear.kicad_sym

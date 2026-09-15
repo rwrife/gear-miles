@@ -1,0 +1,143 @@
+{
+  "scope": "limited-static-blocker-checks-not-design-approval",
+  "netlist_sha256": "4e3cf1c20864afcf187af39f309df1a84679cb02480a06dd98645315e5464137",
+  "status": "BLOCKED",
+  "findings": [
+    {
+      "code": "NEGATIVE_PUMP_CLAMP",
+      "summary": "D2 must clamp the positive PUMP excursion, not the negative excursion.",
+      "evidence": {
+        "D2.A": "GND",
+        "D2.K": "PUMP",
+        "basis": "Forward conduction A to K; docs/schematic.md blocking findings. Engineering topology check, not a manufacturer-diagram trace."
+      },
+      "confidence": "engineering-topology"
+    },
+    {
+      "code": "NEGATIVE_PUMP_RECTIFIER",
+      "summary": "D3 must extract charge from PREVGL during the negative PUMP excursion.",
+      "evidence": {
+        "D3.A": "PUMP",
+        "D3.K": "PREVGL",
+        "basis": "Forward conduction A to K; docs/schematic.md blocking findings. Does not validate component values or physical pad numbering."
+      },
+      "confidence": "engineering-topology"
+    },
+    {
+      "code": "PANEL_RAIL_SHORT",
+      "summary": "J4 VSL and VGL must be present and not directly shorted; full panel network review remains required.",
+      "evidence": {
+        "J4.VSL": "PREVGL",
+        "J4.VGL": "PREVGL",
+        "basis": "GDEY029T94 Rev 1.0 section 5 p8: VSL negative source drive; VGL supply for negative gate drive, VCOM and VSL. See docs/datasheet-sources.md."
+      },
+      "confidence": "datasheet-informed-topology"
+    },
+    {
+      "code": "MISSING_PART_IDENTITY",
+      "summary": "16 BOM components retain missing_part_identity blockers.",
+      "evidence": {
+        "references": [
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C9",
+          "J2",
+          "J3",
+          "J4",
+          "L1",
+          "R5",
+          "R7",
+          "R8"
+        ],
+        "basis": "Native netlist symbol properties; presence checks do not authenticate datasheet or review evidence."
+      },
+      "confidence": "deterministic-metadata"
+    },
+    {
+      "code": "PLACEHOLDER_FOOTPRINT",
+      "summary": "20 BOM components retain placeholder_footprint blockers.",
+      "evidence": {
+        "references": [
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C9",
+          "J1",
+          "J2",
+          "J3",
+          "J4",
+          "L1",
+          "R5",
+          "R7",
+          "R8",
+          "SW1",
+          "SW2",
+          "SW3"
+        ],
+        "basis": "Native netlist symbol properties; presence checks do not authenticate datasheet or review evidence."
+      },
+      "confidence": "deterministic-metadata"
+    },
+    {
+      "code": "DECLARED_UNVERIFIED",
+      "summary": "40 BOM components retain declared_unverified blockers.",
+      "evidence": {
+        "references": [
+          "C1",
+          "C10",
+          "C11",
+          "C12",
+          "C13",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C9",
+          "D1",
+          "D2",
+          "D3",
+          "D4",
+          "J1",
+          "J2",
+          "J3",
+          "J4",
+          "L1",
+          "Q1",
+          "R1",
+          "R10",
+          "R11",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7",
+          "R8",
+          "R9",
+          "SW1",
+          "SW2",
+          "SW3",
+          "U1",
+          "U2",
+          "U3"
+        ],
+        "basis": "Native netlist symbol properties; presence checks do not authenticate datasheet or review evidence."
+      },
+      "confidence": "deterministic-metadata"
+    }
+  ]
+}
