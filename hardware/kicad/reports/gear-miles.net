@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/home/rwrife/repos/gear-miles-wt/issue-3-complete/hardware/kicad/gear-miles.kicad_sch</source>
-    <date>2026-09-14T13:27:55+0000</date>
+    <date>2026-09-15T11:56:18+0000</date>
     <tool>Eeschema 9.0.9.1-unknown-202605141413~ce707d0a6c~ubuntu24.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
