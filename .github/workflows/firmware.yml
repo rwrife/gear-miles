@@ -1,0 +1,52 @@
+name: firmware
+on:
+  pull_request:
+    paths:
+      - "firmware/**"
+  push:
+    branches: [main]
+    paths:
+      - "firmware/**"
+
+jobs:
+  host-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Host unit tests (ASan+UBSan, -Werror)
+        run: make -C firmware/test/host test
+      - name: Save test output
+        run: |
+          mkdir -p firmware-reports
+          firmware/test/host/test_host | tee firmware-reports/host_tests.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: host-test-output
+          path: firmware-reports/host_tests.txt
+
+  idf-build:
+    runs-on: ubuntu-latest
+    container: espressif/idf:v5.5.2
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build ESP32-C3 firmware
+        working-directory: firmware
+        # Container jobs do not run the image ENTRYPOINT, which normally
+        # activates the IDF environment; source export.sh explicitly (bash:
+        # export.sh is not POSIX-sh compatible).
+        shell: bash
+        run: |
+          mkdir -p ../firmware-reports
+          . "${IDF_PATH:-/opt/esp/idf}/export.sh" >/dev/null
+          idf.py set-target esp32c3
+          idf.py build
+          sha256sum build/gear_miles.bin | tee ../firmware-reports/bin_sha256.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: firmware-bin
+          path: |
+            firmware/build/gear_miles.bin
+            firmware/build/gear_miles.elf
+            firmware-reports/bin_sha256.txt
+          if-no-files-found: error
+

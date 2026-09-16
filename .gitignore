@@ -8,8 +8,11 @@ dist/
 
 # ESP-IDF
 managed_components/
+sdkconfig
 sdkconfig.old
 build/
+firmware/test/host/test_host
+firmware-reports/
 
 # Node
 node_modules/
