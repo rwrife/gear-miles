@@ -31,8 +31,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build ESP32-C3 firmware
         working-directory: firmware
+        # Container jobs do not run the image ENTRYPOINT, which normally
+        # activates the IDF environment; source export.sh explicitly (bash:
+        # export.sh is not POSIX-sh compatible).
+        shell: bash
         run: |
           mkdir -p ../firmware-reports
+          . "${IDF_PATH:-/opt/esp/idf}/export.sh" >/dev/null
           idf.py set-target esp32c3
           idf.py build
           sha256sum build/gear_miles.bin | tee ../firmware-reports/bin_sha256.txt
