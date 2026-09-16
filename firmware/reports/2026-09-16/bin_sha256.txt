@@ -1,0 +1,2 @@
+bd9e0bd1dcbfa150895b9f10dcd36a838b59fe46f1340f865d9506a9758dbf7f  firmware/build/gear_miles.bin
+181bfc1f3c356979659c9d5bc40e8147995536ae5aab9b7fafe2f7e53b6c78f4  firmware/build/gear_miles.elf

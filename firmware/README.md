@@ -1,7 +1,60 @@
 # Gear Miles — Firmware
 
-**Status: planning only.** No firmware exists yet; no build or test result is
-claimed.
+**Status: domain logic + full application skeleton implemented (issue #6).**
+Domain logic (cadence pipeline, odometer math, session ring store, config
+validation, session state machine, API handlers, e-ink driver) lives in
+`components/` as allocation-free, hardware-independent C with injected
+clocks/IO. The ESP-IDF application in `main/` wires it to the frozen GPIO
+map. Host unit tests (`test/host/`) run in CI with ASan+UBSan and
+`-Werror`; the ESP32-C3 image builds reproducibly in CI (ESP-IDF v5.5.2,
+`espressif/idf:v5.5.2`). **No run against real silicon has happened yet** —
+all evidence here is host/simulation and build evidence, never bench
+evidence. Bench validation is issue #8.
+
+## Layout
+
+```text
+components/domain/     cadence, odometer, ring store, config, SM, API (pure C)
+components/panel_hal/  GDEY029T94 driver behind an injected bus (pure C)
+main/                  ESP-IDF app: board pins, SPI bus, buttons/ISR, NVS,
+                       raw-partition ring, UI renderer, LAN HTTP server,
+                       captive portal
+test/host/             host unit tests (make -C firmware/test/host test)
+```
+
+## Build + flash (ESP32-C3)
+
+Requirements: ESP-IDF **v5.5.2** (pinned; CI uses `espressif/idf:v5.5.2`).
+
+```bash
+cd firmware
+idf.py set-target esp32c3
+idf.py build
+idf.py -p /dev/ttyUSB0 flash    # native USB CDC of the module
+```
+
+Recovery / boot-mode steps:
+
+1. **Normal flash:** hold **BOOT** (GPIO9), press **EN** (reset), release
+   EN — module enters ROM download mode over USB CDC; run `idf.py flash`,
+   then press EN again.
+2. **If USB is dead:** 4-pin UART0 header (3V3/U0_TXD/U0_RXD/GND,
+   `docs/architecture.md` §2) into any 3.3 V UART adapter, same BOOT+EN
+   sequence, then `idf.py -p /dev/ttyACM0 flash`.
+3. **Brick-resilience:** ROM bootloader is always reachable (BOOT/EN on
+   the board); there is no firmware path that can remove it (no OTA, no
+   GPIO-strapping of the boot ROM).
+
+## E-ink refresh policy (GDEY029T94)
+
+Per panel datasheet (Rev 1.0 §6.3/§7 update timings: full 3 s, fast 1.5 s,
+partial 0.3 s): partial refreshes are capped at 1 Hz by the driver
+(`PANEL_MIN_PARTIAL_INTERVAL_MS`), and a full refresh is forced every
+`full_every` partials (default 30, architecture §6 ghosting row) to clear
+accumulated ghosting. BUSY handling polls with a 5 s ceiling; three
+consecutive timeouts surface `display_error` through the API (architecture
+§6). The driver command sequence is transcribed from datasheet §14.1 and
+is **unverified against silicon** until issue #8.
 
 ## Responsibilities
 
