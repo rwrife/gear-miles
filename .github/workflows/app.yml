@@ -42,6 +42,7 @@ jobs:
       - name: Contract tests against firmware code
         working-directory: app
         run: |
+          set -o pipefail
           ../firmware/test/stub/gm_stub > /tmp/gm_stub.log 2>&1 &
           echo $! > /tmp/gm_stub.pid
           for i in $(seq 1 30); do
@@ -67,6 +68,7 @@ jobs:
         env:
           GM_STUB_URL: http://127.0.0.1:8124
         run: |
+          set -o pipefail
           npx playwright install --with-deps chromium
           npm run test:a11y | tee /tmp/a11y.log
           kill $(cat /tmp/gm_stub_smoke.pid)

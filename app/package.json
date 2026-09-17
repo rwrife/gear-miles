@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "test:contract": "node --experimental-strip-types --test tests/contract/",
+    "test:contract": "node --experimental-strip-types --test tests/contract/*.test.ts",
     "test:a11y": "node tests/a11y/smoke.mjs",
     "audit:assets": "node scripts/audit_assets.mjs"
   },
