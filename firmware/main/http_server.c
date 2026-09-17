@@ -7,6 +7,7 @@
 #include "esp_log.h"
 #include "gm_api.h"
 #include "http_server.h"
+#include "web_assets.h"
 
 static const char *TAG = "http";
 static api_ctx_t *s_ctx;
@@ -94,15 +95,20 @@ static esp_err_t h_export_csv(httpd_req_t *req)
     return send_resp(req, &r);
 }
 
-/* Placeholder root: the real dashboard SPA is issue #7 and will be
- * embedded as gzipped assets; the API contract is complete without it. */
-static esp_err_t h_root(httpd_req_t *req)
+/* Embedded dashboard SPA (issue #7): assets are baked into the image by
+ * app/scripts/embed_bundle.mjs; the root handler serves index.html and any
+ * hashed asset path. Unknown paths 404 — no directory traversal exists by
+ * construction (exact table lookup). */
+static esp_err_t h_static(httpd_req_t *req)
 {
-    httpd_resp_set_type(req, "text/html");
-    return httpd_resp_sendstr(req,
-        "<!doctype html><meta charset=utf-8>"
-        "<title>gear-miles</title><h1>gear-miles</h1>"
-        "<p>Dashboard pending issue #7. API: /api/status</p>");
+    const gm_web_asset_t *a = gm_web_find(req->uri);
+    if (!a) {
+        httpd_resp_set_status(req, "404 Not Found");
+        httpd_resp_set_type(req, "text/plain");
+        return httpd_resp_sendstr(req, "not found");
+    }
+    httpd_resp_set_type(req, a->mime);
+    return httpd_resp_send(req, (const char *)a->data, a->len);
 }
 
 void http_server_start(api_ctx_t *ctx)
@@ -124,7 +130,8 @@ void http_server_start(api_ctx_t *ctx)
         {"/api/config", HTTP_POST, h_config},
         {"/api/wipe/nonce", HTTP_GET, h_nonce},
         {"/api/data/wipe", HTTP_POST, h_wipe},
-        {"/", HTTP_GET, h_root},
+        {"/", HTTP_GET, h_static},
+        {"/assets/*", HTTP_GET, h_static},
     };
     for (size_t i = 0; i < sizeof(routes)/sizeof(routes[0]); i++) {
         httpd_uri_t u = { .uri = routes[i].uri, .method = routes[i].m,

@@ -12,6 +12,7 @@ sdkconfig
 sdkconfig.old
 build/
 firmware/test/host/test_host
+firmware/test/stub/gm_stub
 firmware-reports/
 
 # Node

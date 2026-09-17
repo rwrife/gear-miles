@@ -9,6 +9,7 @@ idf_component_register(
         "ui.c"
         "http_server.c"
         "wifi_setup.c"
+        "web_assets.c"
     INCLUDE_DIRS "."
     REQUIRES domain panel_hal esp_driver_gpio esp_driver_spi esp_wifi
              esp_http_server nvs_flash esp_timer esp_partition

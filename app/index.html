@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gear Miles</title>
+  <meta name="description" content="Local-first stationary bike odometer dashboard" />
+  <link rel="stylesheet" href="./src/style.css" />
+  <link rel="icon" href="data:," />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header>
+    <h1>Gear Miles</h1>
+    <p id="conn-status" role="status" aria-live="polite">Connecting…</p>
+  </header>
+
+  <nav aria-label="Dashboard sections">
+    <button type="button" class="tab" id="tab-live" aria-controls="view-live" aria-selected="true">Live</button>
+    <button type="button" class="tab" id="tab-history" aria-controls="view-history" aria-selected="false">History</button>
+    <button type="button" class="tab" id="tab-settings" aria-controls="view-settings" aria-selected="false">Settings</button>
+    <button type="button" class="tab" id="tab-health" aria-controls="view-health" aria-selected="false">Device</button>
+  </nav>
+
+  <main id="main">
+    <section id="view-live" aria-labelledby="tab-live" tabindex="-1">
+      <h2>Live session</h2>
+      <dl class="metrics">
+        <div><dt>State</dt><dd id="m-state">–</dd></div>
+        <div><dt>Elapsed</dt><dd id="m-elapsed">0:00</dd></div>
+        <div><dt>Distance *</dt><dd id="m-distance">0.00</dd></div>
+        <div><dt>Speed *</dt><dd id="m-speed">0.0</dd></div>
+        <div><dt>Cadence</dt><dd id="m-cadence">0 rpm</dd></div>
+      </dl>
+      <p class="estimate-note" id="live-estimate-note">
+        * Estimated from crank cadence and configured wheel circumference —
+        not a measured speed or distance.
+      </p>
+      <div class="actions">
+        <button type="button" id="btn-toggle">Start / stop session</button>
+      </div>
+      <p id="toggle-result" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="view-history" aria-labelledby="tab-history" tabindex="-1" hidden>
+      <h2>History</h2>
+      <h3>Weekly distance (estimated)</h3>
+      <div id="weekly-chart" role="img" aria-label="Weekly distance bar chart"></div>
+      <h3>Sessions</h3>
+      <table>
+        <caption class="sr-only">Completed sessions, newest first. Distance values are estimates.</caption>
+        <thead>
+          <tr><th scope="col">ID</th><th scope="col">Started</th><th scope="col">Time</th>
+              <th scope="col">Distance *</th><th scope="col">Avg rpm</th><th scope="col">Max rpm</th></tr>
+        </thead>
+        <tbody id="sessions-body"></tbody>
+      </table>
+      <p id="sessions-empty" hidden>No sessions stored yet.</p>
+      <p class="estimate-note">* Estimated from crank cadence and configured wheel circumference.</p>
+      <div class="actions">
+        <a class="btn" href="/export.csv" download>Download CSV</a>
+      </div>
+    </section>
+
+    <section id="view-settings" aria-labelledby="tab-settings" tabindex="-1" hidden>
+      <h2>Settings</h2>
+      <form id="config-form" novalidate>
+        <div class="field">
+          <label for="f-circ">Wheel circumference (mm, 300–4000)</label>
+          <input id="f-circ" name="circumference_mm" type="number" min="300" max="4000" required
+                 aria-describedby="err-circ" />
+          <p class="error" id="err-circ" role="alert" hidden></p>
+        </div>
+        <div class="field">
+          <label for="f-gear-num">Gear ratio numerator (1–99)</label>
+          <input id="f-gear-num" name="gear_num" type="number" min="1" max="99" required />
+        </div>
+        <div class="field">
+          <label for="f-gear-den">Gear ratio denominator (1–99)</label>
+          <input id="f-gear-den" name="gear_den" type="number" min="1" max="99" required />
+        </div>
+        <div class="field">
+          <label for="f-debounce">Cadence debounce (ms, 5–100)</label>
+          <input id="f-debounce" name="debounce_ms" type="number" min="5" max="100" required />
+        </div>
+        <div class="field">
+          <label for="f-ema">Cadence smoothing EMA (%)</label>
+          <input id="f-ema" name="ema_percent" type="number" min="5" max="100" required />
+        </div>
+        <div class="field">
+          <label for="f-dropout">Cadence dropout timeout (ms, 100–5000)</label>
+          <input id="f-dropout" name="dropout_ms" type="number" min="100" max="5000" required />
+        </div>
+        <div class="field">
+          <label for="f-units">Units</label>
+          <select id="f-units" name="units">
+            <option value="0">km / km·h⁻¹</option>
+            <option value="1">mi / mph</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-full">Forced full e-ink refresh every N partials (1–250)</label>
+          <input id="f-full" name="full_every" type="number" min="1" max="250" required />
+        </div>
+        <div class="actions">
+          <button type="submit">Save settings</button>
+        </div>
+        <p id="config-result" role="status" aria-live="polite"></p>
+      </form>
+
+      <h3>Data wipe</h3>
+      <p>Erases all stored sessions from the device. This cannot be undone.</p>
+      <div class="actions">
+        <button type="button" id="btn-wipe" class="danger">Wipe all data…</button>
+      </div>
+      <p id="wipe-result" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="view-health" aria-labelledby="tab-health" tabindex="-1" hidden>
+      <h2>Device health</h2>
+      <dl class="metrics">
+        <div><dt>Protocol version</dt><dd id="h-proto">–</dd></div>
+        <div><dt>Uptime</dt><dd id="h-uptime">–</dd></div>
+        <div><dt>Wi-Fi connected</dt><dd id="h-wifi">–</dd></div>
+        <div><dt>Display error</dt><dd id="h-display">–</dd></div>
+        <div><dt>Free history slots</dt><dd id="h-slots">–</dd></div>
+        <div><dt>Dropped records</dt><dd id="h-dropped">–</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer>
+    <p>All data stays on this device. No analytics, no external requests.</p>
+  </footer>
+
+  <script type="module" src="./src/main.ts"></script>
+</body>
+</html>

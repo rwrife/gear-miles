@@ -1,0 +1,87 @@
+name: app
+on:
+  pull_request:
+    paths:
+      - "app/**"
+      - "firmware/**"
+      - "docs/protocol.md"
+      - ".github/workflows/app.yml"
+  push:
+    branches: [main]
+    paths:
+      - "app/**"
+      - "firmware/**"
+      - ".github/workflows/app.yml"
+
+jobs:
+  build-and-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - name: Install deps
+        working-directory: app
+        run: npm ci
+      - name: Build (tsc --noEmit && vite build)
+        working-directory: app
+        run: npm run build
+      - name: Asset audit (no external hosts in bundle)
+        working-directory: app
+        run: node scripts/audit_assets.mjs
+      - name: Embed freshness check (committed bundle == fresh build)
+        working-directory: app
+        run: node scripts/embed_bundle.mjs --check
+
+      - name: Build firmware API stub (links real gm_api handlers)
+        run: make -C firmware/test/stub
+
+      - name: Contract tests against firmware code
+        working-directory: app
+        run: |
+          ../firmware/test/stub/gm_stub > /tmp/gm_stub.log 2>&1 &
+          echo $! > /tmp/gm_stub.pid
+          for i in $(seq 1 30); do
+            curl -sf http://127.0.0.1:8123/api/status > /dev/null && break
+            sleep 0.5
+          done
+          npm run test:contract | tee /tmp/contract.log
+          kill $(cat /tmp/gm_stub.pid)
+
+      - name: Restart stub with dashboard dist (smoke, fresh fixtures)
+        run: |
+          GM_STUB_PORT=8124 GM_STUB_DIST="$PWD/app/dist" \
+            firmware/test/stub/gm_stub > /tmp/gm_stub_smoke.log 2>&1 &
+          echo $! > /tmp/gm_stub_smoke.pid
+          for i in $(seq 1 30); do
+            curl -sf http://127.0.0.1:8124/api/status > /dev/null && break
+            sleep 0.5
+          done
+          curl -sf http://127.0.0.1:8124/ | grep -qi "gear miles"
+
+      - name: Accessibility + phone-viewport smoke (Playwright)
+        working-directory: app
+        env:
+          GM_STUB_URL: http://127.0.0.1:8124
+        run: |
+          npx playwright install --with-deps chromium
+          npm run test:a11y | tee /tmp/a11y.log
+          kill $(cat /tmp/gm_stub_smoke.pid)
+
+      - name: Firmware host tests (embedded bundle lookup)
+        run: make -C firmware/test/host test
+
+      - name: Save verification reports
+        if: always()
+        run: |
+          mkdir -p reports
+          cp /tmp/contract.log /tmp/a11y.log /tmp/gm_stub*.log reports/ 2>/dev/null || true
+          make -C firmware/test/host test > reports/host_tests.txt 2>&1 || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: app-verification
+          path: reports/
