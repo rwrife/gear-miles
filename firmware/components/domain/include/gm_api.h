@@ -24,7 +24,7 @@
 extern "C" {
 #endif
 
-#define API_PROTO_V 0 /* protocol doc version we implement (draft v0) */
+#define API_PROTO_V 1 /* frozen protocol v1 (docs/protocol.md, issue #7) */
 
 typedef struct {
     cfg_t     cfg;

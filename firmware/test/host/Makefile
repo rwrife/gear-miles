@@ -4,14 +4,15 @@ CC ?= gcc
 CFLAGS ?= -std=c11 -Wall -Wextra -Werror -O2 -fsanitize=address,undefined
 COMP := $(CURDIR)/../../components
 
-INCLUDES := -I$(COMP)/domain/include -I$(COMP)/panel_hal/include
+INCLUDES := -I$(COMP)/domain/include -I$(COMP)/panel_hal/include -I$(CURDIR)/../../main
 SRC := $(COMP)/domain/src/gm_cadence.c \
        $(COMP)/domain/src/gm_odometer.c \
        $(COMP)/domain/src/gm_ring.c \
        $(COMP)/domain/src/gm_config.c \
        $(COMP)/domain/src/gm_session_sm.c \
        $(COMP)/domain/src/gm_api.c \
-       $(COMP)/panel_hal/src/gm_panel.c
+       $(COMP)/panel_hal/src/gm_panel.c \
+       $(CURDIR)/../../main/web_assets.c
 
 .PHONY: all test clean
 

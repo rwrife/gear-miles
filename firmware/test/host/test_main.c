@@ -15,6 +15,7 @@
 #include "gm_panel.h"
 #include "gm_ring.h"
 #include "gm_session_sm.h"
+#include "web_assets.h"
 
 static int g_pass = 0;
 #define CHECK(cond) do { if (!(cond)) { \
@@ -633,6 +634,42 @@ static int test_api_sessions_export(void)
 
 /* ---------------- runner ---------------- */
 
+/* Embedded dashboard bundle (issue #7): the committed generated table must
+ * contain an index route and every referenced asset path. This links the
+ * generated web_assets.c so CI proves the embed compiles and resolves. */
+static int test_web_assets_lookup(void)
+{
+    CHECK(gm_web_assets_count >= 3);
+    const gm_web_asset_t *root = gm_web_find("/");
+    CHECK(root != NULL);
+    CHECK(root && strstr(root->mime, "text/html") != NULL);
+    CHECK(root && root->len > 100);
+    /* every asset referenced from index.html must resolve */
+    CHECK(root != NULL);
+    if (root) {
+        char html[8192];
+        size_t n = root->len < sizeof(html) - 1 ? root->len : sizeof(html) - 1;
+        memcpy(html, root->data, n);
+        html[n] = 0;
+        const char *p = html;
+        int refs = 0;
+        while ((p = strstr(p, "./assets/")) != NULL) {
+            char path[128];
+            size_t i = 0;
+            const char *q = p + 1; /* skip leading '.', keep /assets/... */
+            while (*q && *q != '"' && i < sizeof(path) - 1) path[i++] = *q++;
+            path[i] = 0;
+            CHECK(gm_web_find(path) != NULL);
+            refs++;
+            p = q;
+        }
+        CHECK(refs >= 2); /* css + js from the real vite build */
+    }
+    CHECK(gm_web_find("/../../etc/passwd") == NULL);
+    CHECK(gm_web_find("/nope") == NULL);
+    return 0;
+}
+
 typedef int (*test_fn)(void);
 struct test { const char *name; test_fn fn; };
 static struct test tests[] = {
@@ -655,6 +692,7 @@ static struct test tests[] = {
     {"api_config_rejects", test_api_config_rejects},
     {"api_wipe_nonce", test_api_wipe_nonce},
     {"api_sessions_export", test_api_sessions_export},
+    {"web_assets_lookup", test_web_assets_lookup},
 };
 
 int main(void)

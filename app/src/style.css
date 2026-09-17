@@ -1,0 +1,131 @@
+/* Gear Miles dashboard — system font stack only (no external fonts/CDN).
+ * Contrast-checked: text #1a1a1a on #ffffff (>16:1), secondary #444 (>7:1
+ * large/normal), links #0b5394 (>7:1), danger button #ffffff on #b3261e
+ * (>6:1). Focus outlines never removed. */
+:root {
+  --fg: #1a1a1a;
+  --fg-dim: #444444;
+  --bg: #ffffff;
+  --line: #d0d0d0;
+  --accent: #0b5394;
+  --danger: #b3261e;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+  line-height: 1.5;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+}
+.skip-link:focus {
+  left: 8px;
+  top: 8px;
+  background: var(--fg);
+  color: #fff;
+  padding: 6px 10px;
+  z-index: 10;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  flex-wrap: wrap;
+}
+header h1 { font-size: 1.25rem; margin: 0; }
+#conn-status { margin: 0; color: var(--fg-dim); font-size: 0.9rem; }
+#conn-status.offline { color: var(--danger); }
+
+nav {
+  display: flex;
+  gap: 4px;
+  padding: 8px 16px 0;
+  flex-wrap: wrap;
+}
+.tab {
+  font: inherit;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-bottom: none;
+  background: #efefef;
+  color: var(--fg);
+  cursor: pointer;
+  border-radius: 6px 6px 0 0;
+}
+.tab[aria-selected="true"] {
+  background: var(--bg);
+  font-weight: 600;
+  border-top: 3px solid var(--accent);
+}
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 1px;
+}
+
+main { padding: 16px; max-width: 860px; }
+section:focus { outline: none; } /* only programmatic focus target */
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  margin: 12px 0;
+}
+.metrics div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+}
+.metrics dt { color: var(--fg-dim); font-size: 0.85rem; }
+.metrics dd { margin: 4px 0 0; font-size: 1.3rem; font-variant-numeric: tabular-nums; }
+
+.estimate-note {
+  font-size: 0.85rem;
+  color: var(--fg-dim);
+  border-left: 3px solid var(--accent);
+  padding-left: 8px;
+}
+
+button { font: inherit; }
+.actions { display: flex; gap: 10px; margin: 12px 0; flex-wrap: wrap; }
+.actions button, .btn {
+  padding: 10px 16px;
+  border: 1px solid var(--fg);
+  background: var(--fg);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.actions .danger { background: var(--danger); border-color: var(--danger); }
+
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+caption, .sr-only {
+  position: absolute; width: 1px; height: 1px;
+  clip: rect(0 0 0 0); clip-path: inset(50%); overflow: hidden;
+}
+
+form .field { margin: 10px 0; }
+label { display: block; font-weight: 600; margin-bottom: 2px; }
+input, select { font: inherit; padding: 6px 8px; border: 1px solid var(--fg-dim); border-radius: 4px; width: 100%; max-width: 220px; }
+.error { color: var(--danger); font-size: 0.85rem; margin: 4px 0 0; }
+
+#weekly-chart .bar-row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
+#weekly-chart .bar { height: 18px; background: var(--accent); border-radius: 3px; min-width: 4px; }
+
+footer { border-top: 1px solid var(--line); margin-top: 24px; padding: 12px 16px; color: var(--fg-dim); font-size: 0.85rem; }
+
+@media (max-width: 480px) {
+  .metrics dd { font-size: 1.1rem; }
+  input, select { max-width: 100%; }
+}
