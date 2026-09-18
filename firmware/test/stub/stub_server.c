@@ -214,6 +214,11 @@ static void handle_req(int fd, api_ctx_t *ctx, rs_t *ring, char *req)
         send_api(fd, &r);
         return;
     }
+    if (!strcmp(method, "GET") && !strcmp(target, "/export.json")) {
+        api_export_json(ctx, &r);
+        send_api(fd, &r);
+        return;
+    }
     if (!strcmp(method, "POST") && !strcmp(target, "/api/session/toggle")) {
         api_session_toggle(ctx, &r);
         send_api(fd, &r);

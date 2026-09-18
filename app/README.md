@@ -98,8 +98,6 @@ the LAN the dashboard is at `http://gearmiles.local/`.
 
 ## Known gaps (filed as issues, not silently patched)
 
-- `/export.json` was in the draft protocol; v1 ships CSV only (see
-  docs/protocol.md changelog)
 - `avg_rpm` per session is the last cadence reading (firmware records
   `cad.rpm` at commit); true averaging is issue #8 bench tuning
 - Live session per-second sample stream (draft `/api/sessions/<id>` detail

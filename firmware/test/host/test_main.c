@@ -629,6 +629,68 @@ static int test_api_sessions_export(void)
     CHECK(strstr(r.body, "schema_version=1") != NULL);
     CHECK(strstr(r.body, "distance_km*") != NULL); /* asterisk = estimate legend */
     CHECK(strstr(r.body, "estimate_basis") != NULL);
+
+    /* JSON export (issue #14): sessions-list shape over the full history */
+    api_export_json(&ctx, &r);
+    CHECK(r.status == 200);
+    CHECK(strcmp(r.content_type, "application/json") == 0);
+    const char *head = "{\"v\":1,\"schema_version\":1,\"estimate\":true,\"estimate_basis\":";
+    CHECK(strncmp(r.body, head, strlen(head)) == 0);
+    CHECK(strstr(r.body, "\"estimate_basis\":\"crank cadence x configured circumference\"") != NULL);
+    CHECK(strstr(r.body, "\"sessions\":[") != NULL);
+    CHECK(strstr(r.body, "\"distance_km\":2.100") != NULL);
+    CHECK(strstr(r.body, "\"distance_km\":4.200") != NULL);
+    CHECK(strstr(r.body, "],\"truncated\"") == NULL); /* 2 records fit */
+    { /* closes as valid JSON: ends exactly `]}` */
+        size_t n = strlen(r.body);
+        CHECK(n >= 2 && r.body[n - 2] == ']' && r.body[n - 1] == '}');
+        /* oldest-first: id 1 appears before id 2 */
+        const char *i1 = strstr(r.body, "\"id\":1,");
+        const char *i2 = strstr(r.body, "\"id\":2,");
+        CHECK(i1 && i2 && i1 < i2);
+    }
+    return 0;
+}
+
+/* JSON export must never emit truncated JSON when the ring outgrows the
+ * 1 KiB body: records stop at the budget and the payload gains an explicit
+ * "truncated":true sibling (metric honesty — incomplete is visible). */
+static int test_api_export_json_truncation(void)
+{
+    mem_io_t m = {0};
+    memset(m.mem, 0xFF, sizeof(m.mem));
+    m.fail_write_at = -1;
+    rs_io_t io = make_io(&m);
+    rs_t rs; CHECK(rs_open(&rs, &io) == 0);
+    CHECK(rs.slot_count == 8);
+    api_ctx_t ctx; api_init(&ctx, &rs, 7);
+
+    for (uint32_t i = 0; i < 8; i++) {
+        rs_rec_t rec = mkrec(1758000000u + i * 86400u, 3600u + i, 4294967000ull);
+        CHECK(rs_append(&rs, &rec) == 0);
+    }
+    api_resp_t r;
+    api_export_json(&ctx, &r);
+    CHECK(r.status == 200);
+    CHECK(strstr(r.body, "\"truncated\":true}") != NULL);
+    { /* closes as valid JSON even at the budget edge: `...],"truncated":true}` */
+        size_t n = strlen(r.body);
+        const char *tail = "],\"truncated\":true}";
+        size_t tl = strlen(tail);
+        CHECK(n > tl && strcmp(r.body + n - tl, tail) == 0);
+    }
+    /* every emitted record is whole: count of '{' equals count of '}' in the
+     * sessions array region — snprintf truncation can't split a record */
+    {
+        int opens = 0, closes = 0;
+        for (const char *q = r.body; *q; q++) {
+            if (*q == '{') opens++;
+            if (*q == '}') closes++;
+        }
+        CHECK(opens == closes);
+        CHECK(opens >= 2 && opens <= 8); /* envelope + >=1 but not all 8 records */
+    }
+    CHECK(strstr(r.body, "\"id\":8,") == NULL);
     return 0;
 }
 
@@ -692,6 +754,7 @@ static struct test tests[] = {
     {"api_config_rejects", test_api_config_rejects},
     {"api_wipe_nonce", test_api_wipe_nonce},
     {"api_sessions_export", test_api_sessions_export},
+    {"api_export_json_truncation", test_api_export_json_truncation},
     {"web_assets_lookup", test_web_assets_lookup},
 };
 
