@@ -89,6 +89,31 @@ test("export.csv schema header + estimate labeling", async () => {
   }
 });
 
+test("export.json sessions payload + estimate labeling (v1.1, issue #14)", async () => {
+  const res = await get("/export.json");
+  assert.equal(res.status, 200);
+  assert.match(res.headers.get("content-type") ?? "", /application\/json/);
+  const j = await res.json();
+  assert.equal(typeof j.v, "number");
+  assert.equal(j.schema_version, 1);
+  assert.equal(j.estimate, true);
+  assert.equal(typeof j.estimate_basis, "string");
+  assert.ok(j.estimate_basis.length > 0);
+  assert.ok(Array.isArray(j.sessions));
+  for (const s of j.sessions) {
+    assert.equal(s.estimate, true);
+    assert.equal(typeof s.id, "number");
+    assert.ok("started_epoch" in s && "elapsed_s" in s && "distance_km" in s &&
+              "avg_rpm" in s && "max_rpm" in s);
+  }
+  /* Same-history consistency with the frozen CSV export (ids + count) */
+  const csv = await (await get("/export.csv")).text();
+  const csvIds = csv.trim().split("\n").filter((l) => /^\d+,/.test(l))
+    .map((l) => Number(l.split(",")[0]));
+  assert.deepEqual(j.sessions.map((s) => s.id), csvIds);
+  if ("truncated" in j) assert.equal(j.truncated, true, "truncated flag is boolean-true only");
+});
+
 test("POST /api/config rejects out-of-range with field/reason", async () => {
   const cases: [string, string, string][] = [
     ['{"circumference_mm":100}', "circumference_mm", "out_of_range"],

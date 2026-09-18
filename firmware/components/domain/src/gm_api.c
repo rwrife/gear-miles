@@ -144,6 +144,46 @@ void api_export_csv(api_ctx_t *ctx, api_resp_t *r)
     r->content_type = "text/csv";
 }
 
+/* GET /export.json — additive v1.1 endpoint (filed issue #14). Payload is
+ * the frozen sessions-list shape (docs/protocol.md: {"v","schema_version",
+ * "estimate","estimate_basis","sessions":[...]}) over the full history,
+ * oldest-first like the CSV export. Same 1 KiB response budget as CSV:
+ * when records do not fit, the array closes cleanly and a sibling
+ * "truncated":true flag is added (unknown-field rule makes it additive;
+ * metric-honesty policy requires the user see incomplete exports). */
+void api_export_json(api_ctx_t *ctx, api_resp_t *r)
+{
+    if (!ctx->ring) { resp_json(r, 500); return; }
+    char *p = r->body;
+    int rem = (int)sizeof(r->body);
+    int used = snprintf(p, (size_t)rem,
+        "{\"v\":%d,\"schema_version\":1,\"estimate\":true,"
+        "\"estimate_basis\":\"%s\",\"sessions\":[",
+        API_PROTO_V, ESTIMATE_BASIS);
+    p += used; rem -= used;
+    int truncated = 0, first = 1;
+    for (uint32_t seq = 1; seq < ctx->ring->seq_next; seq++) {
+        rs_rec_t rec;
+        if (rs_get(ctx->ring, seq, &rec) != 0) continue;
+        /* Worst-case record with comma (u32/u64-saturated fields) is 150 B;
+         * closing `]` + `,"truncated":true}` is 21 B. Require 172 B free
+         * before emitting a record so the JSON always closes valid. */
+        if (rem < 172) { truncated = 1; break; }
+        used = snprintf(p, (size_t)rem,
+            "%s{\"id\":%u,\"started_epoch\":%u,\"elapsed_s\":%u,"
+            "\"distance_km\":%.3f,\"avg_rpm\":%u,\"max_rpm\":%u,\"estimate\":true}",
+            first ? "" : ",", (unsigned)rec.seq, (unsigned)rec.started_epoch,
+            (unsigned)rec.elapsed_s,
+            (double)rec.dist_mm / 1000000.0, rec.avg_rpm, rec.max_rpm);
+        p += used; rem -= used; first = 0;
+    }
+    used = truncated
+        ? snprintf(p, (size_t)rem, "],\"truncated\":true}")
+        : snprintf(p, (size_t)rem, "]}");
+    (void)used;
+    resp_json(r, 200);
+}
+
 static void api_commit_session(api_ctx_t *ctx)
 {
     if (!ctx->ring) return;

@@ -31,6 +31,7 @@ stub that links the real firmware code.
 | GET | `/api/sessions?limit=N` | Recent session summaries (limit default 20, max 50) |
 | GET | `/api/sessions/<id>` | Single session record |
 | GET | `/export.csv` | Full history export (user-initiated) |
+| GET | `/export.json` | Full history export, JSON (added v1.1 — see below) |
 | POST | `/api/session/toggle` | Remote session toggle (mirrors BTN_A taps) |
 | POST | `/api/config` | Validate-and-set config subset (all-or-nothing) |
 | GET | `/api/wipe/nonce` | Fetch short-lived single-use wipe nonce |
@@ -82,6 +83,25 @@ id,started_epoch,elapsed_s,distance_km*,avg_rpm,max_rpm
 The `*` on `distance_km*` marks estimates. (JSON export is **not** part of
 v1 — see changelog / filed issue.)
 
+### `/export.json` (added v1.1 — issue #14, additive)
+
+`application/json`. Payload reuses the frozen sessions-list shape over the
+**full** history, oldest-first (matching `/export.csv` ordering):
+
+```json
+{"v":1,"schema_version":1,"estimate":true,
+ "estimate_basis":"crank cadence x configured circumference",
+ "sessions":[{"id":1,"started_epoch":1758000000,"elapsed_s":3600,
+              "distance_km":25.000,"avg_rpm":78,"max_rpm":96,"estimate":true}]}
+```
+
+The response budget is the same 1 KiB as CSV: if the remaining records do
+not fit, the `sessions` array stops at the last whole record, the JSON
+still closes valid, and a sibling `"truncated":true` field is added (only
+present on truncation — unknown-field rule makes it additive). Clients
+must treat a truncated export as incomplete; CSV remains the canonical
+flat export.
+
 ### `/api/config` (POST, flat JSON object)
 
 Accepted keys: `circumference_mm` (300–4000), `gear_num`/`gear_den` (1–99,
@@ -132,6 +152,14 @@ applied. Success: `200 {"ok":true}` (persisted to NVS).
 - Route paths in v1 are permanent; new endpoints are additive.
 
 ## Changelog
+
+### v1.1 (2026-09-18, additive — issue #14)
+
+- Implemented `GET /export.json` (the endpoint the draft promised but v1
+  froze out). Payload = sessions-list shape over full history, oldest-first,
+  with an explicit `"truncated":true` sibling when the 1 KiB response budget
+  is reached. `v` was not bumped (additive route; unknown-field rule covers
+  the new sibling). CSV export and every v1 payload are unchanged.
 
 ### v1 (2026-09-17, frozen with issue #7)
 

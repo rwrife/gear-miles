@@ -95,6 +95,12 @@ static esp_err_t h_export_csv(httpd_req_t *req)
     return send_resp(req, &r);
 }
 
+static esp_err_t h_export_json(httpd_req_t *req)
+{
+    api_resp_t r; api_export_json(s_ctx, &r);
+    return send_resp(req, &r);
+}
+
 /* Embedded dashboard SPA (issue #7): assets are baked into the image by
  * app/scripts/embed_bundle.mjs; the root handler serves index.html and any
  * hashed asset path. Unknown paths 404 — no directory traversal exists by
@@ -126,6 +132,7 @@ void http_server_start(api_ctx_t *ctx)
         {"/api/sessions", HTTP_GET, h_sessions},
         {"/api/sessions/", HTTP_GET, h_session_detail},
         {"/export.csv", HTTP_GET, h_export_csv},
+        {"/export.json", HTTP_GET, h_export_json},
         {"/api/session/toggle", HTTP_POST, h_toggle},
         {"/api/config", HTTP_POST, h_config},
         {"/api/wipe/nonce", HTTP_GET, h_nonce},

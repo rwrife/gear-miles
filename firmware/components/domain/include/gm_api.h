@@ -59,8 +59,11 @@ void api_status(api_ctx_t *ctx, api_resp_t *r);
 void api_sessions(api_ctx_t *ctx, uint32_t limit, api_resp_t *r);
 /* GET /api/sessions/<id> */
 void api_session_detail(api_ctx_t *ctx, uint32_t id, api_resp_t *r);
-/* GET /export.csv | /export.json */
+/* GET /export.csv */
 void api_export_csv(api_ctx_t *ctx, api_resp_t *r);
+/* GET /export.json (v1.1, additive): sessions-list payload over full
+ * history; "truncated":true sibling when the 1 KiB budget is reached. */
+void api_export_json(api_ctx_t *ctx, api_resp_t *r);
 /* POST /api/session/start | /api/session/stop (mirrors BTN_A) */
 void api_session_toggle(api_ctx_t *ctx, api_resp_t *r);
 /* Periodic pump (call from the 1 Hz UI task): applies time-driven events
