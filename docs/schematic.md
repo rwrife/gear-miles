@@ -10,8 +10,8 @@ must not start from this rejected circuit. No BOM order/export is authorized.
 
 | Finding | Confidence / evidence | Required resolution |
 |---|---|---|
-| D2/D3 candidate polarity does not produce the intended negative rail: D2 A=GND/K=PUMP, D3 A=PUMP/K=PREVGL | High engineering confidence; current exported pin map and rectifier polarity reasoning, **not simulation** | Independently trace the manufacturer GDEY029T94 §12 p29 diagram; correct both diode directions and audit physical pad numbers. The incorrect candidate remains visibly marked so its current zero-ERC result cannot be mistaken for approval. |
-| Panel support network is not reliably transcribed, including J4 pin22 VSL versus pin23 VGL, reservoir and flying-capacitor endpoints/values | Unverified; the actual manufacturer p29 is a raster image. Automated/agent readings disagreed | Complete an independent edge-by-edge comparison against the original diagram; do not infer missing edges from this draft. |
+| D2/D3 candidate polarity does not produce the intended negative rail: D2 A=GND/K=PUMP, D3 A=PUMP/K=PREVGL | High engineering confidence; current exported pin map and rectifier polarity reasoning, **not simulation**. A 2026-09-19 raster-evidence pass re-attempted the p29 trace and could not resolve diode lead endpoints (crossings are indistinguishable from junctions at the figure's native 986x681 resolution). See `hardware/kicad/reports/2026-09-19/p29-raster-evidence-summary.md`. | Independently trace the manufacturer GDEY029T94 §12 p29 diagram; correct both diode directions and audit physical pad numbers. The incorrect candidate remains visibly marked so its current zero-ERC result cannot be mistaken for approval. |
+| Panel support network is not reliably transcribed, including J4 pin22 VSL versus pin23 VGL, reservoir and flying-capacitor endpoints/values | **Strengthened 2026-09-19:** §5 p8 text (separate VSL/VGL capacitor pins) plus figure-label row association — the internal `PREVGL` label sits on the pin-23 (VGL) row only and no shared internal label appears on the pin-22 (VSL) row (`hardware/kicad/reports/2026-09-19/`). Full edge list still outstanding; the p29 raster is not machine-traceable at native resolution. | Give pin22/VSL its own net and capacitor; complete the remaining edge-by-edge comparison of the p29 figure (reservoir/flying-cap endpoints/values); do not infer missing edges from this draft. |
 | Selected XUNPU FPC evidence not present locally | Deterministic document identity: local PDF names Kinghelm KH-FG0.5-H2.0-24PIN, SHA in manifest | Retrieve the actual selected connector drawing and verify pitch, contact side, numbering and land pattern. J4 remains TBD. |
 | J2/J3, L1, R5/R7/R8 and C5-C13 lack exact manufacturer-backed selection | Deterministic missing metadata in symbol properties | Obtain manufacturer evidence and populate Manufacturer/MPN; retain PLANNING_ONLY until live sourcing. |
 | Button and several connector/passive footprints are unresolved | Deterministic source inspection | `Gear:TBD_LAYOUT_BLOCKED` is an empty, conspicuous non-production placeholder, **not** a valid land pattern. Replace with manufacturer-derived footprints and pin-to-pad checks before issue #5. |
@@ -135,6 +135,36 @@ this skill installation; native KiCad/MCP were used instead. No full design
 review, structured extraction, SPICE, distributor sourcing, PCB/DRC, thermal,
 EMC, firmware build, bench measurement or field testing was performed. No
 SPICE executable was found. The native zero-ERC result remains strictly static.
+
+## 2026-09-19: raster-evidence pass on the §12 p29 figure
+
+Raw probe dumps, label geometry and interpretation are committed in
+`hardware/kicad/reports/2026-09-19/` (`p29-raster-evidence-summary.md`).
+Method: PyMuPDF 8x render of page 29 + RapidOCR label placement + raw
+dark-run slice probes; no local tesseract, no vision-based reading was
+claimed. SSD1680 (same-pinout controller family) mirrors were fetched only
+as a consistency cross-reference — the panel DS still does not name its
+driver IC, so that file is **not** identity or topology evidence for this
+panel.
+
+Result: the VSL/VGL split now has datasheet-text plus figure-label
+corroboration (pin-22 has no shared `PREVGL` label row); the D2/D3 lead
+endpoints could **not** be machine-traced (raster crossings are not
+distinguishable from junctions at native resolution). **No schematic
+connections, parts or footprints were changed by this pass.** The blocker
+gate still exits 3 on the same six groups, which is the expected state.
+
+Sharpened next step for issue #3: one bounded manual trace of the p29
+pump edges (3.3 V rail → boost inductor/MOSFET switch node → positive-rail
+rectifier + reservoir → negative pump diodes + flying cap → VSL and VGL
+reservoirs; figure references D1-D3 are the driver figure's own numbers,
+not this project's designators), then rename/split
+`PREVGL` so J4 pin22 (VSL) gets its own net + capacitor, updating
+`test_netlist.py` `CRITICAL_EXPECTED`, the `check_blockers.py` fixtures
+and the on-sheet blocker text in the same change. The figure carries the
+passive values (1uF/25V reservoirs, 4.7uF/25V at C4, 47uH/500mA L1,
+2.2R and >1M resistors), so the same trace can retire part of the
+MISSING_PART_IDENTITY list with figure-cited values before live sourcing.
 
 ## Verification limits
 

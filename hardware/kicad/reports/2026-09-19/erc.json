@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-19T18:56:43+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/5691ba5b-4141-58b3-a92f-94adcaa8c3f9",
+            "violations": []
+        }
+    ],
+    "source": "gear-miles.kicad_sch"
+}
