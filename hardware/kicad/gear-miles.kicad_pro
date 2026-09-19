@@ -1,0 +1,16 @@
+{
+  "board": {},
+  "cvpcb": {},
+  "erc": {
+    "erc_exclusions": []
+  },
+  "libraries": {},
+  "meta": {
+    "filename": "gear-miles.kicad_pro",
+    "version": 1
+  },
+  "net_settings": {
+    "classes": []
+  },
+  "schematic": {}
+}

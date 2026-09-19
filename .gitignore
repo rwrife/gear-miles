@@ -22,7 +22,9 @@ app/dist/
 # KiCad generated / caches
 hardware/kicad/fp-info-cache
 hardware/kicad/*.kicad_prl
-hardware/kicad/*/
+# Editable tools/libraries/tests and real validation reports are tracked.
+__pycache__/
+*.pyc
 hardware/kicad/*.bak
 hardware/kicad/*-backups/
 hardware/kicad/gerber/
