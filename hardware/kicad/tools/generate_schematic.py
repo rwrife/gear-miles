@@ -132,7 +132,7 @@ PARTS = [
          ("12", "CS#", "INK_CS"), ("13", "SCL", "INK_CLK"), ("14", "SDA", "INK_MOSI"),
          ("15", "VDDIO", "+3V3"), ("16", "VCI", "+3V3"), ("17", "VSS", "GND"),
          ("18", "VDD", "EPD_VDD"), ("19", "VPP", "NC"), ("20", "VSH1", "VSH1"),
-         ("21", "VGH", "PREVGH"), ("22", "VSL", "PREVGL"), ("23", "VGL", "PREVGL"), ("24", "VCOM", "VCOM"))),
+         ("21", "VGH", "PREVGH"), ("22", "VSL", "VSL"), ("23", "VGL", "PREVGL"), ("24", "VCOM", "VCOM"))),
     ("L1", "47uH 500mA", "TBD", "TBD", "datasheets/GDEY029T94.pdf",
      "GDEY029T94 Rev 1.0 section 12", "Inductor_SMD:L_1210_3225Metric",
      pins(("1", "1", "+3V3"), ("2", "2", "EPD_SW"))),
@@ -166,9 +166,11 @@ PARTS = [
      "Manufacturer figure C12, VCOM bypass", "Capacitor_SMD:C_0402_1005Metric", pins(("1", "1", "VCOM"), ("2", "2", "GND"))),
     ("C13", "4.7uF 25V X7R", "TBD", "TBD", "datasheets/GDEY029T94.pdf",
      "Manufacturer figure C3, flying capacitor", "Capacitor_SMD:C_0603_1608Metric", pins(("1", "1", "EPD_SW"), ("2", "2", "PUMP"))),
+    ("C14", "1uF 25V X7R", "TBD", "TBD", "datasheets/GDEY029T94.pdf",
+     "VSL bypass; value from figure C-family 1uF/25V, endpoint association pending full p29 trace", "Capacitor_SMD:C_0402_1005Metric", pins(("1", "1", "VSL"), ("2", "2", "GND"))),
 ]
 
-for ref, net in (("PWR1", "USB_5V"), ("PWR2", "GND"), ("PWR3", "PREVGH"), ("PWR4", "PREVGL")):
+for ref, net in (("PWR1", "USB_5V"), ("PWR2", "GND"), ("PWR3", "PREVGH"), ("PWR4", "PREVGL"), ("PWR5", "VSL")):
     PARTS.append((ref, "PWR_FLAG", "N/A", "N/A", "KiCad:power", "ERC supply-source flag",
                   "", pins(("1", "PWR", net))))
 for number, net in enumerate(("USB_5V", "+3V3", "CADENCE", "INK_CLK", "INK_MOSI", "BOOT", "U0_TXD", "GND", "EN_RC"), 1):
@@ -180,7 +182,7 @@ def pin_type(ref: str, number: str, name: str) -> str:
     if name == "NC":
         return "no_connect"
     if ref in {"R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "R11",
-               "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "C13",
+               "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "C13", "C14",
                "D1", "D2", "D3", "D4", "L1", "SW1", "SW2", "SW3", "J2", "J3", "J4"}:
         return "passive"
     if ref.startswith("PWR"):
@@ -282,9 +284,9 @@ def main() -> None:
   )
   (text "NOT FOR FABRICATION OR POWER-UP: REJECTED CANDIDATE. Pump diode polarity and panel capacitor endpoints require correction and independent manufacturer-diagram review." (exclude_from_sim no) (at 45 555 0)
     (effects (font (size 1.27 1.27)) (justify left bottom)))
-  (text "KNOWN BLOCKER: D2 A=GND/K=PUMP and D3 A=PUMP/K=PREVGL cannot form the intended negative pump. ERC and netlist tests do not validate analog operation." (exclude_from_sim no) (at 45 563 0)
+  (text "KNOWN BLOCKER: D2 A=GND/K=PUMP and D3 A=PUMP/K=PREVGL cannot form the intended negative pump (figure leads untraced at native raster resolution). VSL/VGL split applied 2026-09-20 per DS section 5 p8; pump diode and capacitor endpoint audit still required. ERC and netlist tests do not validate analog operation." (exclude_from_sim no) (at 45 563 0)
     (effects (font (size 1.27 1.27)) (justify left bottom)))
-  (text "VSH2 is bypassed to GND through C8 (manufacturer figure C2), never hard-grounded. PWR_FLAGs are limited to USB external rails and panel-derived PREVGH/PREVGL rails." (exclude_from_sim no) (at 45.72 571.5 0)
+  (text "VSH2 is bypassed to GND through C8 (manufacturer figure C2), never hard-grounded. PWR_FLAGs are limited to USB external rails and panel-derived PREVGH/PREVGL/VSL rails." (exclude_from_sim no) (at 45.72 571.5 0)
     (effects (font (size 1.27 1.27)) (justify left bottom)))
 {instances}
   (sheet_instances (path "/" (page "1")))

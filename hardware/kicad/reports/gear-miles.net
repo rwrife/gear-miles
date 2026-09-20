@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/home/rwrife/repos/gear-miles-wt/issue-3-complete/hardware/kicad/gear-miles.kicad_sch</source>
-    <date>2026-09-15T11:56:18+0000</date>
+    <date>2026-09-20T22:10:02+0000</date>
     <tool>Eeschema 9.0.9.1-unknown-202605141413~ce707d0a6c~ubuntu24.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -349,6 +349,31 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>2e084308-47b2-51dc-bdd9-3c686b08595f</tstamps>
     </comp>
+    <comp ref="C14">
+      <value>1uF 25V X7R</value>
+      <footprint>Gear:TBD_LAYOUT_BLOCKED</footprint>
+      <datasheet>datasheets/GDEY029T94.pdf</datasheet>
+      <fields>
+        <field name="Citation">VSL bypass; value from figure C-family 1uF/25V, endpoint association pending full p29 trace</field>
+        <field name="Manufacturer">TBD</field>
+        <field name="MPN">TBD</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint">Gear:TBD_LAYOUT_BLOCKED</field>
+        <field name="Datasheet">datasheets/GDEY029T94.pdf</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="C14_41" description=""/>
+      <property name="Citation" value="VSL bypass; value from figure C-family 1uF/25V, endpoint association pending full p29 trace"/>
+      <property name="Manufacturer" value="TBD"/>
+      <property name="MPN" value="TBD"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6dda228f-e6fe-5c57-b699-3f791aa7f711</tstamps>
+    </comp>
     <comp ref="D1">
       <value>PESD5V0S1BA</value>
       <footprint>Diode_SMD:D_SOD-323</footprint>
@@ -587,7 +612,7 @@
         <field name="Datasheet">KiCad:power</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="Gear" part="PWR1_41" description=""/>
+      <libsource lib="Gear" part="PWR1_42" description=""/>
       <property name="Citation" value="ERC supply-source flag"/>
       <property name="Manufacturer" value="N/A"/>
       <property name="MPN" value="N/A"/>
@@ -613,7 +638,7 @@
         <field name="Datasheet">KiCad:power</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="Gear" part="PWR2_42" description=""/>
+      <libsource lib="Gear" part="PWR2_43" description=""/>
       <property name="Citation" value="ERC supply-source flag"/>
       <property name="Manufacturer" value="N/A"/>
       <property name="MPN" value="N/A"/>
@@ -639,7 +664,7 @@
         <field name="Datasheet">KiCad:power</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="Gear" part="PWR3_43" description=""/>
+      <libsource lib="Gear" part="PWR3_44" description=""/>
       <property name="Citation" value="ERC supply-source flag"/>
       <property name="Manufacturer" value="N/A"/>
       <property name="MPN" value="N/A"/>
@@ -665,7 +690,7 @@
         <field name="Datasheet">KiCad:power</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="Gear" part="PWR4_44" description=""/>
+      <libsource lib="Gear" part="PWR4_45" description=""/>
       <property name="Citation" value="ERC supply-source flag"/>
       <property name="Manufacturer" value="N/A"/>
       <property name="MPN" value="N/A"/>
@@ -677,6 +702,32 @@
       <property name="exclude_from_board"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>4a0acb6a-e857-5db2-90a5-ea894e1d0b16</tstamps>
+    </comp>
+    <comp ref="PWR5">
+      <value>PWR_FLAG</value>
+      <datasheet>KiCad:power</datasheet>
+      <fields>
+        <field name="Citation">ERC supply-source flag</field>
+        <field name="Manufacturer">N/A</field>
+        <field name="MPN">N/A</field>
+        <field name="Validation_Status">UNVERIFIED_DO_NOT_BUILD</field>
+        <field name="BOM Comments">PLANNING_ONLY; see docs/schematic.md; no live sourcing performed</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">KiCad:power</field>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Gear" part="PWR5_46" description=""/>
+      <property name="Citation" value="ERC supply-source flag"/>
+      <property name="Manufacturer" value="N/A"/>
+      <property name="MPN" value="N/A"/>
+      <property name="Validation_Status" value="UNVERIFIED_DO_NOT_BUILD"/>
+      <property name="BOM Comments" value="PLANNING_ONLY; see docs/schematic.md; no live sourcing performed"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="gear-miles.kicad_sch"/>
+      <property name="exclude_from_bom"/>
+      <property name="exclude_from_board"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>123d91a1-a51e-507b-9166-e404eb6efabe</tstamps>
     </comp>
     <comp ref="Q1">
       <value>Si1308EDL</value>
@@ -1067,7 +1118,7 @@
         <field name="Datasheet">docs/architecture.md</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="Gear" part="TP1_45" description=""/>
+      <libsource lib="Gear" part="TP1_47" description=""/>
       <property name="Citation" value="Zero-BOM test point"/>
       <property name="Manufacturer" value="Bare copper"/>
       <property name="MPN" value="N/A"/>
@@ -1093,7 +1144,7 @@
         <field name="Datasheet">docs/architecture.md</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="Gear" part="TP2_46" description=""/>
+      <libsource lib="Gear" part="TP2_48" description=""/>
       <property name="Citation" value="Zero-BOM test point"/>
       <property name="Manufacturer" value="Bare copper"/>
       <property name="MPN" value="N/A"/>
@@ -1119,7 +1170,7 @@
         <field name="Datasheet">docs/architecture.md</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="Gear" part="TP3_47" description=""/>
+      <libsource lib="Gear" part="TP3_49" description=""/>
       <property name="Citation" value="Zero-BOM test point"/>
       <property name="Manufacturer" value="Bare copper"/>
       <property name="MPN" value="N/A"/>
@@ -1145,7 +1196,7 @@
         <field name="Datasheet">docs/architecture.md</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="Gear" part="TP4_48" description=""/>
+      <libsource lib="Gear" part="TP4_50" description=""/>
       <property name="Citation" value="Zero-BOM test point"/>
       <property name="Manufacturer" value="Bare copper"/>
       <property name="MPN" value="N/A"/>
@@ -1171,7 +1222,7 @@
         <field name="Datasheet">docs/architecture.md</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="Gear" part="TP5_49" description=""/>
+      <libsource lib="Gear" part="TP5_51" description=""/>
       <property name="Citation" value="Zero-BOM test point"/>
       <property name="Manufacturer" value="Bare copper"/>
       <property name="MPN" value="N/A"/>
@@ -1197,7 +1248,7 @@
         <field name="Datasheet">docs/architecture.md</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="Gear" part="TP6_50" description=""/>
+      <libsource lib="Gear" part="TP6_52" description=""/>
       <property name="Citation" value="Zero-BOM test point"/>
       <property name="Manufacturer" value="Bare copper"/>
       <property name="MPN" value="N/A"/>
@@ -1223,7 +1274,7 @@
         <field name="Datasheet">docs/architecture.md</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="Gear" part="TP7_51" description=""/>
+      <libsource lib="Gear" part="TP7_53" description=""/>
       <property name="Citation" value="Zero-BOM test point"/>
       <property name="Manufacturer" value="Bare copper"/>
       <property name="MPN" value="N/A"/>
@@ -1249,7 +1300,7 @@
         <field name="Datasheet">docs/architecture.md</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="Gear" part="TP8_52" description=""/>
+      <libsource lib="Gear" part="TP8_54" description=""/>
       <property name="Citation" value="Zero-BOM test point"/>
       <property name="Manufacturer" value="Bare copper"/>
       <property name="MPN" value="N/A"/>
@@ -1275,7 +1326,7 @@
         <field name="Datasheet">docs/architecture.md</field>
         <field name="Description"/>
       </fields>
-      <libsource lib="Gear" part="TP9_53" description=""/>
+      <libsource lib="Gear" part="TP9_55" description=""/>
       <property name="Citation" value="Zero-BOM test point"/>
       <property name="Manufacturer" value="Bare copper"/>
       <property name="MPN" value="N/A"/>
@@ -1407,6 +1458,19 @@
       <fields>
         <field name="Reference">C</field>
         <field name="Value">4.7uF 25V X7R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="C14_41">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">1uF 25V X7R</field>
         <field name="Footprint"/>
         <field name="Datasheet"/>
         <field name="Description"/>
@@ -1689,7 +1753,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Gear" part="PWR1_41">
+    <libpart lib="Gear" part="PWR1_42">
       <fields>
         <field name="Reference">PWR</field>
         <field name="Value">PWR_FLAG</field>
@@ -1701,7 +1765,7 @@
         <pin num="1" name="PWR" type="power_out"/>
       </pins>
     </libpart>
-    <libpart lib="Gear" part="PWR2_42">
+    <libpart lib="Gear" part="PWR2_43">
       <fields>
         <field name="Reference">PWR</field>
         <field name="Value">PWR_FLAG</field>
@@ -1713,7 +1777,7 @@
         <pin num="1" name="PWR" type="power_out"/>
       </pins>
     </libpart>
-    <libpart lib="Gear" part="PWR3_43">
+    <libpart lib="Gear" part="PWR3_44">
       <fields>
         <field name="Reference">PWR</field>
         <field name="Value">PWR_FLAG</field>
@@ -1725,7 +1789,19 @@
         <pin num="1" name="PWR" type="power_out"/>
       </pins>
     </libpart>
-    <libpart lib="Gear" part="PWR4_44">
+    <libpart lib="Gear" part="PWR4_45">
+      <fields>
+        <field name="Reference">PWR</field>
+        <field name="Value">PWR_FLAG</field>
+        <field name="Footprint"/>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="PWR" type="power_out"/>
+      </pins>
+    </libpart>
+    <libpart lib="Gear" part="PWR5_46">
       <fields>
         <field name="Reference">PWR</field>
         <field name="Value">PWR_FLAG</field>
@@ -1933,7 +2009,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Gear" part="TP1_45">
+    <libpart lib="Gear" part="TP1_47">
       <fields>
         <field name="Reference">TP</field>
         <field name="Value">Test pad USB_5V</field>
@@ -1945,7 +2021,7 @@
         <pin num="1" name="PAD" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Gear" part="TP2_46">
+    <libpart lib="Gear" part="TP2_48">
       <fields>
         <field name="Reference">TP</field>
         <field name="Value">Test pad +3V3</field>
@@ -1957,7 +2033,7 @@
         <pin num="1" name="PAD" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Gear" part="TP3_47">
+    <libpart lib="Gear" part="TP3_49">
       <fields>
         <field name="Reference">TP</field>
         <field name="Value">Test pad CADENCE</field>
@@ -1969,7 +2045,7 @@
         <pin num="1" name="PAD" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Gear" part="TP4_48">
+    <libpart lib="Gear" part="TP4_50">
       <fields>
         <field name="Reference">TP</field>
         <field name="Value">Test pad INK_CLK</field>
@@ -1981,7 +2057,7 @@
         <pin num="1" name="PAD" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Gear" part="TP5_49">
+    <libpart lib="Gear" part="TP5_51">
       <fields>
         <field name="Reference">TP</field>
         <field name="Value">Test pad INK_MOSI</field>
@@ -1993,7 +2069,7 @@
         <pin num="1" name="PAD" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Gear" part="TP6_50">
+    <libpart lib="Gear" part="TP6_52">
       <fields>
         <field name="Reference">TP</field>
         <field name="Value">Test pad BOOT</field>
@@ -2005,7 +2081,7 @@
         <pin num="1" name="PAD" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Gear" part="TP7_51">
+    <libpart lib="Gear" part="TP7_53">
       <fields>
         <field name="Reference">TP</field>
         <field name="Value">Test pad U0_TXD</field>
@@ -2017,7 +2093,7 @@
         <pin num="1" name="PAD" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Gear" part="TP8_52">
+    <libpart lib="Gear" part="TP8_54">
       <fields>
         <field name="Reference">TP</field>
         <field name="Value">Test pad GND</field>
@@ -2029,7 +2105,7 @@
         <pin num="1" name="PAD" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Gear" part="TP9_53">
+    <libpart lib="Gear" part="TP9_55">
       <fields>
         <field name="Reference">TP</field>
         <field name="Value">Test pad EN_RC</field>
@@ -2190,6 +2266,7 @@
       <node ref="C10" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C11" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C12" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C14" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C2" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C3" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C4" pin="2" pinfunction="2" pintype="passive"/>
@@ -2263,7 +2340,6 @@
     <net code="22" name="PREVGL" class="Default">
       <node ref="C11" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="D3" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="J4" pin="22" pinfunction="VSL" pintype="passive"/>
       <node ref="J4" pin="23" pinfunction="VGL" pintype="passive"/>
       <node ref="PWR4" pin="1" pinfunction="PWR" pintype="power_out"/>
     </net>
@@ -2323,6 +2399,11 @@
     <net code="32" name="VSH2" class="Default">
       <node ref="C8" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="J4" pin="5" pinfunction="VSH2" pintype="passive"/>
+    </net>
+    <net code="33" name="VSL" class="Default">
+      <node ref="C14" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="J4" pin="22" pinfunction="VSL" pintype="passive"/>
+      <node ref="PWR5" pin="1" pinfunction="PWR" pintype="power_out"/>
     </net>
   </nets>
 </export>

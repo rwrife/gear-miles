@@ -783,7 +783,25 @@
         (pin passive line (at -7.62 0.0 0) (length 2.54) (name "2" (effects (font (size 1.0 1.0)))) (number "2" (effects (font (size 1.0 1.0)))))
       )
     )
-    (symbol "Gear:PWR1_41"
+    (symbol "Gear:C14_41"
+      (pin_names (offset 0))
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "C" (at 0 7.62 0) (effects (font (size 1.27 1.27))))
+      (property "Value" "1uF 25V X7R" (at 0 -7.62 0) (effects (font (size 1.27 1.27))))
+      (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Description" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (symbol "C14_41_0_1"
+        (rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0) (type default)) (fill (type background)))
+      )
+      (symbol "C14_41_1_1"
+        (pin passive line (at -7.62 2.54 0) (length 2.54) (name "1" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
+        (pin passive line (at -7.62 0.0 0) (length 2.54) (name "2" (effects (font (size 1.0 1.0)))) (number "2" (effects (font (size 1.0 1.0)))))
+      )
+    )
+    (symbol "Gear:PWR1_42"
       (pin_names (offset 0))
       (exclude_from_sim no)
       (in_bom no)
@@ -793,14 +811,14 @@
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Description" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-      (symbol "PWR1_41_0_1"
+      (symbol "PWR1_42_0_1"
         (rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0) (type default)) (fill (type background)))
       )
-      (symbol "PWR1_41_1_1"
+      (symbol "PWR1_42_1_1"
         (pin power_out line (at -7.62 2.54 0) (length 2.54) (name "PWR" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
       )
     )
-    (symbol "Gear:PWR2_42"
+    (symbol "Gear:PWR2_43"
       (pin_names (offset 0))
       (exclude_from_sim no)
       (in_bom no)
@@ -810,14 +828,14 @@
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Description" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-      (symbol "PWR2_42_0_1"
+      (symbol "PWR2_43_0_1"
         (rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0) (type default)) (fill (type background)))
       )
-      (symbol "PWR2_42_1_1"
+      (symbol "PWR2_43_1_1"
         (pin power_out line (at -7.62 2.54 0) (length 2.54) (name "PWR" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
       )
     )
-    (symbol "Gear:PWR3_43"
+    (symbol "Gear:PWR3_44"
       (pin_names (offset 0))
       (exclude_from_sim no)
       (in_bom no)
@@ -827,14 +845,14 @@
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Description" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-      (symbol "PWR3_43_0_1"
+      (symbol "PWR3_44_0_1"
         (rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0) (type default)) (fill (type background)))
       )
-      (symbol "PWR3_43_1_1"
+      (symbol "PWR3_44_1_1"
         (pin power_out line (at -7.62 2.54 0) (length 2.54) (name "PWR" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
       )
     )
-    (symbol "Gear:PWR4_44"
+    (symbol "Gear:PWR4_45"
       (pin_names (offset 0))
       (exclude_from_sim no)
       (in_bom no)
@@ -844,14 +862,31 @@
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Description" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-      (symbol "PWR4_44_0_1"
+      (symbol "PWR4_45_0_1"
         (rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0) (type default)) (fill (type background)))
       )
-      (symbol "PWR4_44_1_1"
+      (symbol "PWR4_45_1_1"
         (pin power_out line (at -7.62 2.54 0) (length 2.54) (name "PWR" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
       )
     )
-    (symbol "Gear:TP1_45"
+    (symbol "Gear:PWR5_46"
+      (pin_names (offset 0))
+      (exclude_from_sim no)
+      (in_bom no)
+      (on_board no)
+      (property "Reference" "PWR" (at 0 7.62 0) (effects (font (size 1.27 1.27))))
+      (property "Value" "PWR_FLAG" (at 0 -7.62 0) (effects (font (size 1.27 1.27))))
+      (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (property "Description" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
+      (symbol "PWR5_46_0_1"
+        (rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0) (type default)) (fill (type background)))
+      )
+      (symbol "PWR5_46_1_1"
+        (pin power_out line (at -7.62 2.54 0) (length 2.54) (name "PWR" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
+      )
+    )
+    (symbol "Gear:TP1_47"
       (pin_names (offset 0))
       (exclude_from_sim no)
       (in_bom no)
@@ -861,14 +896,14 @@
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Description" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-      (symbol "TP1_45_0_1"
+      (symbol "TP1_47_0_1"
         (rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0) (type default)) (fill (type background)))
       )
-      (symbol "TP1_45_1_1"
+      (symbol "TP1_47_1_1"
         (pin passive line (at -7.62 2.54 0) (length 2.54) (name "PAD" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
       )
     )
-    (symbol "Gear:TP2_46"
+    (symbol "Gear:TP2_48"
       (pin_names (offset 0))
       (exclude_from_sim no)
       (in_bom no)
@@ -878,14 +913,14 @@
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Description" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-      (symbol "TP2_46_0_1"
+      (symbol "TP2_48_0_1"
         (rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0) (type default)) (fill (type background)))
       )
-      (symbol "TP2_46_1_1"
+      (symbol "TP2_48_1_1"
         (pin passive line (at -7.62 2.54 0) (length 2.54) (name "PAD" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
       )
     )
-    (symbol "Gear:TP3_47"
+    (symbol "Gear:TP3_49"
       (pin_names (offset 0))
       (exclude_from_sim no)
       (in_bom no)
@@ -895,14 +930,14 @@
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Description" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-      (symbol "TP3_47_0_1"
+      (symbol "TP3_49_0_1"
         (rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0) (type default)) (fill (type background)))
       )
-      (symbol "TP3_47_1_1"
+      (symbol "TP3_49_1_1"
         (pin passive line (at -7.62 2.54 0) (length 2.54) (name "PAD" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
       )
     )
-    (symbol "Gear:TP4_48"
+    (symbol "Gear:TP4_50"
       (pin_names (offset 0))
       (exclude_from_sim no)
       (in_bom no)
@@ -912,14 +947,14 @@
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Description" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-      (symbol "TP4_48_0_1"
+      (symbol "TP4_50_0_1"
         (rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0) (type default)) (fill (type background)))
       )
-      (symbol "TP4_48_1_1"
+      (symbol "TP4_50_1_1"
         (pin passive line (at -7.62 2.54 0) (length 2.54) (name "PAD" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
       )
     )
-    (symbol "Gear:TP5_49"
+    (symbol "Gear:TP5_51"
       (pin_names (offset 0))
       (exclude_from_sim no)
       (in_bom no)
@@ -929,14 +964,14 @@
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Description" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-      (symbol "TP5_49_0_1"
+      (symbol "TP5_51_0_1"
         (rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0) (type default)) (fill (type background)))
       )
-      (symbol "TP5_49_1_1"
+      (symbol "TP5_51_1_1"
         (pin passive line (at -7.62 2.54 0) (length 2.54) (name "PAD" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
       )
     )
-    (symbol "Gear:TP6_50"
+    (symbol "Gear:TP6_52"
       (pin_names (offset 0))
       (exclude_from_sim no)
       (in_bom no)
@@ -946,14 +981,14 @@
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Description" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-      (symbol "TP6_50_0_1"
+      (symbol "TP6_52_0_1"
         (rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0) (type default)) (fill (type background)))
       )
-      (symbol "TP6_50_1_1"
+      (symbol "TP6_52_1_1"
         (pin passive line (at -7.62 2.54 0) (length 2.54) (name "PAD" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
       )
     )
-    (symbol "Gear:TP7_51"
+    (symbol "Gear:TP7_53"
       (pin_names (offset 0))
       (exclude_from_sim no)
       (in_bom no)
@@ -963,14 +998,14 @@
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Description" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-      (symbol "TP7_51_0_1"
+      (symbol "TP7_53_0_1"
         (rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0) (type default)) (fill (type background)))
       )
-      (symbol "TP7_51_1_1"
+      (symbol "TP7_53_1_1"
         (pin passive line (at -7.62 2.54 0) (length 2.54) (name "PAD" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
       )
     )
-    (symbol "Gear:TP8_52"
+    (symbol "Gear:TP8_54"
       (pin_names (offset 0))
       (exclude_from_sim no)
       (in_bom no)
@@ -980,14 +1015,14 @@
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Description" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-      (symbol "TP8_52_0_1"
+      (symbol "TP8_54_0_1"
         (rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0) (type default)) (fill (type background)))
       )
-      (symbol "TP8_52_1_1"
+      (symbol "TP8_54_1_1"
         (pin passive line (at -7.62 2.54 0) (length 2.54) (name "PAD" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
       )
     )
-    (symbol "Gear:TP9_53"
+    (symbol "Gear:TP9_55"
       (pin_names (offset 0))
       (exclude_from_sim no)
       (in_bom no)
@@ -997,10 +1032,10 @@
       (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Datasheet" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
       (property "Description" "" (at 0 0 0) (effects (font (size 1.27 1.27)) hide))
-      (symbol "TP9_53_0_1"
+      (symbol "TP9_55_0_1"
         (rectangle (start -5.08 5.08) (end 5.08 -5.08) (stroke (width 0) (type default)) (fill (type background)))
       )
-      (symbol "TP9_53_1_1"
+      (symbol "TP9_55_1_1"
         (pin passive line (at -7.62 2.54 0) (length 2.54) (name "PAD" (effects (font (size 1.0 1.0)))) (number "1" (effects (font (size 1.0 1.0)))))
       )
     )

@@ -55,7 +55,7 @@ def inspect(root):
     require("PANEL_RAIL_SHORT", bool(vsl and vgl and vsl != vgl),
             "J4 VSL and VGL must be present and not directly shorted; full panel network review remains required.",
             {"J4.VSL": vsl, "J4.VGL": vgl,
-             "basis": "GDEY029T94 Rev 1.0 section 5 p8: VSL negative source drive; VGL supply for negative gate drive, VCOM and VSL. See docs/datasheet-sources.md."},
+             "basis": "GDEY029T94 Rev 1.0 section 5 p8: VSL negative source drive; VGL supply for negative gate drive, VCOM and VSL. Split applied 2026-09-20; check retained as a regression guard. See docs/datasheet-sources.md."},
             "datasheet-informed-topology")
     groups = {"MISSING_PART_IDENTITY": [], "PLACEHOLDER_FOOTPRINT": [],
               "DECLARED_UNVERIFIED": []}

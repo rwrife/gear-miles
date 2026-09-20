@@ -21,7 +21,7 @@ CRITICAL_EXPECTED = {
     "U2": {"1": "USB_5V", "2": "GND", "3": "NC", "4": "USB_5V", "5": "+3V3"},
     "U3": {"1": "+3V3", "2": "EN_RC", "3": "INK_RST", "4": "INK_BUSY", "5": "INK_CLK", "6": "INK_MOSI", "7": "BTN_B", "8": "BOOT", "9": "GND", "10": "INK_CS", "11": "U0_RXD", "12": "U0_TXD", "13": "USB_D-", "14": "USB_D+", "15": "INK_DC", "16": "GPIO2_STRAP", "17": "CADENCE", "18": "BTN_A", "19": "GND"},
     "D1": {"1": "CADENCE_EXT", "2": "GND"},
-    "J4": {"1": "NC", "2": "GDR", "3": "RESE", "4": "NC", "5": "VSH2", "6": "NC", "7": "NC", "8": "GND", "9": "INK_BUSY", "10": "INK_RST", "11": "INK_DC", "12": "INK_CS", "13": "INK_CLK", "14": "INK_MOSI", "15": "+3V3", "16": "+3V3", "17": "GND", "18": "EPD_VDD", "19": "NC", "20": "VSH1", "21": "PREVGH", "22": "PREVGL", "23": "PREVGL", "24": "VCOM"},
+    "J4": {"1": "NC", "2": "GDR", "3": "RESE", "4": "NC", "5": "VSH2", "6": "NC", "7": "NC", "8": "GND", "9": "INK_BUSY", "10": "INK_RST", "11": "INK_DC", "12": "INK_CS", "13": "INK_CLK", "14": "INK_MOSI", "15": "+3V3", "16": "+3V3", "17": "GND", "18": "EPD_VDD", "19": "NC", "20": "VSH1", "21": "PREVGH", "22": "VSL", "23": "PREVGL", "24": "VCOM"},
     "L1": {"1": "+3V3", "2": "EPD_SW"}, "Q1": {"1": "GDR", "2": "RESE", "3": "EPD_SW"},
     "D2": {"1": "PUMP", "2": "GND"}, "D3": {"1": "PREVGL", "2": "PUMP"}, "D4": {"1": "PREVGH", "2": "EPD_SW"},
     "C13": {"1": "EPD_SW", "2": "PUMP"}, "C8": {"1": "VSH2", "2": "GND"},

@@ -11,7 +11,7 @@ must not start from this rejected circuit. No BOM order/export is authorized.
 | Finding | Confidence / evidence | Required resolution |
 |---|---|---|
 | D2/D3 candidate polarity does not produce the intended negative rail: D2 A=GND/K=PUMP, D3 A=PUMP/K=PREVGL | High engineering confidence; current exported pin map and rectifier polarity reasoning, **not simulation**. A 2026-09-19 raster-evidence pass re-attempted the p29 trace and could not resolve diode lead endpoints (crossings are indistinguishable from junctions at the figure's native 986x681 resolution). See `hardware/kicad/reports/2026-09-19/p29-raster-evidence-summary.md`. | Independently trace the manufacturer GDEY029T94 §12 p29 diagram; correct both diode directions and audit physical pad numbers. The incorrect candidate remains visibly marked so its current zero-ERC result cannot be mistaken for approval. |
-| Panel support network is not reliably transcribed, including J4 pin22 VSL versus pin23 VGL, reservoir and flying-capacitor endpoints/values | **Strengthened 2026-09-19:** §5 p8 text (separate VSL/VGL capacitor pins) plus figure-label row association — the internal `PREVGL` label sits on the pin-23 (VGL) row only and no shared internal label appears on the pin-22 (VSL) row (`hardware/kicad/reports/2026-09-19/`). Full edge list still outstanding; the p29 raster is not machine-traceable at native resolution. | Give pin22/VSL its own net and capacitor; complete the remaining edge-by-edge comparison of the p29 figure (reservoir/flying-cap endpoints/values); do not infer missing edges from this draft. |
+| Panel support network is not reliably transcribed: reservoir and flying-capacitor endpoints/values still untraced | **VSL/VGL split applied 2026-09-20:** §5 p8 text (separate VSL/VGL capacitor pins) + figure-label row association (2026-09-19) + white-region topology corroboration (2026-09-20, `hardware/kicad/reports/2026-09-20/`): J4.22 now has its own `VSL` net and 1uF/25V bypass C14; J4.23 keeps `PREVGL`. Panel-generator ownership of the VSL rail is inferred from §5 text, not a traced p29 edge. Full edge list still outstanding; the p29 raster is not machine-traceable at native resolution. | Complete the remaining edge-by-edge comparison of the p29 figure (reservoir/flying-cap endpoints/values); validate the VSL cap placement against the figure before any build; do not infer missing edges from this draft. |
 | Selected XUNPU FPC evidence not present locally | Deterministic document identity: local PDF names Kinghelm KH-FG0.5-H2.0-24PIN, SHA in manifest | Retrieve the actual selected connector drawing and verify pitch, contact side, numbering and land pattern. J4 remains TBD. |
 | J2/J3, L1, R5/R7/R8 and C5-C13 lack exact manufacturer-backed selection | Deterministic missing metadata in symbol properties | Obtain manufacturer evidence and populate Manufacturer/MPN; retain PLANNING_ONLY until live sourcing. |
 | Button and several connector/passive footprints are unresolved | Deterministic source inspection | `Gear:TBD_LAYOUT_BLOCKED` is an empty, conspicuous non-production placeholder, **not** a valid land pattern. Replace with manufacturer-derived footprints and pin-to-pad checks before issue #5. |
@@ -165,6 +165,30 @@ and the on-sheet blocker text in the same change. The figure carries the
 passive values (1uF/25V reservoirs, 4.7uF/25V at C4, 47uH/500mA L1,
 2.2R and >1M resistors), so the same trace can retire part of the
 MISSING_PART_IDENTITY list with figure-cited values before live sourcing.
+
+### Addendum (2026-09-20): native 1:1 raster pass and VSL/VGL split
+
+Raw native-1:1 dumps (embedded JPEG xref 187, no interpolation) and a
+white-region connectivity trace are committed in
+`hardware/kicad/reports/2026-09-20/` (`native-raster-and-vsl-split-summary.md`).
+Findings: (1) pin-22 and pin-23 lead stubs sit in *different* enclosed white
+regions, corroborating the label-row association that `PREVGL` names only the
+pin-23 net; (2) the three figure diodes render pixel-identically
+(bowtie-with-bar, same orientation) while serving different electrical roles,
+so glyph orientation at this resolution cannot establish lead direction —
+D2/D3 net endpoints remain datasheet-figure UNTRACED and their blockers
+stand unchanged.
+
+The bounded split step was applied to the editable generator: J4.22 (VSL)
+now nets to a new own bypass cap C14 (1uF/25V figure-family value, identity
+TBD) and a PWR5 ERC flag; J4.23 (VGL) keeps `PREVGL`. `test_netlist.py`
+`CRITICAL_EXPECTED`, the `check_blockers.py` PANEL_RAIL_SHORT basis text, and
+the on-sheet blocker text were updated together. Local evidence: ERC 0
+violations (KiCad 9.0.9), netlist/bounds/blocker-fixture tests pass, PDF
+bounds pass; the blocker gate now exits 3 on **five** groups (was six —
+PANEL_RAIL_SHORT cleared, D2/D3 + metadata groups unchanged). This is a
+datasheet-text-supported partial correction, **not** circuit validation or
+build approval.
 
 ## Verification limits
 
