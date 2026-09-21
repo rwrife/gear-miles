@@ -1,0 +1,14 @@
+pdf: /home/rwrife/repos/gear-miles/datasheets/GDEY029T94.pdf
+pdf_sha256: 2ea221896f9b0463e7f53b6a4d0dff967728f2049ca7667d45878c1ff4e876a9
+identity_matches_official: True
+p29_content_stream_bytes: 1187
+p29_image_xobjects: 2
+  image xref=263 name=0 size=720x180 bpc=8 cs=ICCBased
+  image xref=187 name=0 size=986x681 bpc=8 cs=DeviceRGB
+p29_form_xobjects: 1
+  form xref=1028 name=KSPX93 bbox=(0.0, -0.9599999785423279, 599.0399780273438, 62.47999954223633)
+p29_vector_line_segments: 2
+p29_vector_curves: 0
+p29_drawing_objects: 2
+p29_circuit_text_labels_found: NONE
+verdict: page 29 is a single embedded raster; the content stream carries no circuit geometry and no component labels, so lead endpoints cannot be machine-traced from this file by any parser at any fidelity.
