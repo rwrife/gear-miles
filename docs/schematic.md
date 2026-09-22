@@ -190,6 +190,33 @@ PANEL_RAIL_SHORT cleared, D2/D3 + metadata groups unchanged). This is a
 datasheet-text-supported partial correction, **not** circuit validation or
 build approval.
 
+### Addendum (2026-09-22): official CDN re-typeset copy — spare-part table, no pump gain
+
+The official good-display.com download for GDEY029T94 now serves a 2025
+re-typeset copy of Rev 1.0 (SHA-256 `750d119d…7bf264`, revision history
+still lists only 1.0/2021-03-15). Deterministic comparison
+(`hardware/kicad/tools/probe_official_cdn_copy.py`, output in
+`hardware/kicad/reports/2026-09-22/`):
+
+- The §12 p29 figure is the same 986×681 raster content (OCR label sets
+  identical at identical positions; 16×16 cell-mean MAE 0.53). **The pump
+  trace outcome is unchanged: D2/D3 lead endpoints remain untraceable and
+  the two NEGATIVE_PUMP_* blockers stand.**
+- NEW machine-readable content: §12 "Requirements for spare part" table —
+  D1—D3 = MBR0530, Q1 = Si1308EDL (both match drafted MPNs — corroboration
+  of part *identity* only, never orientation/edges), L1 = "refer to NR3015,
+  Io=500 mA(max)" (manufacturer-named inductor series; identity stays TBD
+  until the specific NR3015A470 datasheet + live sourcing land), C1—C12
+  0603/0805 X5R/X7R ≥25 V (explicitly permits the X5R dielectric the
+  2026-09-21 shortlist flagged as a deviation — now manufacturer-sanctioned),
+  P1 24-pin 0.5 mm.
+- Scope caveat: the table's D1—D3 is the *figure's* designator range; this
+  project's D1 is the USB ESD device and is not in that pump figure.
+- Two real text deletions vs the 2021 copy (p9 optimal-storage-temp row,
+  p37 24 h refresh note) — render-verified, not design-relevant.
+- **No source, netlist, generator, or gate file was changed this pass**;
+  the blocker gate remains exit 3 on the same five groups.
+
 ## Verification limits
 
 - **Static:** native ERC, netlist consistency, geometry bounds, targeted

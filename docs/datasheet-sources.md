@@ -32,6 +32,12 @@ PANEL_RAIL_SHORT blocker now has datasheet-text + figure-label evidence.
 D2/D3 endpoint connectivity remains untraced (crossings are
 indistinguishable from junctions at the raster's native resolution).
 
+## 2026-09-22 official CDN re-typeset copy (issue #3 evidence pass)
+
+| Document | Retrieval/source | SHA-256 | Evidence |
+|---|---|---|---|
+| GDEY029T94 Rev 1.0 (2025 re-typeset, official CDN) | official site download chain: `companyfile/621.html` → `downloadNew.do?appId=24&fid=792&id=621` → `v4.cecdn.yun300.cn/100001_1909185148/GDEY029T94.pdf` ("Time of issue 2025-11-26"), fetched 2026-09-22 | `750d119dec52a4f313f6ae3ee90aa02cd71cbf7f83cb584df51ef7d5517bf264` | Same Rev 1.0 spec re-typeset (revision history lists only 1.0/2021-03-15). §12 p29 adds the machine-readable "Requirements for spare part" table: C1—C12 0603/0805 X5R/X7R ≥25 V; R1/R2 0603/0805 1% ≥0.05 W; D1—D3 MBR0530 (≥30 V, ≥500 mA, Vf ≤430 mV); Q1 Si1308EDL (≥30 V, Vgs(th) ≤1.5 V, Rds(on) ≤400 mΩ); L1 refer to NR3015 Io=500 mA(max); P1 24-pin 0.5 mm. §12 figure is the same 986×681 JPEG (OCR label sets identical, 16×16 cell-mean MAE 0.53) — pump edges still untraceable; D2/D3 orientation NOT validated by this table (spare-part naming only, and its D1—D3 scope does not map to this project's ESD device D1). Two real content deletions vs the 2021 copy (p9 "Optimal Storage Temp 23±2 °C" row, p37 24 h refresh/ghosting note), render-verified; neither affects this design. Raw: `hardware/kicad/reports/2026-09-22/`. |
+
 ## Legacy manifest
 
 Datasheet PDFs themselves are gitignored (re-downloadable binaries under
