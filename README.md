@@ -75,12 +75,16 @@ network.
 
 ## Current status
 
-**Architecture baseline accepted; still no built artifact.** This repository
-contains documentation, an accepted architecture baseline
-([`docs/architecture.md`](docs/architecture.md)), a risk register
-([`docs/risk-register.md`](docs/risk-register.md)), and a backlog. No KiCad
-project, schematic, PCB, firmware build, app build, prototype, test, or
-measurement result exists yet, and none is claimed.
+**Hardware schematic is NOT FOR FABRICATION; hardware remains unbuilt.** The
+repository contains the accepted architecture baseline
+([`docs/architecture.md`](docs/architecture.md)), component evidence, and an
+editable KiCad 9 source at
+[`hardware/kicad/gear-miles.kicad_sch`](hardware/kicad/gear-miles.kicad_sch).
+The e-ink pump candidate was rejected in electrical review despite zero ERC.
+Diode polarity, full panel-circuit tracing, connector evidence and footprints
+remain explicit blockers in [`docs/schematic.md`](docs/schematic.md).
+Issue #3 remains incomplete. There is no PCB, firmware build, prototype, or
+bench/field measurement, and none is claimed.
 
 ### Metric-honesty policy
 

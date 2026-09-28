@@ -1,5 +1,45 @@
 # Datasheet source manifest
 
+## 2026-09-14 implementation review additions
+
+The legacy rows below are retained, not blanket-revalidated. Actual local
+manufacturer PDFs were read with `pdftotext`/PyMuPDF this run:
+
+| Document | Retrieval/source | SHA-256 | Evidence |
+|---|---|---|---|
+| Si1308EDL | [Vishay PDF](https://www.vishay.com/docs/63399/si1308edl.pdf), downloaded 2026-09-14 | `a86d6f766f259d8b170a01081f577055f37b527257a0f9af497c8f2c33625c9a` | Document 63399 Rev C p1: **SOT-323/SC-70**, 1 gate, 2 source, 3 drain; orderable Si1308EDL-T1-GE3. Not SOT-23. |
+| MBR0530 | [onsemi PDF](https://www.onsemi.com/pdf/datasheet/mbr0530-d.pdf), downloaded 2026-09-14 | `11459fe319b080be6b12cb596d20f96c1d23381e5e9f40ff017afcca0d187a23` | MBR0530/D Rev 2 p1, SOD-123, 30 V / 500 mA. Physical marking/direction and full pump still require review. |
+| UMW PESD5V0S1BA/BB/BL | Existing `datasheets/PESD5V0S1BA-UMW.pdf`, read 2026-09-14 | `58082d1cca5eefb1d872f35948be198ab5a86f0f83216e07f2832d399f27d00f` | Jan 2025, UTD Semiconductor Co. Limited / UMW, p1: bidirectional, clamp 14 V, component-level ESD >30 kV. This does **not** establish safe ESP32 pin clamping. |
+| Kinghelm FPC drawing | Existing `datasheets/KH-FG0.5-H2.0-24PIN.pdf`, read 2026-09-14 | `288bd7abe5351949830d2c392e814da3db04397699d1562a0d36462827c15c85` | Text identifies Kinghelm/KH-FG0.5-H2.0-24PIN, not XUNPU. Cannot validate the selected XUNPU connector. |
+
+No structured extraction cache, lifecycle audit, or new live distributor
+pricing/stock validation was completed. See [schematic blockers](schematic.md).
+
+## 2026-09-19 raster-evidence pass (issue #3 pump trace)
+
+| Document | Retrieval/source | SHA-256 | Evidence |
+|---|---|---|---|
+| SSD1680 Rev 0.14 (mirror A) | [crystalfontz.com PDF](https://www.crystalfontz.com/controllers/uploaded/SSD1680.pdf), downloaded 2026-09-19 | `c6d3090bcd8a65120e6e1f23f71fddd931662e0dd15a360b6d13fd7b2c8a4748` | §5 p7–p9 pin tables + §13 p43 application figure with text component table. Used ONLY as same-family consistency reference — GDEY029T94's own DS does not name its driver IC (see component-selection caveat 4); not identity evidence. |
+| SSD1680 Rev 0.14 (mirror B) | [elecrow.com PDF](https://www.elecrow.com/download/product/DIE01129S/SSD1680_datasheet.pdf), downloaded 2026-09-19 | `12f8ec4237a17b5d64a0315de72fbbf1babcd1fb86f8dfc02f631fe3699878a8` | Same revision via second host. All three Fig 13-1 raster strips are byte-identical to mirror A (SHA-256 `01d9dba4…c0467`, `0c4024db…1b4b`, `d41fb263…29784`), confirming one canonical figure image. Same non-identity limitation. |
+
+Raw probe dumps + interpretation:
+`hardware/kicad/reports/2026-09-19/` (`p29-raster-evidence-summary.md`).
+Key deterministic result: on GDEY029T94 §12 p29 the internal `PREVGL`
+label associates with the pin-23 (VGL) row only; no shared internal label
+appears on the pin-22 (VSL) row — corroborating the §5 p8 text that VSL
+and VGL are separate capacitor pins. The
+PANEL_RAIL_SHORT blocker now has datasheet-text + figure-label evidence.
+D2/D3 endpoint connectivity remains untraced (crossings are
+indistinguishable from junctions at the raster's native resolution).
+
+## 2026-09-22 official CDN re-typeset copy (issue #3 evidence pass)
+
+| Document | Retrieval/source | SHA-256 | Evidence |
+|---|---|---|---|
+| GDEY029T94 Rev 1.0 (2025 re-typeset, official CDN) | official site download chain: `companyfile/621.html` → `downloadNew.do?appId=24&fid=792&id=621` → `v4.cecdn.yun300.cn/100001_1909185148/GDEY029T94.pdf` ("Time of issue 2025-11-26"), fetched 2026-09-22 | `750d119dec52a4f313f6ae3ee90aa02cd71cbf7f83cb584df51ef7d5517bf264` | Same Rev 1.0 spec re-typeset (revision history lists only 1.0/2021-03-15). §12 p29 adds the machine-readable "Requirements for spare part" table: C1—C12 0603/0805 X5R/X7R ≥25 V; R1/R2 0603/0805 1% ≥0.05 W; D1—D3 MBR0530 (≥30 V, ≥500 mA, Vf ≤430 mV); Q1 Si1308EDL (≥30 V, Vgs(th) ≤1.5 V, Rds(on) ≤400 mΩ); L1 refer to NR3015 Io=500 mA(max); P1 24-pin 0.5 mm. §12 figure is the same 986×681 JPEG (OCR label sets identical, 16×16 cell-mean MAE 0.53) — pump edges still untraceable; D2/D3 orientation NOT validated by this table (spare-part naming only, and its D1—D3 scope does not map to this project's ESD device D1). Two real content deletions vs the 2021 copy (p9 "Optimal Storage Temp 23±2 °C" row, p37 24 h refresh/ghosting note), render-verified; neither affects this design. Raw: `hardware/kicad/reports/2026-09-22/`. |
+
+## Legacy manifest
+
 Datasheet PDFs themselves are gitignored (re-downloadable binaries under
 `datasheets/`); this manifest is the committed record of exactly which
 documents every datasheet citation in `docs/architecture.md` and

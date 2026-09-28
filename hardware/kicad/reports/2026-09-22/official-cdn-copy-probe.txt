@@ -1,0 +1,53 @@
+legacy   sha256 2ea221896f9b0463e7f53b6a4d0dff967728f2049ca7667d45878c1ff4e876a9
+official sha256 750d119dec52a4f313f6ae3ee90aa02cd71cbf7f83cb584df51ef7d5517bf264
+pages: legacy=37 official=37
+legacy: section 12 page = 29
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+MuPDF error: syntax error: cannot find ExtGState resource 'KSPE149'
+
+official: section 12 page = 29
+legacy: drawings inside figure bbox = 0; text spans inside figure bbox = []
+legacy: 986x681 raster xref 187, sha256(bytes) 3b32062d5f26ce7b
+official: drawings inside figure bbox = 0; text spans inside figure bbox = ['GOODISPLAY']
+official: 986x681 raster xref 543, sha256(bytes) c96cb196bae03c41
+16x16 cell-mean diff: mean MAE 0.53, worst cell 132 (row 8, col 4) MAE 2.66
+official §12 machine-readable table: 9/9 expected tokens present; missing=[]
+legacy §12 page tokens (expected absent): leaked=[]
+RESULT: PASS

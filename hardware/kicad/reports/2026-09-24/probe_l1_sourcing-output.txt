@@ -1,0 +1,7 @@
+PASS api-no-entry NR3015A470 | 0 results
+PASS api-no-entry NR3015A470M | 0 results
+PASS ty-supersession-line | TYCOMPAS maps LSXBD3030QKT470M -> NR3015T470M
+PASS nr3015t470m-300ma | LCSC/JLCPCB record: 47uH rated 300 mA < 500 mA line
+PASS no-47uh-3x3mm-meets-500ma | members=[('SMNR3015-470MT', 350), ('FNR3015S470MT', 440)]
+
+PROBE OK (0 failed checks); evidence-only — no file changed

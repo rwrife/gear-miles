@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Gear")(type "KiCad")(uri "${KIPRJMOD}/gear.pretty")(options "")(descr "Project-local non-production layout blockers"))
+)
