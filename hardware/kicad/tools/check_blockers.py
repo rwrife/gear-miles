@@ -43,13 +43,13 @@ def inspect(root):
             pins.get(("D2", "A")) == "PUMP" and pins.get(("D2", "K")) == "GND",
             "D2 must clamp the positive PUMP excursion, not the negative excursion.",
             {"D2.A": pins.get(("D2", "A")), "D2.K": pins.get(("D2", "K")),
-             "basis": "Forward conduction A to K; docs/schematic.md blocking findings. Engineering topology check, not a manufacturer-diagram trace."},
+             "basis": "Forward conduction A to K; corroborated 2026-09-28 by Good Display DESPI-C02 V1.0 vector schematic probe (D2 cathode bar points to right column)."},
             "engineering-topology")
     require("NEGATIVE_PUMP_RECTIFIER",
             pins.get(("D3", "A")) == "PREVGL" and pins.get(("D3", "K")) == "PUMP",
             "D3 must extract charge from PREVGL during the negative PUMP excursion.",
             {"D3.A": pins.get(("D3", "A")), "D3.K": pins.get(("D3", "K")),
-             "basis": "Forward conduction A to K; docs/schematic.md blocking findings. Does not validate component values or physical pad numbering."},
+             "basis": "Forward conduction A to K; corroborated 2026-09-28 by Good Display DESPI-C02 V1.0 vector schematic probe (D3 cathode bar points to right column). Does not validate component values or physical pad numbering."},
             "engineering-topology")
     vsl, vgl = pins.get(("J4", "VSL")), pins.get(("J4", "VGL"))
     require("PANEL_RAIL_SHORT", bool(vsl and vgl and vsl != vgl),

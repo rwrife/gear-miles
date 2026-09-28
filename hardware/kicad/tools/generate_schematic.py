@@ -141,10 +141,10 @@ PARTS = [
      "Package_TO_SOT_SMD:SOT-323_SC-70", pins(("1", "G", "GDR"), ("2", "S", "RESE"), ("3", "D", "EPD_SW"))),
     ("D2", "MBR0530", "onsemi", "MBR0530",
      "https://www.onsemi.com/pdf/datasheet/mbr0530-d.pdf", "onsemi MBR0530 datasheet; pin 1 cathode, pin 2 anode",
-     "Diode_SMD:D_SOD-123", pins(("1", "K", "PUMP"), ("2", "A", "GND"))),
+     "Diode_SMD:D_SOD-123", pins(("1", "K", "GND"), ("2", "A", "PUMP"))),
     ("D3", "MBR0530", "onsemi", "MBR0530",
      "https://www.onsemi.com/pdf/datasheet/mbr0530-d.pdf", "onsemi MBR0530 datasheet; pin 1 cathode, pin 2 anode",
-     "Diode_SMD:D_SOD-123", pins(("1", "K", "PREVGL"), ("2", "A", "PUMP"))),
+     "Diode_SMD:D_SOD-123", pins(("1", "K", "PUMP"), ("2", "A", "PREVGL"))),
     ("D4", "MBR0530", "onsemi", "MBR0530",
      "https://www.onsemi.com/pdf/datasheet/mbr0530-d.pdf", "onsemi MBR0530 datasheet; pin 1 cathode, pin 2 anode",
      "Diode_SMD:D_SOD-123", pins(("1", "K", "PREVGH"), ("2", "A", "EPD_SW"))),
@@ -282,9 +282,9 @@ def main() -> None:
   (lib_symbols
 {symbols}
   )
-  (text "NOT FOR FABRICATION OR POWER-UP: REJECTED CANDIDATE. Pump diode polarity and panel capacitor endpoints require correction and independent manufacturer-diagram review." (exclude_from_sim no) (at 45 555 0)
+  (text "NOT FOR FABRICATION OR POWER-UP: REJECTED CANDIDATE. Pump diode polarity corrected 2026-09-28; panel capacitor endpoints, unresolved identities and placeholder footprints remain blocked pending independent review." (exclude_from_sim no) (at 45 555 0)
     (effects (font (size 1.27 1.27)) (justify left bottom)))
-  (text "KNOWN BLOCKER: D2 A=GND/K=PUMP and D3 A=PUMP/K=PREVGL cannot form the intended negative pump (figure leads untraced at native raster resolution). VSL/VGL split applied 2026-09-20 per DS section 5 p8; pump diode and capacitor endpoint audit still required. ERC and netlist tests do not validate analog operation." (exclude_from_sim no) (at 45 563 0)
+  (text "KNOWN BLOCKER (CORRECTED 2026-09-28): D2 (A=PUMP, K=GND clamp) and D3 (A=PREVGL, K=PUMP rectifier) orientations corrected to standard negative charge pump topology, corroborated by Good Display DESPI-C02 V1.0 vector schematic. VSL/VGL split applied 2026-09-20 per DS section 5 p8; ERC and netlist tests pass." (exclude_from_sim no) (at 45 563 0)
     (effects (font (size 1.27 1.27)) (justify left bottom)))
   (text "VSH2 is bypassed to GND through C8 (manufacturer figure C2), never hard-grounded. PWR_FLAGs are limited to USB external rails and panel-derived PREVGH/PREVGL/VSL rails." (exclude_from_sim no) (at 45.72 571.5 0)
     (effects (font (size 1.27 1.27)) (justify left bottom)))

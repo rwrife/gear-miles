@@ -34,18 +34,27 @@ gate code were changed in this step.
      orientations (`NEGATIVE_PUMP_CLAMP` and `NEGATIVE_PUMP_RECTIFIER`) are
      indeed inverted.
 
-## Remaining Blocker Status for Issue #3
+## Correction applied in the same run (2026-09-28)
 
-The PR remains a **DRAFT** (`gh pr view 12` state `OPEN`, `isDraft=true`,
-`mergeStateStatus=UNSTABLE`).
-The blocker gate `check_blockers.py` continues to exit with code **3** across
-five groups:
+This probe's evidence was sufficient to act on, so the same executor run
+applied the D2/D3 swap to the editable generator, regenerated the schematic,
+and updated `test_netlist.py` critical expectations. See the
+`docs/schematic.md` 2026-09-28 addendum for the full record.
 
-1. `NEGATIVE_PUMP_CLAMP` (D2 polarity)
-2. `NEGATIVE_PUMP_RECTIFIER` (D3 polarity)
-3. `MISSING_PART_IDENTITY` (17 items)
-4. `PLACEHOLDER_FOOTPRINT` (21 items)
-5. `DECLARED_UNVERIFIED` (41 items)
+## Blocker Status After the Correction
 
-This pass records the vector schematic probe and evidence summary without
-unblocking or merging unverified hardware.
+The PR remains a **DRAFT** and must not be merged on this evidence alone;
+native ERC is 0 violations but there is no simulation, bench, or
+panel-endpoint verification.
+
+The blocker gate `check_blockers.py` now exits 3 across **three** groups
+(was five — `NEGATIVE_PUMP_CLAMP` and `NEGATIVE_PUMP_RECTIFIER` cleared):
+
+1. `MISSING_PART_IDENTITY` (17 items)
+2. `PLACEHOLDER_FOOTPRINT` (21 items)
+3. `DECLARED_UNVERIFIED` (41 items)
+
+Residual risk: the DESPI-C02 evidence is a same-supplier reference design,
+not the GDEY029T94 §12 p29 figure itself (still untraceable). The negative
+pump topology is now convention-correct and corroborated, but the pump's
+actual current demand and the C5-C14 endpoint map remain open.

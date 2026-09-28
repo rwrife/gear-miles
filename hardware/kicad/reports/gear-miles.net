@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/home/rwrife/repos/gear-miles-wt/issue-3-complete/hardware/kicad/gear-miles.kicad_sch</source>
-    <date>2026-09-20T22:10:02+0000</date>
+    <date>2026-09-28T13:56:15+0000</date>
     <tool>Eeschema 9.0.9.1-unknown-202605141413~ce707d0a6c~ubuntu24.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -2276,7 +2276,7 @@
       <node ref="C8" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C9" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="D1" pin="2" pinfunction="P2" pintype="passive"/>
-      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="J1" pin="A1" pinfunction="GND" pintype="passive"/>
       <node ref="J1" pin="A12" pinfunction="GND" pintype="passive"/>
       <node ref="J1" pin="B1" pinfunction="GND" pintype="passive"/>
@@ -2339,14 +2339,14 @@
     </net>
     <net code="22" name="PREVGL" class="Default">
       <node ref="C11" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="D3" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D3" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="J4" pin="23" pinfunction="VGL" pintype="passive"/>
       <node ref="PWR4" pin="1" pinfunction="PWR" pintype="power_out"/>
     </net>
     <net code="23" name="PUMP" class="Default">
       <node ref="C13" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="D3" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D3" pin="1" pinfunction="K" pintype="passive"/>
     </net>
     <net code="24" name="RESE" class="Default">
       <node ref="J4" pin="3" pinfunction="RESE" pintype="passive"/>

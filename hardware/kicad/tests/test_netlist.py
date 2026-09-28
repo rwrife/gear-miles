@@ -23,7 +23,7 @@ CRITICAL_EXPECTED = {
     "D1": {"1": "CADENCE_EXT", "2": "GND"},
     "J4": {"1": "NC", "2": "GDR", "3": "RESE", "4": "NC", "5": "VSH2", "6": "NC", "7": "NC", "8": "GND", "9": "INK_BUSY", "10": "INK_RST", "11": "INK_DC", "12": "INK_CS", "13": "INK_CLK", "14": "INK_MOSI", "15": "+3V3", "16": "+3V3", "17": "GND", "18": "EPD_VDD", "19": "NC", "20": "VSH1", "21": "PREVGH", "22": "VSL", "23": "PREVGL", "24": "VCOM"},
     "L1": {"1": "+3V3", "2": "EPD_SW"}, "Q1": {"1": "GDR", "2": "RESE", "3": "EPD_SW"},
-    "D2": {"1": "PUMP", "2": "GND"}, "D3": {"1": "PREVGL", "2": "PUMP"}, "D4": {"1": "PREVGH", "2": "EPD_SW"},
+    "D2": {"1": "GND", "2": "PUMP"}, "D3": {"1": "PUMP", "2": "PREVGL"}, "D4": {"1": "PREVGH", "2": "EPD_SW"},
     "C13": {"1": "EPD_SW", "2": "PUMP"}, "C8": {"1": "VSH2", "2": "GND"},
 }
 EXPECTED = {

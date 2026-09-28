@@ -10,7 +10,7 @@ must not start from this rejected circuit. No BOM order/export is authorized.
 
 | Finding | Confidence / evidence | Required resolution |
 |---|---|---|
-| D2/D3 candidate polarity does not produce the intended negative rail: D2 A=GND/K=PUMP, D3 A=PUMP/K=PREVGL | High engineering confidence; current exported pin map and rectifier polarity reasoning, **not simulation**. A 2026-09-19 raster-evidence pass re-attempted the p29 trace and could not resolve diode lead endpoints (crossings are indistinguishable from junctions at the figure's native 986x681 resolution). See `hardware/kicad/reports/2026-09-19/p29-raster-evidence-summary.md`. | Independently trace the manufacturer GDEY029T94 §12 p29 diagram; correct both diode directions and audit physical pad numbers. The incorrect candidate remains visibly marked so its current zero-ERC result cannot be mistaken for approval. |
+| D2/D3 negative-pump polarity | **Corrected 2026-09-28:** D2 A=PUMP/K=GND, D3 A=PREVGL/K=PUMP. Standard negative charge-pump topology is independently corroborated by the official Good Display `DESPI-C02_SCH V1.0.pdf` vector schematic (D2/D3 cathode bars opposite D1); deterministic source/geometry evidence is in `hardware/kicad/reports/2026-09-28/`. This is static reference-design evidence, **not simulation or bench validation**. | Topology blocker cleared. Keep diode A/K and physical pad mapping under regression tests; do not claim analog validation until remaining panel-network endpoints/values are verified. |
 | Panel support network is not reliably transcribed: reservoir and flying-capacitor endpoints/values still untraced | **VSL/VGL split applied 2026-09-20:** §5 p8 text (separate VSL/VGL capacitor pins) + figure-label row association (2026-09-19) + white-region topology corroboration (2026-09-20, `hardware/kicad/reports/2026-09-20/`): J4.22 now has its own `VSL` net and 1uF/25V bypass C14; J4.23 keeps `PREVGL`. Panel-generator ownership of the VSL rail is inferred from §5 text, not a traced p29 edge. Full edge list still outstanding; the p29 raster is not machine-traceable at native resolution. | Complete the remaining edge-by-edge comparison of the p29 figure (reservoir/flying-cap endpoints/values); validate the VSL cap placement against the figure before any build; do not infer missing edges from this draft. |
 | Selected XUNPU FPC evidence not present locally | Deterministic document identity: local PDF names Kinghelm KH-FG0.5-H2.0-24PIN, SHA in manifest | Retrieve the actual selected connector drawing and verify pitch, contact side, numbering and land pattern. J4 remains TBD. |
 | J2/J3, L1, R5/R7/R8 and C5-C13 lack exact manufacturer-backed selection | Deterministic missing metadata in symbol properties | Obtain manufacturer evidence and populate Manufacturer/MPN; retain PLANNING_ONLY until live sourcing. |
@@ -45,9 +45,9 @@ as new evidence. No live distributor query was completed this run.
 `test_netlist.py` reads the editable source via a fresh native KiCad XML
 export, checks the candidate map, and rejects a deleted J1 A9 connection.
 For noncritical parts it derives expectations from the generator. This is
-**internal consistency only**, not independent circuit validation. The test
-currently accepts the rejected pump map; that limitation is intentional and
-explicit until the independent circuit review replaces it.
+**internal consistency only**, not independent circuit validation. D2/D3 are
+now explicit critical expectations matching the 2026-09-28 vector-backed
+correction; mutation coverage remains synthetic host evidence.
 
 `test_schematic_bounds.py` checks source placement/text anchors;
 `test_pdf_bounds.py` checks extracted word bounds. Neither is a complete
@@ -216,6 +216,35 @@ still lists only 1.0/2021-03-15). Deterministic comparison
   p37 24 h refresh note) — render-verified, not design-relevant.
 - **No source, netlist, generator, or gate file was changed this pass**;
   the blocker gate remains exit 3 on the same five groups.
+
+## 2026-09-28: DESPI-C02 vector evidence and D2/D3 correction
+
+Good Display's official standalone `DESPI-C02_SCH V1.0.pdf` is a true vector
+schematic, unlike the GDEY029T94 §12 embedded raster. The deterministic probe
+`hardware/kicad/tools/probe_despi_vector_sch.py` fetched the CDN file
+(SHA-256 `b1893766…26128b1`) and extracted diode glyph/conductor geometry:
+D1's cathode bar is on the left, while D2/D3 cathode bars are on the right.
+This independently corroborates the negative-pump topology expected by the
+gate. Source and output are committed under
+`hardware/kicad/reports/2026-09-28/`.
+
+The editable source generator was corrected and regenerated in the same run:
+
+- D2 is now `A=PUMP, K=GND` (clamps the positive PUMP excursion).
+- D3 is now `A=PREVGL, K=PUMP` (extracts negative charge into PREVGL).
+- `test_netlist.py` critical pin/net expectations changed with the source.
+- `check_blockers.py` keeps both polarity checks as regression guards and
+  records the vector-reference basis.
+- Native ERC remains **0 violations**; host blocker tests remain **10/10**;
+  netlist, source bounds and PDF bounds pass.
+- The real blocker gate still exits **3**, now on **three** metadata/approval
+  groups (was five): `MISSING_PART_IDENTITY` (17),
+  `PLACEHOLDER_FOOTPRINT` (21), and `DECLARED_UNVERIFIED` (41).
+
+This is static reference-design corroboration, not simulation or bench
+validation. DESPI-C02 is a Good Display reference board, not proof that every
+GDEY029T94 §12 reservoir/flying-cap endpoint and value has been transcribed.
+The PR remains draft and the design remains not-for-build.
 
 ## Verification limits
 
