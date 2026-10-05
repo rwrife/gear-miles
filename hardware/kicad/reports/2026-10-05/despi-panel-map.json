@@ -1,0 +1,62 @@
+{
+  "consequence_for_issue_3": [
+    "The p29 endpoint+value map remains untraced; DESPI evidence may not close MISSING_PART_IDENTITY values by substitution.",
+    "DESPI values must NOT be copied into gear-miles symbol properties."
+  ],
+  "diode_cathode_directions": {
+    "D1": "left",
+    "D2": "right",
+    "D3": "right"
+  },
+  "fpc_pin_rail_table_despi": {
+    "1": "NC",
+    "10": "RES",
+    "11": "D/C",
+    "12": "CS",
+    "13": "SCLK",
+    "14": "SDI",
+    "15": "VDDIO",
+    "16": "VCI",
+    "17": "VSS",
+    "18": "VDD",
+    "19": "VPP",
+    "2": "GDR",
+    "20": "VSH",
+    "21": "PREVGH",
+    "22": "VSL",
+    "23": "PREVGL",
+    "24": "VCOM",
+    "3": "RESE",
+    "4": "VGL",
+    "5": "VGH",
+    "6": "TSCL",
+    "7": "TSDA",
+    "8": "BS",
+    "9": "BUSY"
+  },
+  "legend_values": {
+    "C11": "4.7uF/25V",
+    "C6": "1uF/50V",
+    "C7": "1uF/50V",
+    "C9": "1uF/50V",
+    "D1": "MBR0530",
+    "D2": "MBR0530",
+    "D3": "MBR0530",
+    "L1": "10uH",
+    "Q1": "Si1308EDL"
+  },
+  "provenance_judgement": {
+    "basis": [
+      "Charge-pump part identity (D1-D3 MBR0530, Q1 Si1308EDL) and the complementary D2/D3 cathode direction corroborate the applied 2026-09-28 orientation fix (topology + identity evidence only).",
+      "DESPI-C02 keeps VSL (pin 22) and PREVGL (pin 23) as distinct nets, corroborating the applied 2026-09-20 VSL/VGL split.",
+      "Its connector assignment differs from GDEY029T94 section 5 p8 at pins 4/5/20/21 (DESPI: VGL/VGH/VSH/PREVGH; panel: NC/VSH2/VSH1/VGH), so it is NOT the panel's own \u00a712 application circuit.",
+      "Boost inductor (10uH/1A vs 47uH/500mA) and bypass ratings (1uF/50V vs 1uF/25V) differ from the panel figure; the panel datasheet remains the normative source for values and endpoints."
+    ],
+    "relation": "same-family reference-board corroboration, NOT an exact copy"
+  },
+  "source": {
+    "sha256": "b1893766d212249429876aa1cb3e7cf929712ac2f2b262ce2da39948c26128b1",
+    "sha_matches_expected": true,
+    "url": "https://v4.cecdn.yun300.cn/100001_1909185148/DESPI-C02_SCH%20V1.0.pdf"
+  }
+}

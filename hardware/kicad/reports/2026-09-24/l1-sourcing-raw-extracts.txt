@@ -1,0 +1,84 @@
+L1 live-sourcing raw extracts — retrieved 2026-09-24 (UTC). ALL entries fetched
+live this pass (fetched_live=true) unless a line says otherwise. These are raw
+recorded strings/hashes; interpretation lives in l1-sourcing-live-summary.md.
+
+[1] jlcsearch community API — exact-MPN query "NR3015A470" (no LCSC catalog entry)
+URL: https://jlcsearch.tscircuit.com/api/search?q=NR3015A470&limit=20&full=true
+{"components":[]}
+  -> results: 0
+Also re-queried "NR3015A470M" and "NR3015A4R7M": both {"components":[]} (0 results).
+
+[2] jlcsearch community API — series query "NR3015" (20 results, all SMD 3x3mm);
+    every 47 uH member at/below 440 mA. Key rows (verbatim API fields):
+  C135243   SMNR3015-470MT   basic:false stock:184112  1.625Ω 300mA 350mA 47uH Magnetic Shielded Inductor ±20% SMD,3x3mm
+  C167766   FNR3015S470MT    basic:false stock:46881   1.625Ω 430mA 440mA 47uH Magnetic Shielded Inductor ±20% SMD,3x3mm
+  C7427088  ANR3015T470M     basic:false stock:6261    price 0.0406 (no description field returned)
+  C18221995 MNR3015T470MT    basic:false stock:2337    price 0.0374 (no description field returned)
+  (series query for NR3015 returned NO entry with inductance 47uH at Io >= 500mA
+  in 3030/3x3mm package; the Taiyo Yuden MPN NR3015T470M itself did not appear
+  in the live API results at all.)
+
+[3] Taiyo Yuden official site (TYCOMPAS "for AP"), live fetch 2026-09-24:
+URL: https://ds.yuden.co.jp/TYCOMPAS/ap/detail?pn=LSXBD3030QKT470M&u=M
+  Verbatim: "LSXBD3030QKT470M (Previous Part Number : NR3015T470M) INDUCTORS
+  [Wire-wound Ferrite Power Inductors LSXB/LSXN/LSXP series for General
+  Electronic Equipment]"
+  -> NR3015 is TAIYO YUDEN's series (ty-top.com), superseded family mapped on
+     the manufacturer's own site. This corrects the 2026-09-22 note in
+     official-cdn-copy-summary.md that called it "Murata standard series code".
+  sha256(d3bce01f0fb1adf7270cfa47d5394fa0dfe3aecc069c438b2782c29ae58efb0b) yuden.html (2026-09-24)
+
+[4] Taiyo Yuden per-part spec sheet (Octopart mirror of ty-top.com sheet):
+URL: https://datasheet.octopart.com/NR3015T100M-Taiyo-Yuden-datasheet-41181802.pdf
+  Verbatim (10 uH member, same NR3015 3.0x3.0x1.5 mm package):
+  "10μH(±20%), 700mA, 710mA ... Rated Current -Saturation Current 700mA
+   Rated Current -Temperature Rise Current 710mA"
+  -> shows NR3015 current rating falls with inductance; per-member rating needed.
+  sha256(903d94ae3d36f2d7c062ddf8f5e9a5fc6e246c96ec0f59eb37b25cdc7462e76d) ty_nr3015.pdf
+
+[5] 47 uH member rating — JLCPCB part record (LCSC/JLCPCB shared parts library):
+URL: https://jlcpcb.com/partdetail/TaiyoYuden-NR3015T470M/C87171
+  Verbatim part string: "NR3015T470M - 1.608Ω 300mA 320mA 47uH ±20% SMD,3x3mm"
+  -> the 47uH NR3015 member is rated 300 mA (320 mA temp-rise), i.e. BELOW the
+     GDEY029T94 spare-part table line "Io = 500 mA (max)".
+  Secondary corroboration (web search snippets, NOT independently fetched):
+  Taiyo Yuden TYCOMPAS outline "47uH±20%, 0.3A, 3.0x3.0x1.5mm" (from search
+  result description); datasheet4u "Current Rating: 300mA"; Newark 93K5690
+  "320mA".
+  sha256(e6df974bfdaa8f2948293471bf861e97b9a4fc79cfb4d6c3d76deec6d079d90f) jlc87171.html (2026-09-24)
+  NOTE LCSC-side: https://www.lcsc.com/product-detail/C87171.html still resolves
+  with title "NR3015T470M | Fixed Inductors | Taiyo Yuden | LCSC", but the
+  jlcsearch API MPN query did not return C87171 and
+  https://www.lcsc.com/datasheet/C87171.pdf serves an HTML interstitial, so
+  LCSC stock/pricing for C87171 stays UNVERIFIED (not claimed here).
+
+[6] "NR3015A470" MPN hunt (web search 2026-09-24): every hit for "NR3015A470" /
+    "NR3015A470M" resolves to NR3015T470M datasheets/stock pages or unrelated
+    second-source series (FNR3015, SMNR3015...). No manufacturer document with
+    the literal part number "NR3015A470" exists on the hosts checked.
+    Conclusion: "NR3015A470" (2026-09-21/22 shorthand) is a TRUNCATED series
+    reference from the panel table ("refer to NR3015" + figure value 47uH),
+    not a purchasable MPN. Stop searching for it verbatim.
+
+[7] Second-source 47uH/3030 datasheet identities (downloaded from LCSC CDN 2026-09-24):
+  FNR3015S470MT (C167766) datasheet header: "SHENZHEN SHUNXIANGNUO ELECTRONICS
+  CO., LTD." sha256(0d75da6de91b9af75d47408ced71e790c0806e3b0644e15ac6bdad44e7e2cc3c) fnr_ds.pdf
+  SMNR3015-470MT (C135243) datasheet: SMNR series magnetic-resin shielded SMD
+ power inductors (Chinese-language, same vendor family)
+ sha256(80da7a976d63432d15df72ca1464f38a4572eb964d23f613c3301606e488ca3f) c135243.pdf
+
+[8] Basic-tier capacitor shortlist row re-verified live (from 2026-09-21 shortlist):
+URL: https://jlcsearch.tscircuit.com/api/search?q=CL05A105KA5NQNC&full=true
+  C52923 | CL05A105KA5NQNC | Samsung | basic:true | stock:4519174 |
+  "1uF 25V X5R ±10% 0402" -> still Basic and in stock; X5R is
+  manufacturer-sanctioned by the panel's own 2025 spare-part table (C1—C12
+  0603/0805 X5R/X7R >=25V). Note the table says 0603/0805, not 0402 (2026-09-22
+  note stands: footprint choice is a #5 decision).
+
+[9] Non-basic 47uH parts in LARGER footprints with >=500 mA evidence (series query
+    "TAIYO YUDEN 47uH", live 2026-09-24, catalog API fields only):
+  C222886 NRS4018T470MDGJ  4x4mm   "440mA 47uH 600mA 780mΩ ±20%"  stock 817
+  C222943 NRS5030T470MMGJ 4.9x4.9  "325mΩ 47uH 700mA 950mA ±20%"  stock 342
+  C2047527 NRS5040T470MMGJV 4.9x4.9 "1.1A 403mΩ 47uH 900mA"      stock 260
+  (None is 3030-footprint compatible; listed only as evidence that the 500 mA
+  requirement forces a footprint change — decision belongs with #5 + owner.)

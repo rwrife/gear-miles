@@ -1,0 +1,22 @@
+2026-09-19T18:59:17Z
+551952a79b2e0543b7a30fce06d47b51ccc0995e
+9.0.9
+Found 0 violations (ERC json+text, hardware/kicad/reports/2026-09-19/)
+deterministic regeneration: byte-identical (git diff --exit-code clean)
+candidate-map consistency passed (NOT circuit validation); deleted-J1-A9 mutation rejected
+source placement and text anchors are within A1 landscape bounds
+Ran 10 tests in 0.495s
+one-page PDF text bounds are clean
+BLOCKED: 6 blocker groups; not electrical approval
+NEGATIVE_PUMP_CLAMP: D2 must clamp the positive PUMP excursion, not the negative excursion.
+NEGATIVE_PUMP_RECTIFIER: D3 must extract charge from PREVGL during the negative PUMP excursion.
+PANEL_RAIL_SHORT: J4 VSL and VGL must be present and not directly shorted; full panel network review remains required.
+MISSING_PART_IDENTITY: 16 BOM components retain missing_part_identity blockers.
+PLACEHOLDER_FOOTPRINT: 20 BOM components retain placeholder_footprint blockers.
+DECLARED_UNVERIFIED: 40 BOM components retain declared_unverified blockers.
+Actual candidate blocker gate exit: 3 (3 means BLOCKED, expected — gate NOT repaired)
+markdownlint-cli2 v0.13.0: 14 files, 0 errors (local)
+npx markdownlint same
+a22de9930b89d16dbff4448f1c69bb89a47f5e33c6c3b7916060369952561ae3  hardware/kicad/gear-miles.kicad_sch
+95d11e007ebfb79049ab861927ce224ee1326455cb958257c8242656c717f933  /tmp/gm-v.net
+2ea221896f9b0463e7f53b6a4d0dff967728f2049ca7667d45878c1ff4e876a9  /home/rwrife/repos/gear-miles/datasheets/GDEY029T94.pdf
