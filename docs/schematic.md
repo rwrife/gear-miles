@@ -246,6 +246,21 @@ validation. DESPI-C02 is a Good Display reference board, not proof that every
 GDEY029T94 §12 reservoir/flying-cap endpoint and value has been transcribed.
 The PR remains draft and the design remains not-for-build.
 
+## 2026-10-05: reference-board pinout contrast (not panel validation)
+
+A hash-pinned vector-text/glyph probe of the official DESPI-C02 schematic
+(`hardware/kicad/reports/2026-10-05/`) confirms that this is a **same-family
+reference board, not a pin-for-pin transcription target**: its pins 4/5/20/21
+are VGL/VGH/VSH/PREVGH, versus the GDEY029T94 panel §5 p8 table's
+NC/VSH2/VSH1/VGH. Its inductor and bypass ratings also differ from the panel
+figure. D2/D3 orientation corroboration remains limited to topology; no
+panel-specific conductor edge or unverified value was accepted from the
+reference board. The available local `kicad-cli` wrapper could not rerun
+ERC/netlist export this cycle because its Docker image was absent; the
+schematic was unchanged, and the blocker gate on the already committed native
+XML netlist still exited 3 on three metadata/approval groups. Neither historical
+zero-ERC nor a reference-board assertion is fabrication approval.
+
 ## Verification limits
 
 - **Static:** native ERC, netlist consistency, geometry bounds, targeted
